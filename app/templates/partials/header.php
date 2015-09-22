@@ -15,11 +15,8 @@
 	</head>
 
 	<body>
-
     <!-- logo + nav -->
-
 		<header>
-
             <!-- logo du site -->
 
 				<h1><img src="<?= $this->assetUrl('img/mealoclockB.png')?>" alt='logo meal oclock Découvrir, partager, échanger, savourer !'></h1>
@@ -54,17 +51,22 @@
                 <!-- menu déroulant -->
 
 			          <ul class="dropdown-menu">
-			            <li><a href="communaute_vege.php">Végétarien</a></li>
-			            <li><a href="#">Végan</a></li>
-			            <li><a href="#">Sans gluten</a></li>
-			           	<li><a href="#">Sans lactose</a></li>
+			            <li><a href="<?= $this->url('eventsbycom',['com'=>'vege']); ?>">Végétarien</a></li>
+			            <li><a href="<?= $this->url('eventsbycom',['com'=>'vegan']); ?>">Végan</a></li>
+			            <li><a href="<?= $this->url('eventsbycom',['com'=>'ssgluten']); ?>">Sans gluten</a></li>
+			           	<li><a href="<?= $this->url('eventsbycom',['com'=>'sslactose']); ?>">Sans lactose</a></li>
 			           	<li role="separator" class="divider"></li>
 
 			          </ul>
 			        </li>
 
-			        <li><a href="evenements.php">Evénements</a></li>
+			        <li><a href="<?= $this->url('events'); ?>">Evénements</a></li>
+              <?php if($w_user==NULL):?>
 			        <li class="navbar-right"><a>Se connecter</a></li>
+              <?php else:?>
+              <li class="navbar-right"><a href="<?=$this->url('logout')?>">Logout</a></li>
+              <li class="navbar-right"><a href="<?=$this->url('logout')?>"><?="Bonjour ".ucfirst($w_user['user_name'])?></a></li>
+            <?php endif ?>
 			      </ul>
 			    </div>
 	<div id="overlay">
@@ -75,22 +77,23 @@
       <a href="" id="button">X</a>
     </div>
     <div id="mid">
-      <form class="col-lg-6" >
+      <form id="loginform" class="col-lg-6" method="POST" action="<?= $this->url('login')?>">
         <div class="forms">
           <div class="form-group" class="col-sm-10">
-              <label for="exampleInputEmail1">Email address:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <div id="errorMessage" class="text-danger"></div>
+              <label for="user_login">Email address:</label>
+            <input type="email" class="form-control" id="user_login" name="user_name" placeholder="Email">
           </div>
           <div class="form-group" class="col-sm-10">
-              <label for="exampleInputPassword1">Password:</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="user_password">Password:</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
             </div>
             <div>
               <input type="checkbox" name="remember" value="yes">
               <span>Remember me</span>
             </div>
             <div class="form-group">
-              <input type="submit" value="Login" class="btn btn-primary btn-block btn-lg" tabindex="7">
+              <input type="submit" value="Login" name="login" class="btn btn-primary btn-block btn-lg" tabindex="7">
             </div>
         </div>
       </form>
@@ -100,7 +103,7 @@
         <h4 class="toggle-button">Ou inscrivez vous</h4>
         <a href="" id="button">X</a>
       </div>
-      <form class="col-lg-6" id="registerform" method="POST" action="<?= $this->url('signup')?>"
+      <form class="col-lg-6" id="registerform" method="POST" action="<?= $this->url('signup')?>">
         <div>
           <label> Votre nom (ceci est public): </label><span class="text-danger" id="errorName"></span>
           <input type="text" class="form-control" name="user_name" id="left" placeholder="First Name">
