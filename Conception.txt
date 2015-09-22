@@ -1,0 +1,47 @@
+﻿Front:
+	- / => Home: page d'accueil: slider + communautés
+
+	- /about => Comment ça marche/ Texte statique + lien inscription
+
+	- /{nom communautés} => 1 page par communauté (4 en tout) - fait appel aux 	données USERS + EVENTS
+
+	- /events => liste de tous les événements toutes communautés confondues fait appel aux 	données EVENTS
+
+	- /{nom communautés}/event/id => présente toutes les infos d'un événement
+		. la route n'utilisera que les paramètres event et id pour appeler le controller et la méthode correspondante. Le nom de la communauté ne sera qu'à titre informatif et utilisé pour le fil d'arianne
+		. A la place du calendrier dynamique, 2 liens: 
+			1 qui envoie sur la page listant tous les events filtrée sur la même date que l'event d'où viens l'utilisateur
+			1 qui envoie vers la page de la commnuauté
+		. Fait appel aux données: EVENTS, USERSbyEVENTS, USERS, COMMUNAUTES, QUESTIONS
+
+	- /contact => formulaire de contact (pas d'enregistrement en BD, juste un e-mail)
+
+	- /profil/id => affichage des infos du user + comments des autres + events futurs (participant et organisateur) - Fait appel aux données USERS, EVENTS, COMMENTS, USERSbyEVENTS(infos participants)
+
+	- /myaccount/update => formulaire de mise à jour du profil - Fait appel aux donnes USERS
+
+	- /myaccount/myevents =>
+		. Liste événements participant
+		. Liste événements organisateurs avec lien Modifier/ Supprimer / Valider participants
+		. Fait appel aux données USERS, EVENTS, USERSbyEVENTS
+
+
+	- /event/create => formaulaire de création d'un event - Ecrit dans les données EVENTS
+
+	- Login/sign up: route qui ne gèrera que la récupération des informations des formulaires dont l'affichage sera géré en JS. L'utilisateur reste sur la page où il était quand il a cliqué sur le lien de login ou sign up 
+	(gestion des changements d'affichage sur la page pour les utilisateurs loggé)
+	- Logout: route qui ne gèrera que le logout (unset $_SESSION). L'utilisateur sera envoyé sur la page d'accueil
+
+
+Entités:
+	->CONTROLLER:
+	à priori 2 controller principaux:
+	1) gestion des pages en consultation
+	2) gestion des pages en Create, Update et Delete
+
+	->MANAGER:
+	- Evénements
+	- Users
+
+
+

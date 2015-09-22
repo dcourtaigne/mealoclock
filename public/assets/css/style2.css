@@ -1,0 +1,668 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic|Nobile:400,400italic,700,700italic);
+
+header {
+    text-align: center;
+}
+
+/* style de la modale */
+#overlay{
+  color: black;
+}
+
+h4{
+  text-align: center;
+}
+.col-lg-6{
+  border-top: 1px solid #C0C0BF;
+  border-left: 1px solid #C0C0BF;
+  border-right: 1px solid #C0C0BF;
+  border-radius-top: 80px;
+  width: 100%;
+  float: none;
+  padding-bottom: 3px;
+  margin-bottom: 0;
+}
+
+#form div{
+  border-bottom: none;
+
+}
+#modal, #registerform, #bot{
+  width: 400px;
+  background-color: white;
+}
+input#exampleInputEmail1, input#exampleInputPassword1 {
+    margin-top: 5px;
+}
+label{
+  margin-top: 15px;
+}
+.form-group{
+  margin-bottom: 0px;
+}
+#bot{
+  border-bottom: 1px solid #C0C0BF;
+  border-radius-bottom: 80px;
+  position: absolute;
+  left: 0px;
+}
+#mid{
+  padding-bottom: 0px;
+}
+#exampleInputEmail1{
+  margin-top: 15px;
+}
+#registerform{
+  display: none;
+}
+
+/* overlay + modal styling */
+#overlay {
+     display: none;
+     position: absolute;
+     left: 0px;
+     top: 75  px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+}
+#modal {
+  position: relative;
+  margin: auto;
+}
+#button{
+  position: absolute;
+  top: 0px;
+  right: 2px;
+  color: black;
+}
+/* fin style modale */
+.pull-right {
+  float: none !important;
+}
+
+.largeurSite {
+  width: 75%;
+  margin:auto;
+}
+
+.paddingTop {
+  padding-top: 40px;
+}
+
+.row {
+  margin-top: 40px;
+}
+
+/* CSS de la nav */
+
+.glyphicon {
+  position: relative;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar-default, .dropdown-menu, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+  background-color: #8C091E;
+  color: white;
+}
+
+.navbar-default, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+  background-color: #8C091E;
+  color: white;
+  padding: 5px 15px 5px 15px;
+}
+
+.home a { /* classe de l'icone "maison de la nav" */
+  padding: 15px 15px 5px 15px !important;
+}
+
+nav {
+	font-size: 15px;
+}
+
+.navbar-toggle {
+  padding: 10px 10px;
+}
+
+.navbar-nav {
+  float: none;
+}
+
+nav a {
+  color: white;
+}
+
+header ul {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.navbar-default{
+    margin-bottom: 0px;
+}
+
+.navbar-nav>li>a {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.dropdown-menu>li>a {
+  color: #8C091E;
+}
+
+/* fin du CSS de la nav */
+
+
+.thumbnail {
+  padding: 15px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+
+h1 img {
+	width: 80%;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #8C091E;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700 !important;
+  font-size: 2em;
+  margin-top: 0px;
+}
+
+#bckgrd h2  {
+  padding-top: 50px;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+p, a {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400 !important;
+  font-size: 1.2em;
+}
+
+a, a:hover, a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+#entete img {
+  max-width: 100%;
+}
+
+#bckgrd { /* classe pour le fond de la page d'accueil */
+	background-color: #F7F7f0;
+  text-align: center;
+}
+
+#bckgrdVege { /* classe pour le fond de la page végétarien */
+  background-color: rgb(234, 242, 227);
+}
+
+#bckgrdWhite, #bckgrdUser { /* classe pour le fond des pages en fond blanc */
+  background-color: white;
+}
+
+#bckgrd article, #bckgrdVege article, #bckgrdWhite article, #bckgrdUser article {
+  width: 81%;
+  margin: auto;
+
+}
+
+/* CSS de la page d'acceuil partie communauté uniquement */
+
+#communautes {
+	padding: 10px 0px 40px 0px;
+	margin:auto;
+	width: 80%;
+  }
+
+.thumbnail .caption {
+ padding: 0px;
+}
+
+#communautes img {
+	width: 140px;
+	height: 140px;
+}
+
+#communautes p {
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+#communautes a {
+  margin-top: 10px;
+
+}
+
+#bckgrd .col-sm-3 { /*conflit avec avatar dc création de la classe avatar */
+    text-align: center;
+    background-color: white !important;
+    padding: 20px;
+    margin: 10px auto;
+}
+
+#bckgrd .col-xs-6 {
+  width: 100%;
+}
+
+/* fin du CSS de lapage d'accueil - partie communauté; */
+
+/* CSS des partie centrales Communauté et évènement */;
+
+#bckgrdVege aside div {
+  margin: 20px 0px;
+  display: inline-block;
+}
+
+div p {
+  padding: 10px 0;
+}
+
+div article {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 30px;
+
+}
+
+aside .thumbnail {
+  width: 170px;
+  margin-bottom: 20px !important;
+}
+
+#bckgrdVege aside .thumbnail img {
+  border: 1px solid grey;
+  margin: 10px 20px 0 0;
+  float: left;
+}
+
+#bckgrdVege aside h3 {
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+article h2, article p, article h3, article a {
+  text-align: left;
+  margin: 0 0 0 50px;
+}
+
+article img {
+  max-width: 250px !important;
+  margin-left: 50px;
+}
+
+/* fin des CSS evenement et Communauté */
+
+/* CSS des pages profil .... */
+
+.avatar {
+  text-align: left;
+  background-color: transparent !important;
+  padding: 0px !important;
+  margin: 0px auto !important;
+}
+
+#bckgrdUser .col-md-7 {
+  padding-left: 30px !important;
+}
+
+#bckgrdUser .col-md-3 {
+  padding-right: 0px;
+}
+
+#bckgrdUser .col-md-3 a {
+  margin-top: 10px;
+}
+
+#comments, #evenement {
+  margin: 40px 0px !important;
+}
+
+#quote-carousel {
+  margin-top: 0px !important;
+}
+
+#quote-carousel .carousel-control {
+  margin-top: 100px !important;
+}
+
+#comments .row {
+  margin-top: 0px !important;
+}
+
+/* fin du CSS des profils */
+
+/* CSS de la page contact */
+
+.red{
+   color:red;
+   }
+.form-area
+{
+
+ padding: 10px 40px 60px;
+ margin: 10px 0px 60px;
+
+ }
+
+/* fin du CSS de la page contact */
+
+/* CSS du footer */
+
+footer {
+	background-color: #8C091E;
+	color: #ffffff;
+	margin: auto;
+	padding: 30px 0 20px 0;
+	text-align: center;
+}
+
+footer ul {
+  text-align: center;
+  padding-left: 0;
+
+}
+
+footer li {
+	font-size: 11px;
+	display: inline;
+}
+
+footer a {
+	padding: 5px;
+  color: white;
+
+}
+
+.reseauxSociaux img {
+	padding: 10px;
+    width: 50px;
+}
+
+#tableau {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.marginLeft {
+  margin-left: 53px !important;
+}
+
+
+/* fin du CSS du footer */
+
+@media all and (min-width: 770px) {
+
+   h1 img {
+    width: 40%;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    background-color: transparent;
+    padding: 16px 15px 10px 15px;
+  }
+
+  .navbar-nav {
+    width: 80%;
+    margin: auto;
+  }
+
+  .pull-right {
+    float: right!important;
+  }
+
+  #entete img {
+    max-width: 100%;
+  }
+
+  .col-xs-6 {
+    width: 46%;
+  }
+
+  .col-sm-3 {
+    margin: 10px 10px;
+  }
+
+}
+
+
+
+@media all and (min-width: 1140px) {
+
+  nav {
+  font-size: 1.1em;
+  }
+
+  h1 img {
+    width: 40%;
+  }
+
+  header ul, .home {
+    display: block;
+    width: 80%;
+    margin: auto;
+  }
+
+  .navbar-default .navbar-brand, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+      padding: 16px 15px 15px 15px;
+  }
+
+  #communautes {
+    padding: 20px 0px 40px 0px;
+  }
+
+
+  #entete img {
+    max-width: 100%;
+  }
+
+  .col-sm-3 {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin: 10px 10px;
+    width: 23% !important;
+  }
+
+  .col-xs-6 {
+    width: 23% !important;
+  }
+
+  footer p {
+    display: inline-block;
+    width: 25%;
+    vertical-align: text-top;
+    margin-top: 20px;
+    padding: 5px;
+
+  }
+
+}
+
+
+
+/* CSS du carroussel de commentaire
+   tableau de placement */
+
+article div {
+}
+
+.col-md-offset-2 {
+  margin-left: 0px;
+}
+
+blockquote .col-sm-3 {
+    background-color: transparent !important;
+  }
+
+.agenda {
+  margin-top: 50px!important;
+}
+
+/* Dates */
+.agenda .agenda-date { width: 170px; }
+.agenda .agenda-date .dayofmonth {
+  width: 100px;
+  font-size: 36px;
+  line-height: 36px;
+  float: left;
+  text-align: right;
+  margin-right: 10px;
+}
+.agenda .agenda-date .shortdate {
+  font-size: 0.75em;
+}
+
+.agenda-date, .agenda-time, .agenda-events {
+  padding-top: 15px;
+}
+
+
+/* Times */
+.agenda .agenda-time { width: 250px; }
+
+
+/* Events */
+.agenda .agenda-events {  }
+.agenda .agenda-events .agenda-event {  }
+
+.col-sm-3 {
+  background-color: transparent;
+}
+
+.col-sm-9 {
+  width: 70% !important;
+}
+
+@media (max-width: 767px) {
+
+}
+
+
+/* carousel */
+#quote-carousel
+{
+  padding: 0 10px 30px 10px;
+  margin-top: 30px;
+}
+
+/* Control buttons  */
+#quote-carousel .carousel-control
+{
+  background: none;
+  color: #222;
+  font-size: 2.3em;
+  text-shadow: none;
+  margin-top: 30px;
+}
+/* Previous button  */
+#quote-carousel .carousel-control.left
+{
+  left: -12px;
+}
+/* Next button  */
+#quote-carousel .carousel-control.right
+{
+  right: -12px !important;
+}
+/* Changes the position of the indicators */
+#quote-carousel .carousel-indicators
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the color of the indicators */
+#quote-carousel .carousel-indicators li
+{
+  background: #c0c0c0;
+}
+#quote-carousel .carousel-indicators .active
+{
+  background: #333333;
+}
+#quote-carousel img
+{
+  width: 250px;
+  height: 100px
+}
+/* End carousel */
+
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+
+.item blockquote img {
+    margin-bottom: 10px;
+}
+
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/**
+  MEDIA QUERIES
+*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #quote-carousel
+    {
+      margin-bottom: 0;
+      padding: 0 40px 30px 40px;
+    }
+
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) {
+
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+
