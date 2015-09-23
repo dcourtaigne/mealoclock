@@ -7,10 +7,12 @@
 		<div class="col-md-6 col-md-offset-3">
 			<form role="form">
 				<h1>Compléter mon profil</h1>
+
 					<div class="form-group">
 						<label for="nom">Nom</label>
 						<input type="text" class="form-control" name="nom">
 			  		</div>
+			  		
 			  		<div class="form-group">
 			  			<label for="prenom">Prénom</label>
 						<input type="text" class="form-control" name="prenom">
@@ -24,13 +26,14 @@
 					<div class="form-group">
 						<label for="email">Email</label>
 						<input type="email" class="form-control" name="email">
-			  		</div>
-
-			  		<div class="form-group">
+				  	</div>
+				  	
+				  	<div class="form-group photoUpload">
 						<label for="photo">Photo</label>
-						<input type="" class="form-control" name="photo">
-			  		</div>
-
+						<input type="file" name="photo">
+				  		<button type="submit" class="btn btn-primary btn-xs">Ok</button>
+				  	</div>
+				  	
 					<div>
 						<label for="favcommunaute">Communauté(s) favorite(s)</label></br>
 						<label class="checkbox-inline">
@@ -42,20 +45,21 @@
 						<label class="checkbox-inline">
 							<input type="checkbox" id="inlineCheckbox3" value="option3"> Sans gluten
 						</label>
-			    		<label class="checkbox-inline">
+				    	<label class="checkbox-inline">
 							<input type="checkbox" id="inlineCheckbox4" value="option4"> Sans lactose
 						</label>
 					</div>
 
-			  		<div class="form-group">
-			  			<label>Renseignements complémentaires (facultatif)</label>
+				  	<div class="form-group">
+				  		<label>Renseignements complémentaires (facultatif)</label>
 						<textarea class="form-control"></textarea>
-			  		</div>
-			  		<div>
+				  	</div>
+				  	
+				  	<div>
 						<input type="submit" class="btn btn-default marginTB20" value="Annuler" name="cancel">
-					
 						<input type="submit" class="btn btn-primary marginTB20" value="Envoyer" name="submit">
 					</div>
+
 			</form>
 		</div>
 	</div>
