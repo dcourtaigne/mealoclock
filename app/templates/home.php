@@ -1,81 +1,65 @@
 <?php $this->layout('layout', ['title' => 'Accueil !']) ?>
 
 <?php $this->start('main_content') ?>
-  <section id="entete">
-      <img src="<?= $this->assetUrl('img/food1.jpg')?>" alt="salade">
+  <section id="entete" class="container-fluid">
+    <div class="row">
+      <img src="<?= $this->assetUrl('img/food1.jpg')?>" class="center-block img-responsive" alt="salade">
+    </div>
+
+          <!-- rangée pitch communauté -->
+    <section id="community" class="row">
+      <article class="col-xs-12 text-center paddingTB40">
+        <h2> Nos communautés </h2>
+        <p class="text-center">Meal'o clock regroupe 4 régimes alimentaires principaux. Choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir, consultez les évènements à venir, le profil de nos membres, etc !</p>
+      </article>
     </section>
 
-        <!-- section des communautés -->
+    <section class="row text-center">
 
-    <section id="bckgrd">
+      <a href="#">
+        <article class="col-xs-6 col-sm-3 col-md-3 vertClair color-white paddingTB20">
+          <img src="<?= $this->assetUrl('img/vegetarien.png')?>" alt="logo communauté végétariens" class="img-responsive center-block">
+            <div class="caption ">
+              <h3>5 fruits & légumes</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
+            </div>
+        </article>
+      </a>
 
-            <!-- section de présentation générale des communautés -->
 
-            <section class="largeurSite paddingTop">
-                <h2> Nos communautés </h2>
-                <p class="text-center">Meal'o clock regroupe 4 régimes alimentaires principaux. Choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir, consultez les évènements à venir, le profil de nos membres, etc !</p>
-            </section>
+      <a href="#">
+        <article class="col-xs-6 col-sm-3 col-md-3 vertFonce color-white paddingTB20">
+          <img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo communauté végans" class="img-responsive center-block">
+          <div class="caption">
+            <h3>Animals friends</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
+          </div>
+        </article>
+      </a>
 
-            <!-- encart de chaque communauté -->
+      <a href="#">
+        <article class="col-xs-6 col-sm-3 col-md-3 orange color-white paddingTB20">
+          <img src="<?= $this->assetUrl('img/ss_gluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block">
+          <div class="caption">
+            <h3>Mort au gluten</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
+          </div>
+        </article>
+      </a>
 
-            <!-- végétarien -->
 
-            <section id="communautes" class="row">
-                <div class="col-xs-6 col-sm-3">
-                    <div class="thumbnail">
-                        <img src="<?= $this->assetUrl('img/vegetarien.png')?>" alt="logo végétariens">
+      <a href="#">
+        <article class="col-xs-6 col-sm-3 col-md-3 bleuLactose color-white paddingTB20">
+          <img src="<?= $this->assetUrl('img/ss_lactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block">
+          <div class="caption">
+            <h3>Mort aux vaches</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
+          </div>
+        </article>
+      </a>
 
-                        <div class="caption">
-                                    <h3>5 fruits & légumes</h3>
-                                    <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
-                                    <a href="communaute_vege.html" class="btn btn-default" role="button">Découvrir la communauté</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- végan -->
-
-                <div class="col-xs-6 col-sm-3">
-                     <div class="thumbnail">
-                         <img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo végan">
-
-                            <div class="caption">
-                        <h3>Animals for life</h3>
-                                <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
-                                <a href="#" class="btn btn-default" role="button">Découvrir la communauté</a>
-                            </div>
-                    </div>
-                </div>
-
-                <!-- sans gluten -->
-
-                <div class="col-xs-6 col-sm-3">
-                     <div class="thumbnail">
-                         <img src="<?= $this->assetUrl('img/ss_gluten.png')?>" alt="logo sans gluten">
-
-                            <div class="caption">
-                        <h3>Mort au gluten</h3>
-                                <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
-                                <a href="#" class="btn btn-default" role="button">Découvrir la communauté</a>
-                            </div>
-                    </div>
-                </div>
-
-                <!-- sans lactose -->
-
-                <div class="col-xs-6 col-sm-3">
-                     <div class="thumbnail">
-                         <img src="<?= $this->assetUrl('img/ss_lactose.png')?>" alt="logo sans lactose">
-
-                            <div class="caption">
-                        <h3>Mort aux vaches</h3>
-                                <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
-                                <a href="#" class="btn btn-default" role="button">acceder à la communauté</a>
-                            </div>
-                    </div>
-                </div>
-            </section>
-        </section>
+    </section>
+  </section>
 
 
 <?php $this->stop('main_content') ?>

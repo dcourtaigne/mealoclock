@@ -5,8 +5,9 @@
     ['GET', '/about', 'Read#about', 'about'],
     ['GET', '/events', 'Read#getEvents', 'events'],
     ['GET', '/[vege|vegan|ssgluten|sslactose:com]', 'Read#getEventsbyCom', 'eventsbycom'],
-    ['POST', '/login', 'Create#login', 'login'],
-    ['POST|GET', '/logout', 'Create#logout', 'logout'],
-    ['POST', '/signup', 'Create#signup', 'signup'],
-		['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
+    ['GET|POST', '/create_event', 'Create#createEvent', 'createEvent'],
+    ['POST', '/login', 'Users#login', 'login'],
+    ['POST|GET', '/logout', 'Users#logout', 'logout'],
+    ['POST', '/signup', 'Users#signup', 'signup'],
+	['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
 	);

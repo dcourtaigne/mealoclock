@@ -9,7 +9,6 @@ class ReadController extends Controller{
   public function home(){
 
     $this->show('home');
-
   }
 
   public function about(){
@@ -34,5 +33,13 @@ class ReadController extends Controller{
     $eventsObj = new EventsManager();
     $events = $eventsObj->getFutureEvents();
     $this->showJson($events);
+  }
+
+  public function getCommunities(){
+    $eventsObj = new CommunitiesManager();
+    $communities = $eventsObj->findAll();
+    var_dump($communities);
+
+
   }
 }

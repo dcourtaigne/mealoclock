@@ -1,20 +1,20 @@
-<?php
-include('header.php');
+<?php $this->layout('layout', ['title' => 'Accueil !']) ?>
 
-?>
-<section>
+<?php $this->start('main_content') ?>
+<section id="">
 	<h1>Créer un événement</h1>
 	<form>
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="Nom de l'événement">
-  		</div>
+  	</div>
 		<div class="form-group">
 			<select class="form-control" name="communaute">
-				<option value="0">Communauté</option>
-				<option value="1">Végétariens</option>
-				<option value="2">Végans</option>
-				<option value="3">Sans Gluten</option>
-				<option value="4">Sans Lactose</option>
+				<option value="0">Choisissez une communauté</option>
+
+			<?php foreach ($communities as $community){
+	       $this->insert('partials/options-communities',['community'=>$community]);
+     }
+     ?>
 			</select>
   		</div>
   		<div class="form-group">
@@ -92,7 +92,4 @@ include('header.php');
 		</div>
 	</form>
 </section>
-
-<?php
-include('footer.php');
-?>
+<?php $this->stop('main_content') ?>

@@ -3,12 +3,12 @@
 <?php $this->start('main_content') ?>
         <!-- section des communautés -->
             <!-- section de présentation générale des communautés -->
-        <section class="container largeurSite">
-        <section>
-          <p>Date: <input type="text" id="datepicker"></p>
-        </section>
+        <section class="container-fluid">
+          <section>
+            <p>Date: <input type="text" id="datepicker"></p>
+          </section>
 
-        <section id="event_list" class="row">
+          <section id="event_list" class="row">
 
      <!--                <?php
      /*foreach ($events as $event) {
@@ -19,12 +19,9 @@
        $this->insert('partials/events-list',['event'=>$event,'year'=>$year,'month'=>$month,'day'=>$day]);
      }*/
      ?> -->
+          </section>
         </section>
 
-        <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>
+    <script type="text/javascript" src="<?= $this->assetUrl('js/datepicker_moc.js')?>"></script>
 
 <?php $this->stop('main_content') ?>
