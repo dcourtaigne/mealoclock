@@ -16,8 +16,7 @@ class CreateController extends Controller{
     $this->show('createEvent',['communities'=>$communities]);
   }
 
-
-
+  
 
 
 }

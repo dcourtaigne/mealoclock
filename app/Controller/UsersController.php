@@ -87,4 +87,13 @@ class UsersController extends Controller{
 
   }
 
+  public function userProfile(){
+    $this->show('userProfile');
+  }
+
+public function updateProfile(){
+    $this->show('updateProfile');
+  }
+
+  
 }
