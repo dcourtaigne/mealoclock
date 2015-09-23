@@ -3,8 +3,8 @@
 	$w_routes = array(
     ['GET', '/', 'Read#home', 'home'],
     ['GET', '/about', 'Read#about', 'about'],
-    ['GET', '/events', 'Read#getEvents', 'events'],
-    ['GET', '/[vege|vegan|ssgluten|sslactose:com]', 'Read#getEventsbyCom', 'eventsbycom'],
+    ['GET', '/events', 'Read#showEventsPage', 'events'],
+    ['GET', '/[vege|vegan|ssgluten|sslactose:com]', 'Read#showComPage', 'eventsbycom'],
 
     ['GET|POST', '/create_event', 'Create#createEvent', 'createEvent'],
 
@@ -15,5 +15,6 @@
     ['GET|POST', '/updateprofile', 'Users#updateProfile', 'updateProfile'],
 
 
-	['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
+    ['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
+	['GET', '/eventAjaxCom', 'Read#getEventsAjaxCom', 'eventsajaxcom'],
 	);

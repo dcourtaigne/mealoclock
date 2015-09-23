@@ -1,15 +1,18 @@
-<ul>
-    <li class="col-md-2 text-center">
-        <p class="lead"><?= $this->e($day)?></p>
-        <p><?= $this->e($month)?></p>
-        <p><?= $this->e($year)?><p>
-        <p><?= $this->e($event['event_time'])?></p>
-    </li>
-    <li class="col-md-2">
-    <img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
-    </li>
-    <li class="col-md-8">
-        <strong class="title lead"><?= $this->e($event['event_title'])?></strong>
-        <p class="desc"><?= $this->e($event['event_desc'])?></p>
-    </li>
-</ul>
+    <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3 bg-success marginTB20'>
+        <h4 class='text-center noMargin'><?= $this->e($event['event_time'])?></h4>
+    </div>
+
+    <article class='col-xs-12 col-sm-7 col-md-7 col-lg-7'>
+        <h3 class='noMargin marginTop20'><a href='#'><strong><?= $this->e($event['event_title'])?></strong></a></h3>
+        <p class='noMargin'>Chez <a href='#'><?= $this->e($event['user_name'])?></a>, Paris <?= $this->e($event['event_location'])?></p>
+        <p class='marginTop20 hidden-xs'><?= $this->e($event['event_desc'])?></p>
+    </article>
+
+    <div class='col-xs-12 col-sm-2 col-md-2 col-lg-2'>\
+        <div class='text-center marginTop20'>\
+            <a href='#'><img src='/mealoclock/public/assets/img/saladebis.jpg' class='img-responsive'></a>\
+        </div>\
+    </div>
+
+
+

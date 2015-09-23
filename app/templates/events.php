@@ -11,16 +11,19 @@
           </section>
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <section id="event_list" class="marginTB20">
-
-       <!--                <?php
-       /*foreach ($events as $event) {
-         $eventDate=explode('-',$event['event_date']);
-         $year = $eventDate[0];
-         $month = $eventDate[1];
-         $day = $eventDate[2];
-         $this->insert('partials/events-list',['event'=>$event,'year'=>$year,'month'=>$month,'day'=>$day]);
-       }*/
-       ?> -->
+            <!--  <ul class="list-unstyled">
+                        <?php /*foreach($events as $event)
+                  for($i=0;$i<count($events);$i++):?>
+                    <?php if($events[$i]['event_date'] !== $events[$i-1]['event_date'] || $i == 0): ?>
+                      <li class="row center">
+                        <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 vertClair'>
+                          <p class='text-center h4 color-white'><?= $this->e($events[$i]['dateFR'])?></p>
+                        </div>
+                    <?php endif ?>
+                  <?php $this->insert('partials/events-list',['event'=>$event]);?>
+                  </li>
+                        <?php endfor */?>
+            </ul> -->
             </section>
           </div>
         </section>

@@ -287,6 +287,10 @@ background-color:#C72B10 ;
     margin: 0;
 }
 
+#blog  {
+background-color: #303B34 ;
+}
+
 /* liste des événements */
 
 #event_list p, #event_list h3 {
@@ -299,6 +303,11 @@ margin-top: 0px;
 
 #updateUser label{
     margin-top: 0;
+}
+
+/*Formulaire update profil user */
+.photoUpload input {
+ display: inline;
 }
 
 /* ----------------------------- footer -------------------------*/
@@ -403,7 +412,7 @@ footer li {
         background-color: #F5F5D3;
     }
 
-    header, #community, #contact, #vegan, #vegetarian, #gluten, #lactose, #User,#updateUser  {
+    header, #community, #contact, #vegan, #vegetarian, #gluten, #lactose, #User,#updateUser, #createEvent  {
         background-color: white;
     }
 
