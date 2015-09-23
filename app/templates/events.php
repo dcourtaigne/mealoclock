@@ -5,7 +5,9 @@
             <!-- section de présentation générale des communautés -->
         <section class="container-fluid">
           <section>
-            <p>Date: <input type="text" id="datepicker"></p>
+            <label>Date: </label>
+            <input type="text" id="datepicker"></button>
+            <input type="button" value="Liste complète" id="resetDate" /></span>
           </section>
 
           <section id="event_list" class="row">

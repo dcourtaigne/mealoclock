@@ -18,7 +18,7 @@
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 col-md-3 vertClair color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/vegetarien.png')?>" alt="logo communauté végétariens" class="img-responsive center-block">
+          <img src="<?= $this->assetUrl('img/vegetarien.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social">
             <div class="caption ">
               <h3>5 fruits & légumes</h3>
               <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
@@ -29,7 +29,7 @@
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 col-md-3 vertFonce color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo communauté végans" class="img-responsive center-block">
+          <img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo communauté végans" class="img-responsive center-block social">
           <div class="caption">
             <h3>Animals friends</h3>
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
@@ -39,7 +39,7 @@
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 col-md-3 orange color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/ss_gluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block">
+          <img src="<?= $this->assetUrl('img/ss_gluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social">
           <div class="caption">
             <h3>Mort au gluten</h3>
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
@@ -50,7 +50,7 @@
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 col-md-3 bleuLactose color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/ss_lactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block">
+          <img src="<?= $this->assetUrl('img/ss_lactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social">
           <div class="caption">
             <h3>Mort aux vaches</h3>
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
