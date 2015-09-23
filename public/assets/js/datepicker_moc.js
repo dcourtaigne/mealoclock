@@ -59,7 +59,7 @@
                             </div>")
         $eventInfo.append("<article class='col-xs-12 col-sm-7 col-md-7 col-lg-7'>\
                             <h3 class='noMargin marginTop20'><a href='#'><strong>" + data[i].event_title + "</strong></a></h3>\
-                            <p class='noMargin'>Chez <a href='#'>gaston</a>, Paris "+ data[i].event_location + "</p>\
+                            <p class='noMargin'>Chez <a href='#'>" + data[i].user_name + "</a>, Paris "+ data[i].event_location + "</p>\
                             <p class='marginTop20 hidden-xs'>" + data[i].event_desc + "</p>\
                             </article>")
         $eventInfo.append("<div class='col-xs-12 col-sm-2 col-md-2 col-lg-2'>\
@@ -94,7 +94,7 @@
       onSelect: function(date){
         var arr = date.split('/');
         var selectDate = arr[2] + "-" + arr[1] + "-" + arr[0];
-        console.log(selectDate);
+        //console.log(selectDate);
         $('#event_list li').each(function() {                    // loop through the list
           var liId = $(this).attr('id'); // get value of the id attribute of the  <li>
           if(liId == selectDate) {      // search if textboxVal is in listVal
