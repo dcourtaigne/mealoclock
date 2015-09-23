@@ -32,6 +32,15 @@ class ReadController extends Controller{
   public function getEventsAjax(){
     $eventsObj = new EventsManager();
     $events = $eventsObj->getFutureEvents();
+    for ($i = 0 ; $i<count($events); $i++ ){
+      $dateStr = $events[$i]['event_date'];
+      setlocale (LC_TIME, 'fr_FR.utf8','fra');
+      $timestamp = strtotime($dateStr);
+      $dateFR = strftime("%d %B %Y", $timestamp);
+    //var_dump($dateFR);
+      $events[$i]['dateFR'] = $dateFR;
+    }
+
     $this->showJson($events);
   }
 

@@ -40,29 +40,40 @@
  var dateArray = [];
 
   $.get('eventAjax',function(data){
-    var output
+    console.log(data);
     var $eventList= $("<ul/>");;
+    $eventList.addClass('list-unstyled');
       for (var i=0; i<data.length ; i++){
         dateArray[i] = data[i].event_date;
-        var event_date = data[i].event_date.split('-');
+        if(dateArray[i] !== dateArray[i-1] || i == 0 ){
         var $eventInfo= $('<li/>')
             $eventInfo.attr('id', data[i].event_date)
-            $eventInfo.append('<p class="hidden">' + data[i].event_date + '</p>')
-            $eventInfo.append('<p>' + event_date[2] + '</p>')
-            $eventInfo.append('<p>' + event_date[1] + '</p>')
-            $eventInfo.append('<p>' + event_date[0] + '</p>')
-            $eventInfo.append('<p>' + data[i].event_time + '</p>')
-            $eventInfo.append('<p>' + data[i].event_title + '</p>')
-            $eventInfo.append('<p>' + data[i].event_desc + '</p>')
-            $eventInfo.append("<img alt='Independence Day' src='https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg' />")
-            $eventInfo.prependTo($eventList);
+            $eventInfo.addClass('row center')
+        //var event_date = data[i].event_date.split('-');
+            $eventInfo.append( "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 vertClair'>\
+                                <p class='text-center h4 color-white'>" + data[i].dateFR + "</p>\
+                                </div>")
+        }
+        $eventInfo.append("<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3 bg-success marginTB20'>\
+                            <h4 class='text-center noMargin'>" + data[i].event_time + "</h4>\
+                            </div>")
+        $eventInfo.append("<article class='col-xs-12 col-sm-7 col-md-7 col-lg-7'>\
+                            <h3 class='noMargin marginTop20'><a href='#'><strong>" + data[i].event_title + "</strong></a></h3>\
+                            <p class='noMargin'>Chez <a href='#'>gaston</a>, Paris "+ data[i].event_location + "</p>\
+                            <p class='marginTop20 hidden-xs'>" + data[i].event_desc + "</p>\
+                            </article>")
+        $eventInfo.append("<div class='col-xs-12 col-sm-2 col-md-2 col-lg-2'>\
+                            <div class='text-center marginTop20'>\
+                            <a href='#'><img src='/mealoclock/public/assets/img/saladebis.jpg' class='img-responsive'></a>\
+                            </div>\
+                          </div>")
+
+        $eventInfo.prependTo($eventList);
+        $('<br>').appendTo($eventList);
       }
       $("#event_list").html($eventList);
 
       console.log(dateArray);
-/*
-      $(eventInfo).appendTo(output);
-      $(output).appendTo('#event_list');*/
     })
 
     //console.log(data);
@@ -85,7 +96,7 @@
         var selectDate = arr[2] + "-" + arr[1] + "-" + arr[0];
         console.log(selectDate);
         $('#event_list li').each(function() {                    // loop through the list
-          var liId = $(this).attr('id'); // get value of the <li>
+          var liId = $(this).attr('id'); // get value of the id attribute of the  <li>
           if(liId == selectDate) {      // search if textboxVal is in listVal
               $(this).show();                         // if true show this <li>
           } else {

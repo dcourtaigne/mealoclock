@@ -289,7 +289,7 @@ background-color:#C72B10 ;
 
 /* liste des événements */
 
-#liste p, #liste h3 {
+#event_list p, #event_list h3 {
     text-align: center;
 }
 
@@ -369,7 +369,7 @@ footer li {
 
 .center {
     height : 100px;
-    display : table-cell;
+    display : block;
     vertical-align : middle;
     float:none;
 }
@@ -386,7 +386,7 @@ footer li {
 
   @media (min-width: 768px) {
 
-    #liste p, #liste h3 {
+    #event_list p, #event_list h3 {
     text-align: left;
     }
 
