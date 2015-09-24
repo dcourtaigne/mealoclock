@@ -1,18 +1,38 @@
 
+    //Display desired title
+    function setTitle(){
+    var modalstate = $(".top").css("display");
+      if (modalstate == "none"){
+        $(".toggle-button").html("Ou connectez vous");
+      } else {
+        $(".toggle-button").html("Ou inscrivez vous");
+      } 
+    }
+    //Open window
     $(".toggle-button").click(function() {
     $(".top, #mid, #registerform" ).slideToggle(300, function(){});
-  });
+    setTimeout(setTitle, 400);
+    });
+    //Display modal
     function overlay(){
     var overlaystate = $("#overlay").css("display");
       if (overlaystate = "none") {
         $("#overlay").css({"display":"initial"})
         }
     };
+    //Display desired sections
     $("#login").click(function(){
       $("#overlay").animate({top:'125px'});
       overlay();
+    })
+    $("#inscription").click(function(){
+      $("#overlay").animate({top:'125px'})
+      overlay();
+      setTitle();
+      $(".top, #mid, #registerform").toggle();
     });
-    $("#close button").click(function(){
+    //Close modal
+    $("#button").click(function(){
       $("#overlay").css({"display":"none"})
     })
 

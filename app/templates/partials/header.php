@@ -49,6 +49,7 @@
                 <li><a href="<?=$this->url('logout')?>">Logout</a></li>
                 <li><a href="<?=$this->url('logout')?>"><?="Bonjour ".ucfirst($w_user['user_name'])?></a></li>
                 <?php endif ?>
+                <li id="inscription"><a>Inscription</a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
@@ -58,10 +59,9 @@
 
 	<div id="overlay">
     <div id="modal">
-
+      <a href="" id="button">X</a>
     <div class="col-lg-6 top">
       <h4>Connectez vous</h4>
-      <a href="" id="button">X</a>
     </div>
     <div id="mid">
       <form id="loginform" class="col-lg-6" method="POST" action="<?= $this->url('login')?>">
@@ -88,7 +88,6 @@
     <div id="bot">
       <div class="col-lg-6">
         <h4 class="toggle-button">Ou inscrivez vous</h4>
-        <a href="" id="button">X</a>
       </div>
       <form class="col-lg-6" id="registerform" method="POST" action="<?= $this->url('signup')?>">
         <div>
@@ -107,6 +106,5 @@
     </div>
     </div>
   </div>
-
           <!-- fin de la navbar -->
 		</header>
