@@ -6,7 +6,8 @@
     ['GET', '/events', 'Read#showEventsPage', 'events'],
     ['GET', '/[vege|vegan|ssgluten|sslactose:com]', 'Read#showComPage', 'eventsbycom'],
 
-    ['GET|POST', '/create_event', 'Create#createEvent', 'createEvent'],
+    ['GET|POST', '/event/[create|edit:action]/[i:id]?', 'Create#editEvent', 'editEvent'],
+    ['GET|POST', '/contact', 'Create#contact', 'contact'],
 
     ['POST', '/login', 'Users#login', 'login'],
     ['POST|GET', '/logout', 'Users#logout', 'logout'],
@@ -16,5 +17,6 @@
 
 
     ['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
-	['GET', '/eventAjaxCom', 'Read#getEventsAjaxCom', 'eventsajaxcom'],
+    ['GET', '/eventAjaxCom', 'Read#getEventsAjaxCom', 'eventsajaxcom'],
+
 	);

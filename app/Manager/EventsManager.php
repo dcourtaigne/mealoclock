@@ -25,5 +25,27 @@ class EventsManager extends \W\Manager\Manager{
     return $eventQuery->fetchAll();
   }
 
+  public function findEventFieldName(){
+      //cette méthode sert juste à récupérer dynamiquement le noms des colonnes de la table event de la bdd
+      $sql=$this->dbh->query("SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='mealoclock' AND `TABLE_NAME`='events'");
+      $emptyPost=[];
+      while($column=$sql->fetch()){
+        $emptyPost[$column["COLUMN_NAME"]] = "";
+      }
+      return $emptyPost;
+    }
+
+  public static function getValidationFilters(){
+    return array(
+        'event_title'      => FILTER_SANITIZE_STRING,
+        'community_id'    => FILTER_SANITIZE_STRING,
+        'event_desc'    => FILTER_SANITIZE_STRING,
+        'event_location'    => FILTER_SANITIZE_STRING,
+        'event_date'    => FILTER_SANITIZE_STRING,
+        'event_time'    => FILTER_SANITIZE_STRING,
+        'event_guests'    => FILTER_VALIDATE_INT
+      );
+  }
+
 
 }
