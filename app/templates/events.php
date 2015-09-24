@@ -4,6 +4,15 @@
         <!-- section des communautés -->
             <!-- section de présentation générale des communautés -->
         <section id="events" class="container-fluid">
+          <section class="row">
+            <article class="col-xs-9 col-sm-10 col-md-10 col-lg-10">
+            <h3 class="h4 marginTop20">Evénements à venir</h2>
+            </article>
+
+            <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 h4 ">
+              <a href="<?=$this->url('editEvent', ['action' => 'create'])?>"><i class="btn btn-default glyphicon glyphicon-plus pull-right"></i></a>
+            </div>
+          </section>
           <section>
             <label>Date: </label>
             <input type="text" id="datepicker"></button>

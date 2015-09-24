@@ -6,7 +6,7 @@ class EventsManager extends \W\Manager\Manager{
   public function getFutureEvents(){
     //$currentDate = date('Y-m-d');
     $currentDate = '2015-01-01';
-    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.user_id AND e.community_id=c.community_id AND e.event_date>=:currentdate ORDER BY e.event_date DESC ";
+    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate ORDER BY e.event_date DESC ";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->execute();
@@ -17,7 +17,7 @@ class EventsManager extends \W\Manager\Manager{
     //$currentDate = date('Y-m-d');
     $currentDate = '2015-01-01';
 
-    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.user_id AND e.community_id=c.community_id AND e.event_date>=:currentdate AND c.community_id=:community ORDER BY e.event_date DESC";
+    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate AND c.id=:community ORDER BY e.event_date DESC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->bindValue(':community',$com);
@@ -38,12 +38,12 @@ class EventsManager extends \W\Manager\Manager{
   public static function getValidationFilters(){
     return array(
         'event_title'      => FILTER_SANITIZE_STRING,
-        'community_id'    => FILTER_SANITIZE_STRING,
+        'community_id'    => FILTER_SANITIZE_NUMBER_INT,
         'event_desc'    => FILTER_SANITIZE_STRING,
         'event_location'    => FILTER_SANITIZE_STRING,
         'event_date'    => FILTER_SANITIZE_STRING,
         'event_time'    => FILTER_SANITIZE_STRING,
-        'event_guests'    => FILTER_VALIDATE_INT
+        'event_guests'    => FILTER_SANITIZE_NUMBER_INT
       );
   }
 

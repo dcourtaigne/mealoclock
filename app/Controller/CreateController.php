@@ -14,13 +14,14 @@ class CreateController extends Controller{
     $comObj = new CommunitiesManager();
     $communities = $comObj->findAll();
     $user = $this->getUser();
+    $currentDate = date('Y-m-d');
 
       if($params == 'create'){
         // cas de la création d'un nouvel event
         $idEvent = "";
         $eventObj = new EventsManager();
         $event = $eventObj-> findEventFieldName();
-        $event['event_date'] = date('Y-m-d');
+
 
         $title = "Créer un événement";
         $submitName = 'Créer l\'événement';
@@ -31,7 +32,13 @@ class CreateController extends Controller{
 
       }elseif($params == 'edit'){
         // cas de la modification d'un event existant
-
+        $idEvent = (int)$id;
+        $eventObj = new EventsManager();
+        $event = $eventObj->find($idEvent);
+        $event['event_time'] = substr($event['event_time'], 0, 5);
+        $title = "Modifier l'événement ".$event['event_title'];
+        $submitName = 'Modifier';
+        $formAction = $this->generateUrl('editEvent', ['action' =>  'edit', 'id' => $idEvent]);
       }
 
 
@@ -57,8 +64,8 @@ class CreateController extends Controller{
 
       $filters = EventsManager::getValidationFilters();
       $values = filter_input_array(INPUT_POST, $filters);
-      $values['user_id'] = $user['user_id'];
-
+      $values['user_id'] = $user['id'];
+      var_dump($user);
       $validform = empty($errors['name']) && empty($errors['community']) && empty($errors['desc']) && empty($errors['location'])
                     && empty($errors['date']) && empty($errors['time']) && empty($errors['guests']);
       var_dump($validform);
@@ -80,7 +87,8 @@ class CreateController extends Controller{
       'idEvent'=>$idEvent,
       'title'=>$title,
       'submitName'=>$submitName,
-      'formAction'=>$formAction
+      'formAction'=>$formAction,
+      'currentDate'=> $currentDate
       ]);
   }
 
