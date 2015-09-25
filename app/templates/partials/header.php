@@ -5,10 +5,12 @@
 		<title>Meal o'Clock | Organisez des repas, partagez des moments | accueil !</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' >
 		<link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/style.css')?>">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	</head>
 
@@ -41,6 +43,7 @@
                         </ul>
                     </li>
                     <li class=""><a href="<?= $this->url('events'); ?>">Evénements</a></li>
+                    <li class=""><a href="http://jecuisinesansgluten.com/">Blog</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <?php if($w_user==NULL):?>
