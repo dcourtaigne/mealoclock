@@ -110,7 +110,7 @@ public function updateProfile(){
 
 public function displayEvents(){
     $this->show('myevents');
-    
+
 }
 
 

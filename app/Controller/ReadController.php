@@ -106,9 +106,9 @@ class ReadController extends Controller{
     $eventObj = new EventsManager();
     $thisId = (int)$id;
     $event = $eventObj->getEventInfo($thisId);
-    var_dump($event);
     $event = Controller::getFrenchDate($event);
     $event['guests'] = $eventObj->getEventGuests($thisId);
+    var_dump($event);
     $this->show('event',['event'=>$event]);
 
   }

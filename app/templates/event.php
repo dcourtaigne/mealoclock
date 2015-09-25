@@ -28,7 +28,7 @@
       <section class="row ">
 
         <article class="col-xs-12 col-sm-8 col-sm-push-3 marginTB10">
-            <p class="text-left"><?=$this->e(count($event[0]['event_desc']))?></p>
+            <p class="text-left"><?=$this->e($event[0]['event_desc'])?></p>
         </article>
 
          <article class="col-xs-12 col-sm-3 col-sm-pull-8 marginTB10">
