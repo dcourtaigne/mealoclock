@@ -421,6 +421,11 @@ footer li {
     font-size: 0.8em;
 }
 
+
+footer{
+  text-align: center; /*modif 25/09/15*/
+}
+
 #vegetarian, #events {
     background-color: white;
 }
@@ -453,7 +458,12 @@ footer li {
         font-weight: 700;
         text-align: left;
     }
- }
+ 
+   footer p, footer p>a{
+    text-align: left; /*modif 25/09/15*/
+  }
+
+}
 
  @media (min-width: 1200px) {
 
@@ -475,4 +485,8 @@ footer li {
         font-weight: 700;
         text-align: left;
     }
- }
+ 
+  footer p, footer p>a{
+    text-align: left; /*modif 25/09/15*/
+  }
+}
