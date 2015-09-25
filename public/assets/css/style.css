@@ -92,13 +92,14 @@ header h1 {
     padding-top: 20px;
     padding-bottom: 10px;
 }
+
 a {
     text-decoration: none;
     color: black;
 }
 
 a:hover {
-    color: #F5F5D3;
+    color: #ABCE48;
 }
 
 a:link {
@@ -111,15 +112,15 @@ a:link {
 }
 
 #vegan a:hover {
-    color: #589482;
+    color: #CC99CC; /*nv class*/
 }
 
 #gluten a:hover {
     color: #FF8830 ;
 }
 
-#lactose a:hover {
-    color: #457DBB;
+#lactose a:hover {   /*nv class*/
+    color: #99CCCC;
 }
 
 #events a:hover {
@@ -232,15 +233,15 @@ a:link {
 }
 
 .orange {
-    background-color:#FF8830 ;
+    background-color:#CC6633 ;  /*nv class*/
 }
 
 .vertClair {
-    background-color:#A6B06D ;
+    background-color:#669933 ;  /*nv class*/
 }
 
 .vertFonce{
-    background-color:#589482 ;
+    background-color:#993366 ;  /*nv class*/
 }
 
 .rouge {
@@ -248,11 +249,15 @@ background-color:#C72B10 ;
 }
 
 .bleuLactose {
-    background-color:#457DBB  ;
+    background-color:#669999  ;  /*nv class*/
 }
 
-.color-white {
+.color-white, #event button a {  /*nv class*/
     color: white;
+ }
+
+ .green {
+    background-color: #ABCE48; /*nv class*/
  }
 
 .paddingTB10 {
@@ -263,6 +268,11 @@ background-color:#C72B10 ;
 .paddingTB20 {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.marginTB10 {               /* nvl classe */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .marginTB20 {
@@ -295,11 +305,12 @@ background-color:#C72B10 ;
     margin: 0;
 }
 
+/*Blog Home Page*/
 #blog  {
 background-color: #303B34 ;
 }
 
-/* liste des événements */
+/* liste des events */
 
 #event_list p, #event_list h3 {
     text-align: center;
@@ -316,6 +327,36 @@ margin-top: 0px;
 /*Formulaire update profil user */
 .photoUpload input {
  display: inline;
+}
+
+/* ----------------------page event------------------------------- */
+
+.thumbnail {                 /* nvl classe */
+    padding: 10px;
+
+}
+
+.thumbnail img {               /* nvl classe */
+    margin-bottom: 10px;
+    border: solid 1px black;
+}
+
+#event button {
+    padding-left: 10px;         /* nvl classe */
+    border: none;
+}
+
+button:hover {
+    background-color: #97B73C !important; /* nvl classe */
+}
+
+button:active {
+    background-color: #87B30B !important; /* nvl classe */
+    border: 1px solid #87B30B
+}
+
+#event p {                      /*nv class*/
+    margin-bottom: 0px;
 }
 
 /* ----------------------------- footer -------------------------*/
@@ -417,11 +458,11 @@ footer li {
  @media (min-width: 1200px) {
 
     body {
-        background-color: #F5F5D3;
+        background-color: #D4D4D4;  /* nv couleur */
     }
 
-    header, #community, #contact, #vegan, #vegetarian, #gluten, #lactose, #User,#updateUser, #createEvent  {
-        background-color: white;
+    header, #community, #contact, #vegan, #vegetarian, #gluten, #lactose, #User,#updateUser, #createEvent, #event  {
+        background-color: white; /* nv couleur */
     }
 
     #largeurSite {
