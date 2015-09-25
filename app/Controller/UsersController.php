@@ -108,5 +108,10 @@ public function updateProfile(){
     $this->show('updateProfile');
   }
 
+public function displayEvents(){
+    $this->show('myevents');
+    
+}
+
 
 }

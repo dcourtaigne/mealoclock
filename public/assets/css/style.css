@@ -358,7 +358,103 @@ button:active {
 #event p {                      /*nv class*/
     margin-bottom: 0px;
 }
+/* --------------------------Gerer events------------------------*/
+/* Structure du conteneur */
 
+#gererevenements{
+  width: 75%;
+  padding: 0px 0px 0px 0px;
+  margin: auto;
+}
+#gerer{
+    margin-bottom: 20px;
+}
+
+
+ul.nav-justified li{
+  text-align: center;
+  padding: 10px 15px 25px 15px;
+  border: 2px solid darkgreen;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: relative;
+}
+ul.nav-justified li a{
+  width: 100%;  
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 6px;
+  text-align: center; 
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+ul.nav-justified li:hover{
+  background-color: darkgreen;
+  cursor: pointer;
+} 
+ul.nav-justified li a:hover{
+  color: white;
+}
+ul.nav-justified{
+  padding: 10px 0px 0px 0px;
+  list-style: none;
+  margin: 0 0 0 0;
+}
+.tabbable-line{
+  width: 100%;
+}
+.tab-content{
+  margin: 0 auto; border-bottom: 2px solid darkgreen;
+  border-left: 2px solid darkgreen;
+  border-right: 2px solid darkgreen;
+}
+
+#evenement{
+  width: 100%;
+  position: relative;
+  border: 1px solid grey;
+  padding: 5px;
+  margin: 0 auto; 
+}
+section{
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.right{
+  float: right;
+}
+#right{
+  margin-top: 13px;
+}
+#right span{
+  margin: 0px 0px 0px 7px;
+}
+span{
+  font-size: 15px;
+}
+h4{
+  margin-top: 6px;
+  margin-bottom: 3px;
+}
+button{
+  padding: 6px 12px 6px 12px; 
+}
+
+/* Fonctionnalité */
+.active{
+  display: none;
+}
+@media (max-width: 768px){
+  #gererevenements{
+    width: 100%;
+  }
+
+
+}  
 /* ----------------------------- footer -------------------------*/
 
 .social:hover {

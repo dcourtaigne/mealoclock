@@ -14,6 +14,7 @@
     ['POST', '/signup', 'Users#signup', 'signup'],
     ['GET', '/profile/[i:id]', 'Users#userProfile', 'userProfile'],
     ['GET|POST', '/myaccount/profile', 'Users#updateProfile', 'updateProfile'],
+    ['GET', '/myaccount/myevents', 'Users#displayEvents', 'myEvents'],
 
 
     ['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
