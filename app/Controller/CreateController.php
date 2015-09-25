@@ -9,14 +9,14 @@ use Manager\CommunitiesManager;
 
 class CreateController extends Controller{
 
-  public function editEvent($params,$id=NULL){
+  public function editEvent($action,$id=NULL){
     //récupération du nom des communautés pour les afficher dans les options du formulaire
     $comObj = new CommunitiesManager();
     $communities = $comObj->findAll();
     $user = $this->getUser();
     $currentDate = date('Y-m-d');
 
-      if($params == 'create'){
+      if($action == 'create'){
         // cas de la création d'un nouvel event
         $idEvent = "";
         $eventObj = new EventsManager();
@@ -30,7 +30,7 @@ class CreateController extends Controller{
 
 
 
-      }elseif($params == 'edit'){
+      }elseif($action == 'edit'){
         // cas de la modification d'un event existant
         $idEvent = (int)$id;
         $eventObj = new EventsManager();
@@ -51,7 +51,7 @@ class CreateController extends Controller{
       'date'=>"",
       'time'=>"",
       'guests'=>""];
-    $values = $event;
+    //$values = $event;
 
     if(!empty($_POST)) {
       if(empty($_POST['event_title'])) $errors['name']="Ce champ ne peut être vide";
@@ -59,16 +59,17 @@ class CreateController extends Controller{
       if(empty($_POST['event_desc'])) $errors['desc']="Ce champ ne peut être vide";
       if($_POST['event_location'] == 0) $errors['location']="Vous devez choisir un lieu";
       if($_POST['event_date'] == 0) $errors['date']="Vous devez choisir une date";
-      if($_POST['event_time']== 0) $errors['time']="Vous devez choisir une heure";
+      //if($_POST['event_time']== 0) $errors['time']="Vous devez choisir une heure";
       if(empty($_POST['event_guests'])) $errors['guests']="Ce champ ne peut être vide";
 
       $filters = EventsManager::getValidationFilters();
       $values = filter_input_array(INPUT_POST, $filters);
       $values['user_id'] = $user['id'];
-      var_dump($user);
+      //var_dump($user);
       $validform = empty($errors['name']) && empty($errors['community']) && empty($errors['desc']) && empty($errors['location'])
                     && empty($errors['date']) && empty($errors['time']) && empty($errors['guests']);
       var_dump($validform);
+      var_dump($errors);
       if($validform){
         $eventObj = new EventsManager();
         if(!empty($idEvent)){

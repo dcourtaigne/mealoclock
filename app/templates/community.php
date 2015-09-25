@@ -4,13 +4,7 @@
 
   <section id="<?= $this->e($community['css_id'])?>" data-type="com" data-id="<?= $this->e($community['sql_id'])?>" data-class="<?= $this->e($community['css_class'])?>" class="container-fluid">
 
-    <section class="row <?= $this->e($community['css_class'])?> hidden-xs">
-        <div class="col-xs-12 .col-sm-12 .col-md-12 .col-lg-12 color-white ">
-          <p>Home > Végétarien</p>
-        </div>
-    </section>
-
-    <section class="row <?= $this->e($community['css_class'])?>">
+     <section class="row <?= $this->e($community['css_class'])?>">
         <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 marginTB20 ">
           <i class="glyphicon glyphicon-leaf logo hidden-sm hidden-md hidden-lg img-responsive marginTop10
         "></i>
