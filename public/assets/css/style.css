@@ -3,12 +3,40 @@
     padding: 0;
 }
 
+h2,h3 {
+font-family: 'Libre Baskerville', serif;
+}
+
+h2 {
+  font-weight: 700;
+
+}
+
+#blog h4 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2.5em;
+
+}
+
+p {
+  font-family: 'Gudea', sans-serif;
+  font-size: 1.2em;
+}
+
+#community p {
+      font-size: 1.5em;
+}
+
+footer p {
+      font-size: 1em;
+}
+
 /* style de la modale */
 #overlay{
   color: black;
 }
 
-h4{
+#overlay h4 {
   text-align: center;
 }
 .col-lg-6{
@@ -210,15 +238,7 @@ a:link {
     background-color: white;
 }
 
-@media (max-width: 767px) {
-.navbar-default .navbar-nav .open .dropdown-menu>li>a {
-    color: white;
-    }
 
-    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
-    color: #ABCE48 !important;
-    }
-}
 
 /* ----------------------------- fin de la nav -------------------------*/
 
@@ -446,8 +466,20 @@ footer{
     background-color: #ABCE48;
     border: none;
 }
-
+ /**********************************************************************/
   @media (min-width: 768px) {
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: white;
+    }
+
+    .navbar {
+    border-radius: 0px; 
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #ABCE48 !important;
+    }
 
     #event_list p, #event_list h3 {
     text-align: left;
@@ -462,9 +494,22 @@ footer{
    footer p, footer p>a{
     text-align: left; /*modif 25/09/15*/
   }
+  #blog h4{
+    font-size: 3.5em;
+  }
+}
+
+/*******************************************************************/
+
+@media (min-width: 992px){
+
+  #blog h4{
+    font-size: 3.9em;
+  }
 
 }
 
+/*******************************************************************/
  @media (min-width: 1200px) {
 
     body {
@@ -488,5 +533,9 @@ footer{
  
   footer p, footer p>a{
     text-align: left; /*modif 25/09/15*/
+  }
+
+  #blog h4 {
+    font-size: 4.5em;
   }
 }
