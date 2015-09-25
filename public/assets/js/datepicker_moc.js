@@ -40,8 +40,9 @@
  var dateArray = [];
 
   $.get('eventAjax',function(data){
-    console.log(data);
-    var $eventList= $("<ul/>");;
+  console.log('OK');
+  console.log(data);
+   var $eventList= $("<ul/>");;
     $eventList.addClass('list-unstyled');
       for (var i=0; i<data.length ; i++){
         dateArray[i] = data[i].event_date;

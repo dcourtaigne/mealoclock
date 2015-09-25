@@ -35,6 +35,19 @@ class EventsManager extends \W\Manager\Manager{
       return $emptyPost;
     }
 
+    public function getEventGuests($id){
+    $query = "select e.event_title, e.event_desc, e.event_date, e.event_time, e.event_location, e.event_image, e.user_id, uep.guest_id, uep.message, u.user_name
+              from events e
+              join users_events_participation uep on (e.id = uep.event_id)
+              join users u on (uep.guest_id = u.id)
+              WHERE e.id=:id
+              ORDER BY u.user_name ASC";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':id',(int)$id);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
+  }
+
   public static function getValidationFilters(){
     return array(
         'event_title'      => FILTER_SANITIZE_STRING,

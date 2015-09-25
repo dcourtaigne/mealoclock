@@ -87,13 +87,26 @@ class UsersController extends Controller{
 
   }
 
-  public function userProfile(){
-    $this->show('userProfile');
+  public function userProfile($id){
+    $user = new UsersManager();
+    $thisId = intval($id);
+    $thisUser = $user->find(intval($thisId));
+    $thisUser['communities'] = $user ->getUserCommunities($thisId);
+
+    $eventsOrg = $user->getUserEvents($thisId);
+    $eventsOrgDateFR = Controller::getFrenchDate($eventsOrg);
+    $thisUser['eventsOrg'] = $eventsOrgDateFR;
+
+    $eventsPart = $user->getUserParticipations($thisId);
+    $eventsPartDateFR = Controller::getFrenchDate($eventsPart);
+    $thisUser['eventsPart'] = $eventsPartDateFR;
+
+    $this->show('userProfile', ['thisUser'=>$thisUser]);
   }
 
 public function updateProfile(){
     $this->show('updateProfile');
   }
 
-  
+
 }

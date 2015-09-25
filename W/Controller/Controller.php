@@ -8,7 +8,7 @@ use W\Security\AuthorizationManager;
 /**
  * Le contrôleur de base à extender
  */
-class Controller 
+class Controller
 {
 
 	/**
@@ -31,7 +31,7 @@ class Controller
 	public function redirect($uri)
 	{
 		header("Location: $uri");
-		die();	
+		die();
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Controller
 
 	/**
 	 * Affiche un template
-	 * 
+	 *
 	 * @param  string $file Chemin vers le template, relatif à app/templates/
 	 * @param  array  $data Données à rendre disponibles à la vue
 	 */
@@ -106,7 +106,7 @@ class Controller
 		}
 		else {
 			die("404");
-		}	
+		}
 	}
 
 	/**
@@ -121,7 +121,7 @@ class Controller
 
 	/**
 	 * Autorise l'accès à un ou plusieurs rôles
-	 * 		
+	 *
 	 * @param  mixed $roles Tableau de rôles, ou chaîne pour un seul
 	 */
 	public function allowTo($roles)
@@ -152,8 +152,20 @@ class Controller
 			die($json);
 		}
 		else {
-			die("error in json encoding");
+			die(json_last_error_msg());
 		}
 	}
+
+	public static function getFrenchDate($array){
+		for ($i = 0 ; $i<count($array); $i++ ){
+      $dateStr = $array[$i]['event_date'];
+      setlocale (LC_TIME, 'fr_FR.utf8','fra');
+      $timestamp = strtotime($dateStr);
+      $dateFR = strftime("%d %B %Y", $timestamp);
+      $array[$i]['dateFR'] = $dateFR;
+		}
+	 return $array;
+	}
+
 
 }

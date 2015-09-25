@@ -12,11 +12,11 @@
     ['POST', '/login', 'Users#login', 'login'],
     ['POST|GET', '/logout', 'Users#logout', 'logout'],
     ['POST', '/signup', 'Users#signup', 'signup'],
-    ['GET', '/profile', 'Users#userProfile', 'userProfile'],
-    ['GET|POST', '/updateprofile', 'Users#updateProfile', 'updateProfile'],
+    ['GET', '/profile/[i:id]', 'Users#userProfile', 'userProfile'],
+    ['GET|POST', '/myaccount/profile', 'Users#updateProfile', 'updateProfile'],
 
 
     ['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
-    ['GET', '/eventAjaxCom', 'Read#getEventsAjaxCom', 'eventsajaxcom'],
+    ['GET', '/eventAjaxCom', 'Read#getEventsAjaxCom', 'eventsajaxcom']
 
 	);

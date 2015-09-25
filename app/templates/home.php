@@ -18,7 +18,7 @@
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 col-md-3 vertClair color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/vegetarien.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social">
+          <img src="<?= $this->assetUrl('img/vegetarian.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social">
             <div class="caption hidden-xs">
               <h3>5 fruits & légumes</h3>
               <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
@@ -39,7 +39,7 @@
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 col-md-3 orange color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/ss_gluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social">
+          <img src="<?= $this->assetUrl('img/gluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social">
           <div class="caption hidden-xs">
             <h3>Mort au gluten</h3>
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
@@ -50,7 +50,7 @@
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 col-md-3 bleuLactose color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/ss_lactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social">
+          <img src="<?= $this->assetUrl('img/lactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social">
           <div class="caption hidden-xs">
             <h3>Mort aux vaches</h3>
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>

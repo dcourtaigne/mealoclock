@@ -3,84 +3,77 @@
 <?php $this->start('main_content') ?>
   <div id="largeurSite">
     <section id="User">
- 
-      
- 
+
+
+
        <!-- debut de la info du profil -->
- 
+
         <div class="container-fluid">
           <div class="row">
- 
-            <div class="col-xs-12 col-sm-2 col-md-2 avatar">
+
+            <div class="col-xs-12 col-sm-2 col-md-2 avatar marginTop20">
                 <img src="http://lorempixel.com/100/100" alt="photo du profil" class="img-thumbnail Responsive image">
             </div>
- 
+
             <div class="col-xs-12 col-sm-6 col-md-7">
-                <h2> Bienvenue, Gaston</h2>
+                <h2> Bienvenue, <?=$this->e($thisUser['user_name'])?></h2>
                 <p><a href="#" class="btn btn-default" role="button">Compléter mon profil</a></p>
-                <p> Membre depuis le : <?php echo "A INSERER DYNAMIQUEMENT"?></p>
-                <p> Repas organisé(s) : <?php echo "A INSERER DYNAMIQUEMENT" ?> </br>
-                Repas participé(s) : <?php echo "A INSERER DYNAMIQUEMENT" ?></p>
+                <p> Membre depuis le : <?=$this->e($thisUser['create_time'])?></p>
+                <p> Repas organisé(s) : <?= $this->e(count($thisUser['eventsOrg']))?> </br>
+                Repas participé(s) : <?= $this->e(count($thisUser['eventsPart']))?></p>
             </div>
- 
-            
+
+
         </div>
- 
+
         <hr>
- 
+
         <!-- commentaires -->
-       
+
         <article>
             <span><img class="img-thumbnail" src="http://lorempixel.com/80/80"><a href="#"><em>Un utilisateur</em></a></span>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p></br>
         </article>
         <!-- tableau d'exemple en placement -->
- 
-        <section id="evenement">
+
+        <section id="evenement" class="row">
             <h3>Les prochains événements</h3>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                 <a href="#" class="btn btn-default" role="button">Gérer mes événements</a><br></br>
                 </div>
             <div class="col-xs-12 col-sm-4 col-md-3">
                 <a href="#" class="btn btn-primary" role="button">Créer un nouvel événement</a><br></br>
-            </div>              
-            
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-unstyled">
-                <hr class="marginTop10 bordeauNav">
-                 
-                    <li class="row">
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                          <strong class="h3">2</strong></br>septembre
-                        </div>
-                 
-                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                            <h3>Soirée Salade</h3>
-                            <p>19h30</p>
-                            <p>Chez <a href="#">Gaston</a>, Paris 14e</p>
-                        </div>
-                    </li>
- 
-                <hr class="bordeauNav">
- 
-                    <li class="row">
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                          <strong class="h3">25</strong></br>octobre
-                        </div>
-             
-                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                          <h3>Soirée Radis</h3>
-                          <p>19h30</p>
-                          <p>Chez <a href="#">Lulu</a>, Paris 5e</p>
-                        </div>
-                    </li>
- 
-                </ul>
             </div>
+            <article>
+                <h4 class="col-xs-12">Organisateur</h4>
+
+                <div class="col-xs-12">
+                    <ul class="list-unstyled">
+                    <hr class="marginTop10 bordeauNav">
+                    <?php foreach ($thisUser['eventsOrg'] as $event){
+                           $this->insert('partials/events-list-profile',['event'=>$event,'userName'=>$thisUser['user_name']]);
+                     }
+                     ?>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h4 class="col-xs-12">Participants</h4>
+                <div class="col-xs-12">
+                    <ul class="list-unstyled">
+                    <hr class="marginTop10 bordeauNav">
+                    <?php foreach ($thisUser['eventsPart'] as $event){
+                           $this->insert('partials/events-list-profile',['event'=>$event,'userName'=> '']);
+                     }
+                     ?>
+                    </ul>
+                </div>
+            </article>
+
         </section>
- 
+
         <!-- fin du tableau de placement -->
- 
+
     </section>
  </div>
 <?php $this->stop('main_content') ?>

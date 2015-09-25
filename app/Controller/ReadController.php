@@ -20,6 +20,8 @@ class ReadController extends Controller{
   public function showEventsPage(){
     /*$eventsObj = new EventsManager();
     $events = $eventsObj->getFutureEvents();
+    $lastDate="";
+    $results=[]
     for ($i = 0 ; $i<count($events); $i++ ){
       $dateStr = $events[$i]['event_date'];
       setlocale (LC_TIME, 'fr_FR.utf8','fra');
@@ -27,6 +29,9 @@ class ReadController extends Controller{
       $dateFR = strftime("%d %B %Y", $timestamp);
     //var_dump($dateFR);
       $events[$i]['dateFR'] = $dateFR;
+
+      $results[$dateStr] = $events[$i]
+
     }*/
     $this->show('events');
   }
@@ -69,23 +74,16 @@ class ReadController extends Controller{
   public function getEventsAjax(){
     $eventsObj = new EventsManager();
     $events = $eventsObj->getFutureEvents();
-    for ($i = 0 ; $i<count($events); $i++ ){
-      $dateStr = $events[$i]['event_date'];
-      setlocale (LC_TIME, 'fr_FR.utf8','fra');
-      $timestamp = strtotime($dateStr);
-      $dateFR = strftime("%d %B %Y", $timestamp);
-    //var_dump($dateFR);
-      $events[$i]['dateFR'] = $dateFR;
-    }
-
-    $this->showJson($events);
+    $eventsFR = Controller::getFrenchDate($events);
+    $this->showJson($eventsFR);
   }
 
   public function getEventsAjaxCom(){
     if(isset($_GET['com'])){
       $com = intval($_GET['com']);
-    $eventsObj = new EventsManager();
+      $eventsObj = new EventsManager();
     $events = $eventsObj->getFutureEventsbyCom($com);
+
     for ($i = 0 ; $i<count($events); $i++ ){
       $dateStr = $events[$i]['event_date'];
       setlocale (LC_TIME, 'fr_FR.utf8','fra');
@@ -94,7 +92,6 @@ class ReadController extends Controller{
     //var_dump($dateFR);
       $events[$i]['dateFR'] = $dateFR;
     }
-
     $this->showJson($events);
     }
   }
@@ -103,7 +100,6 @@ class ReadController extends Controller{
     $eventsObj = new CommunitiesManager();
     $communities = $eventsObj->findAll();
     var_dump($communities);
-
-
   }
+
 }
