@@ -5,6 +5,7 @@
     ['GET', '/about', 'Read#about', 'about'],
     ['GET', '/events', 'Read#showEventsPage', 'events'],
     ['GET', '/[vege|vegan|ssgluten|sslactose:com]', 'Read#showComPage', 'eventsbycom'],
+    ['GET', '/event/[i:id]', 'Read#showEvent', 'event'],
 
     ['GET|POST', '/event/[create|edit:action]/[i:id]?', 'Create#editEvent', 'editEvent'],
     ['GET|POST', '/contact', 'Create#contact', 'contact'],

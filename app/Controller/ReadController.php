@@ -95,11 +95,23 @@ class ReadController extends Controller{
     $this->showJson($events);
     }
   }
-
+/*
   public function getCommunities(){
     $eventsObj = new CommunitiesManager();
     $communities = $eventsObj->findAll();
     var_dump($communities);
   }
+*/
+  public function showEvent($id){
+    $eventObj = new EventsManager();
+    $thisId = (int)$id;
+    $event = $eventObj->getEventInfo($thisId);
+    var_dump($event);
+    $event = Controller::getFrenchDate($event);
+    $event['guests'] = $eventObj->getEventGuests($thisId);
+    $this->show('event',['event'=>$event]);
+
+  }
+
 
 }
