@@ -36,38 +36,49 @@
         </article>
         <!-- tableau d'exemple en placement -->
 
-        <section id="evenement" class="row">
+        <section id="evenement" class="row container-fluid">
             <h3>Les prochains événements</h3>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                <a href="#" class="btn btn-default" role="button">Gérer mes événements</a><br></br>
-                </div>
-            <div class="col-xs-12 col-sm-4 col-md-3">
-                <a href="#" class="btn btn-primary" role="button">Créer un nouvel événement</a><br></br>
-            </div>
+                <ul class="list-unstyled list-inline">
+                    <li><a href="#" class="btn btn-default" role="button">Gérer mes événements</a></li>
+                    <li><a href="#" class="btn btn-primary" role="button">Créer un nouvel événement</a></li>
+                </ul>
             <article>
-                <h4 class="col-xs-12">Organisateur</h4>
-
-                <div class="col-xs-12">
-                    <ul class="list-unstyled">
-                    <hr class="marginTop10 bordeauNav">
-                    <?php foreach ($thisUser['eventsOrg'] as $event){
-                           $this->insert('partials/events-list-profile',['event'=>$event,'userName'=>$thisUser['user_name']]);
-                     }
-                     ?>
-                    </ul>
-                </div>
+                <h4 class="col-xs-12">J'organise</h4>
+                    <section id="events">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <section id="event_list" class="marginTB20">
+                                <div class="col-xs-12">
+                                    <ul class="list-unstyled">
+                                    <hr class="marginTop10 bordeauNav">
+                                    <?php foreach ($thisUser['eventsOrg'] as $event){
+                                           $this->insert('partials/events-list-profile',['event'=>$event,'userName'=>$thisUser['user_name']]);
+                                     }
+                                     ?>
+                                    </ul>
+                                </div>
+                        
+                            </section>
+                        </div>
+                    </section>
+                
             </article>
             <article>
-                <h4 class="col-xs-12">Participants</h4>
-                <div class="col-xs-12">
-                    <ul class="list-unstyled">
-                    <hr class="marginTop10 bordeauNav">
-                    <?php foreach ($thisUser['eventsPart'] as $event){
-                           $this->insert('partials/events-list-profile',['event'=>$event,'userName'=> '']);
-                     }
-                     ?>
-                    </ul>
-                </div>
+                <h4 class="col-xs-12">Je participe</h4>
+                    <section id="events">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <section id="event_list" class="marginTB20">
+                                <div class="col-xs-12">
+                                    <ul class="list-unstyled">
+                                    <hr class="marginTop10 bordeauNav">
+                                    <?php foreach ($thisUser['eventsPart'] as $event){
+                                           $this->insert('partials/events-list-profile',['event'=>$event,'userName'=> '']);
+                                     }
+                                     ?>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
             </article>
 
         </section>

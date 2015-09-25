@@ -40,6 +40,7 @@
   </section>
 
   <script type="text/javascript" src="<?= $this->assetUrl('js/datepicker_moc_com.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/datepicker_fr.js')?>"></script>
 
 
 <?php $this->stop('main_content') ?>
