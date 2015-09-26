@@ -306,6 +306,14 @@ background-color:#C72B10 ;
     background-color: #ABCE48; /*nv class*/
  }
 
+ .anthracite {                   /*-- nv classe --*/
+    background-color: #303B34;
+}
+
+.rose {                         /*-- nv classe --*/
+    background-color: #CC6699;
+}
+
 .paddingTB10 {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -334,6 +342,21 @@ background-color:#C72B10 ;
 .paddingTB40 {
     padding-top: 40px;
     padding-bottom: 40px;
+}
+
+.paddingLR20 {              /*-- nv classe --*/
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.paddingLR10 {              /*-- nv classe --*/
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.paddingLR40 {              /*-- nv classe --*/
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .marginTop10 {
