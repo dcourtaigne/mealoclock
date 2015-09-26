@@ -2,22 +2,23 @@
 
 <?php $this->start('main_content') ?>
     <div id="largeurSite">
-
-            <section id="User" data-id="<?= $this->e($thisUser['loggedUser'])?>" class="row container-fluid">
-               <!-- debut de la info du profil -->
+        <section id="User" class="container-fluid">
+            <div class="row">
+           <!-- debut de la info du profil -->
                 <div id="thumbnail" class="col-xs-12">
                     <img src="http://lorempixel.com/1200/300" alt="photo du profil" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-7">
                     <h2><?=$thisUser['greeting']?></h2>
-                    <?php if($w_user == $thisUser['id']):?>
-                    <p><a href="#" class="btn btn-default" role="button">Compléter mon profil</a></p>
+                    <?php if($w_user['id'] == $thisUser['id']):?>
+                    <p><a href="<?= $this->url('updateProfile')?>" class="btn btn-default" role="button">Compléter mon profil</a></p>
                     <?php endif ?>
                     <p> Membre depuis le : <?=$this->e($thisUser['create_time'])?></p>
                     <p> Repas organisé(s) : <?= $this->e(count($thisUser['eventsOrg']))?> </br>
                             Repas participé(s) : <?= $this->e(count($thisUser['eventsPart']))?></p>
                 </div>
-            </section>
+            </div>
+            
             <hr>
             <!-- commentaires -->
 
@@ -43,9 +44,9 @@
 
             <!-- tableau d'exemple en placement -->
 
-            <section id="evenement" class="row container-fluid">
+            <section id="evenementProfile" class="row container-fluid">
                 <h2>Les prochains événements <?php if($w_user !== $thisUser['id']) echo 'de '.$this->e($thisUser['user_name'])?></h2>
-                <?php if($w_user == $thisUser['id']):?>
+                <?php if($w_user['id'] == $thisUser['id']):?>
                     <ul class="list-unstyled list-inline">
                         <li><a href="#" class="btn btn-default" role="button">Gérer mes événements</a></li>
                         <li><a href="#" class="btn btn-primary" role="button">Créer un nouvel événement</a></li>
@@ -87,5 +88,7 @@
             </section>
 
             <!-- fin du tableau de placement -->
+        </section>
     </div>
+
 <?php $this->stop('main_content') ?>
