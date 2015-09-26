@@ -3,6 +3,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use \W\Security\AuthentificationManager;
 use Manager\UsersManager;
+use Manager\CommunitiesManager;
 
 
 class UsersController extends Controller{
@@ -88,8 +89,8 @@ class UsersController extends Controller{
   }
 
   public function userProfile($id){
-    $userObj = new AuthentificationManager();
-    $userLogin = $userObj->getLoggedUser();
+    $authObj = new AuthentificationManager();
+    $userLogin = $authObj->getLoggedUser();
 
     if($userLogin){
       $user = new UsersManager();
@@ -123,7 +124,21 @@ class UsersController extends Controller{
   }
 
 public function updateProfile(){
-    $this->show('updateProfile');
+    $authObj = new AuthentificationManager();
+    $userLogin = $authObj->getLoggedUser();
+    if($userLogin){
+      $userObj = new UsersManager();
+      $user = $userObj->find($userLogin['id']);
+      $user['com'] = $userObj->getUserCommunities($userLogin['id']);
+      $comObj = new CommunitiesManager();
+      $communities = $comObj->findAll();
+      var_dump($user);
+      $this->show('updateProfile',['user'=>$user , 'communities'=>$communities]);
+    }else{
+      $this->show('requireLogin');
+    }
+
+
   }
 
 public function displayEvents(){
