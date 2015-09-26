@@ -27,4 +27,17 @@ namespace {
 		return null;
 	}
 
+	function formatTime($timeHMS){
+		$timeHM = substr($timeHMS, 0, 5);
+		$formatedTime = str_replace(':','h',$timeHM);
+		return $formatedTime;
+	}
+
+	function formatDateFR($date){
+		setlocale (LC_TIME, 'fr_FR.utf8','fra');
+    $timestamp = strtotime($date);
+    $dateFR = strftime("%d %B %Y", $timestamp);
+    return $dateFR;
+	}
+
 }
