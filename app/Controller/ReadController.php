@@ -93,9 +93,8 @@ class ReadController extends Controller{
     $event = $eventObj->getEventInfo($thisId);
     $event = Controller::getFrenchDate($event);
     $event['guests'] = $eventObj->getEventGuests($thisId);
+    $event[0]['event_time'] = formatTime($event[0]['event_time'] );
+    $event[0]['event_date'] = formatDateFR($event[0]['event_date'] );
     $this->show('event',['event'=>$event]);
-
   }
-
-
 }
