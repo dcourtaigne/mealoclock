@@ -9,57 +9,40 @@
 				<h1>Compléter mon profil</h1>
 
 					<div class="form-group">
-						<label for="nom">Nom</label>
-						<input type="text" class="form-control" name="nom">
-			  		</div>
-			  		
-			  		<div class="form-group">
-			  			<label for="prenom">Prénom</label>
-						<input type="text" class="form-control" name="prenom">
-			  		</div>
 
 			  		<div class="form-group">
 			  			<label for="pseudo">Pseudo</label>
-						<input type="text" class="form-control" name="pseudo">
+						<input type="text" class="form-control" name="user_name" value="<?= $this->e($user['user_name'])?>">
 			  		</div>
 
-					<div class="form-group">
+					<div class="form-group marginTB20">
 						<label for="email">Email</label>
-						<input type="email" class="form-control" name="email">
+						<input type="email" class="form-control" name="user_email" value="<?= $this->e($user['user_email'])?>">
 				  	</div>
-				  	
+
 				  	<div class="form-group photoUpload">
 						<label for="photo">Photo</label>
 						<input type="file" name="photo">
 				  		<button type="submit" class="btn btn-primary btn-xs">Ok</button>
 				  	</div>
-				  	
-					<div>
+
+					<div class="marginTB20">
 						<label for="favcommunaute">Communauté(s) favorite(s)</label></br>
-						<label class="checkbox-inline">
-							<input type="checkbox" id="inlineCheckbox1" value="option1"> Végétariens
-						</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" id="inlineCheckbox2" value="option2"> Vegans
-						</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" id="inlineCheckbox3" value="option3"> Sans gluten
-						</label>
-				    	<label class="checkbox-inline">
-							<input type="checkbox" id="inlineCheckbox4" value="option4"> Sans lactose
-						</label>
+						<?php foreach ($communities as $community){
+							$this->insert('partials/checkbox-communities',['userCom' => $user['com'], 'community'=>$community]);
+						}
+						?>
 					</div>
 
 				  	<div class="form-group">
 				  		<label>Renseignements complémentaires (facultatif)</label>
-						<textarea class="form-control"></textarea>
+						<textarea class="form-control" rows="10" placeholder="N'hésitez à vous présenter! Ce texte s'affichera sur votre profil et permettront aux autres membres de mieux vous connaître"><?= $this->e($user['user_desc'])?></textarea>
 				  	</div>
-				  	
-				  	<div>
-						<input type="submit" class="btn btn-default marginTB20" value="Annuler" name="cancel">
-						<input type="submit" class="btn btn-primary marginTB20" value="Envoyer" name="submit">
-					</div>
 
+				  	<div class="marginTB20">
+						<input type="submit" class="btn btn-default" value="Annuler" name="cancel">
+						<input type="submit" class="btn btn-primary" value="Envoyer" name="submit">
+					</div>
 			</form>
 		</div>
 	</div>
