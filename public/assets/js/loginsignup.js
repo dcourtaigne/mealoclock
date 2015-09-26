@@ -6,7 +6,7 @@
         $(".toggle-button").html("Ou connectez vous");
       } else {
         $(".toggle-button").html("Ou inscrivez vous");
-      } 
+      }
     }
     //Open window
     $(".toggle-button").click(function() {
@@ -25,6 +25,13 @@
       $("#overlay").animate({top:'125px'});
       overlay();
     })
+
+    $("#requireLogin button").click(function(){
+      $("#overlay").animate({top:'125px'});
+      overlay();
+    })
+
+
     $("#inscription").click(function(){
       $("#overlay").animate({top:'125px'})
       overlay();
@@ -80,3 +87,4 @@ $('#loginform').submit(function ( e ) { // affectation d'un listener sur l'evene
       }
     );
   });
+

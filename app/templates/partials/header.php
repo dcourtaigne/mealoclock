@@ -46,12 +46,14 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <?php if($w_user==NULL):?>
-                <li id="login"><a>Se connecter</a></li>
+                <li id="login"><button>Se connecter</button></li>
                 <?php else:?>
                 <li><a href="<?=$this->url('logout')?>">Logout</a></li>
                 <li><a href="<?=$this->url('logout')?>"><?="Bonjour ".ucfirst($w_user['user_name'])?></a></li>
                 <?php endif ?>
-                <li id="inscription"><a>Inscription</a></li>
+                <?php if($w_user==NULL):?>
+                <li id="inscription"><button>Inscription</button></li>
+                <?php endif ?>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
@@ -61,51 +63,51 @@
 
 	<div id="overlay">
     <div id="modal">
-      <a href="" id="button">X</a>
-    <div class="col-lg-6 top">
-      <h4>Connectez vous</h4>
-    </div>
-    <div id="mid">
-      <form id="loginform" class="col-lg-6" method="POST" action="<?= $this->url('login')?>">
-        <div class="forms">
-          <div class="form-group" class="col-sm-10">
-            <div id="errorMessage" class="text-danger"></div>
-              <label for="user_login">Email address:</label>
-            <input type="email" class="form-control" id="user_login" name="user_name" placeholder="Email">
-          </div>
-          <div class="form-group" class="col-sm-10">
-              <label for="user_password">Password:</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-            </div>
-            <div>
-              <input type="checkbox" name="remember" value="yes">
-              <span>Remember me</span>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Login" name="login" class="btn btn-primary btn-block btn-lg" tabindex="7">
-            </div>
-        </div>
-      </form>
-    </div>
-    <div id="bot">
-      <div class="col-lg-6">
-        <h4 class="toggle-button">Ou inscrivez vous</h4>
+        <a href="" id="button">X</a>
+      <div class="col-lg-6 top">
+        <h4>Connectez vous</h4>
       </div>
-      <form class="col-lg-6" id="registerform" method="POST" action="<?= $this->url('signup')?>">
-        <div>
-          <label> Votre nom (ceci est public): </label><span class="text-danger" id="errorName"></span>
-          <input type="text" class="form-control" name="user_name" id="left" placeholder="First Name">
-          <label> Votre adresse email:</label><span class="text-danger" id="errorEmail"></span>
-          <input type="text" class="form-control" name="user_email" placeholder="Email adress">
-          <label> Mot de passe: </label><span class="text-danger" id="errorPass"></span>
-          <input type="password" class="form-control" name="password" placeholder="Password">
-          <label> Verification: </label><span class="text-danger" id="errorPassRepeat"></span>
-          <input type="password" class="form-control" name="passwordrepeat" placeholder="Repeat Password">
-          <span>By clicking Sign Up, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.</span>
-          <input type="submit" name="signup" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+      <div id="mid">
+        <form id="loginform" class="col-lg-6" method="POST" action="<?= $this->url('login')?>">
+          <div class="forms">
+            <div class="form-group" class="col-sm-10">
+              <div id="errorMessage" class="text-danger"></div>
+                <label for="user_login">Email address:</label>
+              <input type="email" class="form-control" id="user_login" name="user_name" placeholder="Email">
+            </div>
+            <div class="form-group" class="col-sm-10">
+                <label for="user_password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+              </div>
+              <div>
+                <input type="checkbox" name="remember" value="yes">
+                <span>Remember me</span>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Login" name="login" class="btn btn-primary btn-block btn-lg" tabindex="7">
+              </div>
+          </div>
+        </form>
+      </div>
+      <div id="bot">
+        <div class="col-lg-6">
+          <h4 class="toggle-button">Ou inscrivez vous</h4>
         </div>
-      </form>
-    </div>
+        <form class="col-lg-6" id="registerform" method="POST" action="<?= $this->url('signup')?>">
+          <div>
+            <label> Votre nom (ceci est public): </label><span class="text-danger" id="errorName"></span>
+            <input type="text" class="form-control" name="user_name" id="left" placeholder="First Name">
+            <label> Votre adresse email:</label><span class="text-danger" id="errorEmail"></span>
+            <input type="text" class="form-control" name="user_email" placeholder="Email adress">
+            <label> Mot de passe: </label><span class="text-danger" id="errorPass"></span>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            <label> Verification: </label><span class="text-danger" id="errorPassRepeat"></span>
+            <input type="password" class="form-control" name="passwordrepeat" placeholder="Repeat Password">
+            <span>By clicking Sign Up, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.</span>
+            <input type="submit" name="signup" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+          </div>
+        </form>
+      </div>
     </div>
   </div>
           <!-- fin de la navbar -->

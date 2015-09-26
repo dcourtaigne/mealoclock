@@ -88,20 +88,38 @@ class UsersController extends Controller{
   }
 
   public function userProfile($id){
-    $user = new UsersManager();
-    $thisId = intval($id);
-    $thisUser = $user->find(intval($thisId));
-    $thisUser['communities'] = $user ->getUserCommunities($thisId);
+    $userObj = new AuthentificationManager();
+    $userLogin = $userObj->getLoggedUser();
 
-    $eventsOrg = $user->getUserEvents($thisId);
-    $eventsOrgDateFR = Controller::getFrenchDate($eventsOrg);
-    $thisUser['eventsOrg'] = $eventsOrgDateFR;
+    if($userLogin){
+      $user = new UsersManager();
+      $thisId = intval($id);
+      $thisUser = $user->find(intval($thisId));
+      $thisUser['communities'] = $user ->getUserCommunities($thisId);
 
-    $eventsPart = $user->getUserParticipations($thisId);
-    $eventsPartDateFR = Controller::getFrenchDate($eventsPart);
-    $thisUser['eventsPart'] = $eventsPartDateFR;
+      $eventsOrg = $user->getUserEvents($thisId);
+      $eventsOrgDateFR = Controller::getFrenchDate($eventsOrg);
+      $thisUser['eventsOrg'] = $eventsOrgDateFR;
 
-    $this->show('userProfile', ['thisUser'=>$thisUser]);
+      $eventsPart = $user->getUserParticipations($thisId);
+      $eventsPartDateFR = Controller::getFrenchDate($eventsPart);
+      $thisUser['eventsPart'] = $eventsPartDateFR;
+
+      if($userLogin['id'] == $thisUser['id']){
+        $thisUser['greeting'] = 'Bienvenue, '.$thisUser['user_name'];
+        $thisUser['orgTitle'] = 'J\'organise';
+        $thisUser['partTitle'] = 'Je participe';
+      }else{
+        $thisUser['greeting'] = 'Bienvenue sur le profil de '.$thisUser['user_name'];
+        $thisUser['orgTitle'] = 'Evénement(s) organisé(s) par '.$thisUser['user_name'];
+        $thisUser['partTitle'] = 'Evénement(s) au(x)quel(s) participe '.$thisUser['user_name'];
+      }
+
+      $this->show('userProfile', ['thisUser'=>$thisUser]);
+    } else{
+      $this->show('requireLogin');
+    }
+
   }
 
 public function updateProfile(){
@@ -111,6 +129,11 @@ public function updateProfile(){
 public function displayEvents(){
     $this->show('myevents');
 
+}
+
+public function loginJS(){
+  $status=["status"=>1];
+  $this->showJson($status);
 }
 
 
