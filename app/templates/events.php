@@ -14,7 +14,7 @@
             </div>
           </section>
           <section>
-            <label>Date: </label>
+            <label>Rechercher par date: </label>
             <input type="text" id="datepicker"></button>
             <input type="button" value="Liste complète" id="resetDate" /></span>
           </section>
