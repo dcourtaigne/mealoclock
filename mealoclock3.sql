@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 22 Septembre 2015 à 11:20
+-- Généré le :  Sam 26 Septembre 2015 à 11:52
 -- Version du serveur :  5.6.24
 -- Version de PHP :  5.6.8
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `mealoclock`
+-- Base de données :  `mealoclock2`
 --
 
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `comments` (
-  `comment_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `comment_text` text,
   `event_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- Contenu de la table `comments`
 --
 
-INSERT INTO `comments` (`comment_id`, `comment_text`, `event_id`, `user_id`) VALUES
+INSERT INTO `comments` (`id`, `comment_text`, `event_id`, `user_id`) VALUES
 (1, 'Nam est velit culpa porro. Molestiae voluptatem ea architecto enim nulla impedit illum cupiditate. Veritatis officiis reprehenderit dolorum enim qui vel. Quia voluptatem deleniti ad veritatis sit veniam. Sint consequatur consectetur dolores. Facilis atque dolore ullam ipsum soluta rem. Modi sequi maiores nulla occaecati. Distinctio deserunt veritatis voluptas incidunt rerum.', 5, 8),
 (2, 'Temporibus totam ullam commodi voluptas consequatur delectus. Ut voluptate voluptatem eius soluta voluptas in qui sapiente. Est dolorem et et in recusandae. Deserunt officia quo amet necessitatibus. Sequi molestiae cupiditate itaque omnis. Libero repellat delectus quia quis impedit iste et. Omnis eaque commodi similique ab voluptas a alias. Et assumenda quas dolorem ipsa est eligendi et atque.', 7, 10),
 (3, 'Quis voluptas autem culpa. Ex soluta ipsa corrupti et in rerum. Quaerat ut dolores nemo est quaerat voluptatibus. Eum qui voluptas eos at libero animi aliquid. Nisi impedit non velit excepturi delectus. Dolores saepe provident quos incidunt praesentium earum asperiores qui. Soluta similique dolor cum molestiae aspernatur. Expedita dolorem est qui consequatur quo. Iste nisi reprehenderit maiores eaque quo enim libero.', 8, 15),
@@ -56,19 +56,20 @@ INSERT INTO `comments` (`comment_id`, `comment_text`, `event_id`, `user_id`) VAL
 --
 
 CREATE TABLE IF NOT EXISTS `communities` (
-  `community_id` int(11) NOT NULL,
-  `com_name` varchar(150) DEFAULT NULL
+  `id` int(11) NOT NULL,
+  `com_name` varchar(150) DEFAULT NULL,
+  `com_shortname` varchar(100) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `communities`
 --
 
-INSERT INTO `communities` (`community_id`, `com_name`) VALUES
-(1, 'Végétariens'),
-(2, 'Vegans'),
-(3, 'Sans Gluten'),
-(4, 'Sans Lactose');
+INSERT INTO `communities` (`id`, `com_name`, `com_shortname`) VALUES
+(1, 'Végétariens', 'vege'),
+(2, 'Vegans', 'vegan'),
+(3, 'Sans Gluten', 'ssgluten'),
+(4, 'Sans Lactose', 'sslactose');
 
 -- --------------------------------------------------------
 
@@ -92,6 +93,7 @@ INSERT INTO `communities_members` (`user_id`, `community_id`) VALUES
 (13, 1),
 (17, 1),
 (30, 1),
+(45, 1),
 (1, 2),
 (3, 2),
 (4, 2),
@@ -107,6 +109,7 @@ INSERT INTO `communities_members` (`user_id`, `community_id`) VALUES
 (16, 3),
 (22, 3),
 (23, 3),
+(45, 3),
 (11, 4),
 (12, 4),
 (14, 4),
@@ -124,8 +127,8 @@ INSERT INTO `communities_members` (`user_id`, `community_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `events` (
-  `event_id` int(11) NOT NULL,
-  `event_title` varchar(255) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `event_title` varchar(100) DEFAULT NULL,
   `event_desc` text,
   `event_guests` int(11) DEFAULT NULL,
   `event_date` date DEFAULT NULL,
@@ -135,23 +138,24 @@ CREATE TABLE IF NOT EXISTS `events` (
   `event_image` varchar(255) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   `community_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `events`
 --
 
-INSERT INTO `events` (`event_id`, `event_title`, `event_desc`, `event_guests`, `event_date`, `event_time`, `event_location`, `event_address`, `event_image`, `user_id`, `community_id`) VALUES
+INSERT INTO `events` (`id`, `event_title`, `event_desc`, `event_guests`, `event_date`, `event_time`, `event_location`, `event_address`, `event_image`, `user_id`, `community_id`) VALUES
 (1, 'Porro consequatur nostrum tenetur quidem dolores tenetur accusantium labore.', 'Praesentium et mollitia rem iure quia exercitationem et. Qui non inventore voluptas dolorem a eos. Nisi sunt et ratione molestiae voluptas illo eos. Qui quia pariatur perspiciatis quo aliquam. Consequuntur ratione omnis id repellat cum quia. Neque sed fugit ad nesciunt temporibus facilis. Omnis architecto nulla ducimus rerum cum est. Velit enim tenetur in corrupti quia distinctio reprehenderit. Iusto numquam et nesciunt vel numquam labore.', 6, '2015-09-28', '00:25:00', '3', '510 Gibson Viaduct Mckenzieview, AR 05175-6162', NULL, 13, 2),
 (2, 'Velit ipsa occaecati iusto dolor qui voluptatem.', 'Voluptatem eum mollitia quo neque qui. Praesentium commodi eaque ipsam. Autem iste et dolor facere qui. Recusandae in quas eos quia soluta ipsam. Minima laborum quia aspernatur ea. Molestiae voluptatem voluptas quia sit sunt. Architecto fugiat odit sit dolor et cum ad ut. Quidem modi ullam eveniet veritatis quisquam ipsa modi nam.', 8, '2015-09-30', '07:57:00', '12', '25765 Haley Fords Apt. 500 Dejahside, MO 36027', NULL, 3, 4),
 (3, 'Quas qui quia nostrum cupiditate.', 'Pariatur et pariatur est delectus nam est. Illum dolore pariatur sint fuga impedit quis. Dolorem asperiores autem aut tempore. Iste quas est consequatur. Ullam temporibus assumenda vel nostrum earum ipsa. Ut modi placeat sint facere sit animi non est. Dolores est ab voluptatibus. Dolor delectus molestiae dolore commodi. Neque rerum rem optio blanditiis unde eius et. Similique hic omnis et possimus maxime eum corrupti voluptates. Aliquam saepe qui itaque eveniet.', 10, '2015-10-06', '10:37:00', '8', '2040 Ansley Street Kertzmanntown, WY 03236-7473', NULL, 7, 1),
 (4, 'Accusamus dolor optio ex velit et voluptas.', 'Dolores tenetur odit tempore dicta culpa. Est voluptatibus nam voluptatibus et ut consequuntur a eos. Enim maiores esse voluptas fuga qui. Quibusdam ut et debitis id quod est. Perferendis a corporis non voluptas corrupti quibusdam maiores. Molestiae ad reiciendis voluptas ut. Illo ut iure necessitatibus laboriosam dolorem aperiam. Molestiae eum dicta repellendus iste quos corrupti. Illo optio ratione necessitatibus atque repellat veniam maxime.', 3, '2015-09-30', '06:26:00', '11', '938 Haag Harbors Suite 488 Gorczanyton, MD 03654', NULL, 4, 2),
-(5, 'Et aut expedita velit perferendis.', 'Numquam qui consequatur voluptatem nostrum cum ut. Vel et excepturi aliquid veniam. Ratione aut dolore qui qui quod dolor. Dolor velit quidem magnam. Esse quia sit voluptate repudiandae. Ut asperiores qui hic aut dolore. Maxime debitis alias quos laborum tenetur corrupti. Voluptas voluptatum repellat deserunt maxime tempora reiciendis dolore id. Ex provident aut aut aut odio. Quas quaerat impedit at minima harum.', 7, '2015-09-19', '20:39:00', '5', '0054 Marcelo Turnpike Eleazarmouth, NV 66783', NULL, 2, 3),
+(5, 'GASTON PARTICIPE Et aut expedita velit perferendis.', 'GASTON PARTICIPE Numquam qui consequatur voluptatem nostrum cum ut. Vel et excepturi aliquid veniam. Ratione aut dolore qui qui quod dolor. Dolor velit quidem magnam. Esse quia sit voluptate repudiandae. Ut asperiores qui hic aut dolore. Maxime debitis alias quos laborum tenetur corrupti. Voluptas voluptatum repellat deserunt maxime tempora reiciendis dolore id. Ex provident aut aut aut odio. Quas quaerat impedit at minima harum.', 7, '2015-09-19', '20:39:00', '5', '0054 Marcelo Turnpike Eleazarmouth, NV 66783', NULL, 2, 3),
 (6, 'Officia molestiae et quod aut ut perspiciatis.', 'Explicabo consequuntur deleniti suscipit nisi cum expedita omnis. Sunt optio repellat velit deleniti odit placeat perferendis eius. Qui alias quidem temporibus a similique. Earum assumenda molestias harum repellat enim in. Veniam explicabo nesciunt et maiores ipsam. Qui voluptas quo nihil dolorum. Ducimus fugiat dolor est voluptatem et fugit voluptas. Sed quidem aut voluptas aut rerum. Labore quisquam vel earum. Hic accusamus qui tenetur dignissimos.', 8, '2015-09-09', '20:23:00', '1', '0597 Torphy Flat Suite 493 Fisherland, AK 50732', NULL, 13, 4),
 (7, 'Sapiente sit ut ducimus quos nobis.', 'Et rerum minima cumque qui perferendis. Facere deserunt velit quia consequatur qui quas at. Aliquid deleniti voluptas occaecati ut nulla qui reiciendis. Ducimus et unde enim nemo est dolorem. Soluta deserunt eveniet et molestiae. Ut et iure ipsum culpa temporibus. Voluptatem doloremque dignissimos ea non. Alias tempora est possimus. Labore quas ab atque facilis quia.', 7, '2015-09-18', '15:31:00', '6', '97998 Johan Views Meganetown, NJ 72373-7134', NULL, 10, 2),
 (8, 'Qui est labore rerum labore quisquam aut.', 'Laborum modi quos perspiciatis aut aut est sequi. Laboriosam voluptas ipsum voluptatum magni. Mollitia in exercitationem saepe velit aliquam. Quo impedit eligendi laboriosam rerum. Itaque ut animi earum nihil sint dignissimos aut. Eius nisi est dolor. Sit labore voluptatem dicta ad nisi et maiores. Et veniam ut quia laborum. Maxime est quis quo reprehenderit. Laudantium dolore ab est cum rerum nemo non. Dolorem amet iure quam voluptates.', 4, '2015-09-08', '21:19:00', '6', '79044 Breitenberg Place Lake Korbin, MD 21418', NULL, 1, 3),
-(9, 'Nulla sit quis sed ab sunt quidem voluptatem esse.', 'Ea aut voluptate ut qui aliquam. Id nostrum laboriosam omnis voluptatem est eos et. Optio consequatur enim sint harum dolorum est totam. Quia explicabo saepe dolorem aliquam qui. Voluptatem ut perferendis autem omnis. Id quae non exercitationem dolor aspernatur ipsum non et. Odit beatae aliquid vitae culpa deserunt omnis expedita. Unde dicta repellendus assumenda ex. Dignissimos ea omnis est et aperiam perferendis. Et sunt suscipit blanditiis quasi optio ut recusandae. Et rerum autem rem.', 10, '2015-09-09', '21:25:00', '5', '929 Adele Canyon Leannonstad, PA 79508-0003', NULL, 11, 4),
-(10, 'Repudiandae dolor porro sit dolorum.', 'Quod suscipit deleniti aperiam. Aperiam porro aut illum tempora quo qui harum tempore. Consectetur nam autem quis quo. Qui suscipit nisi voluptas officiis. Voluptatem dignissimos incidunt quia dolorem deserunt. Consectetur non enim enim numquam. Laborum earum ad reiciendis quia ut voluptates nemo. Ullam doloremque sunt similique. Error dolorem harum mollitia qui aut. Et enim voluptate deserunt facere magni amet. Ab eum sint facere omnis.', 3, '2015-09-15', '22:35:00', '5', '8009 Tavares Ways Sawaynchester, SD 47044-2591', NULL, 3, 2);
+(9, 'GASTON PARTICIPE Nulla sit quis sed ab sunt quidem voluptatem esse.', 'GASTON PARTICIPE Ea aut voluptate ut qui aliquam. Id nostrum laboriosam omnis voluptatem est eos et. Optio consequatur enim sint harum dolorum est totam. Quia explicabo saepe dolorem aliquam qui. Voluptatem ut perferendis autem omnis. Id quae non exercitationem dolor aspernatur ipsum non et. Odit beatae aliquid vitae culpa deserunt omnis expedita. Unde dicta repellendus assumenda ex. Dignissimos ea omnis est et aperiam perferendis. Et sunt suscipit blanditiis quasi optio ut recusandae. Et rerum autem rem.', 10, '2015-09-09', '21:25:00', '5', '929 Adele Canyon Leannonstad, PA 79508-0003', NULL, 11, 4),
+(10, 'Repudiandae dolor porro sit dolorum.', 'Quod suscipit deleniti aperiam. Aperiam porro aut illum tempora quo qui harum tempore. Consectetur nam autem quis quo. Qui suscipit nisi voluptas officiis. Voluptatem dignissimos incidunt quia dolorem deserunt. Consectetur non enim enim numquam. Laborum earum ad reiciendis quia ut voluptates nemo. Ullam doloremque sunt similique. Error dolorem harum mollitia qui aut. Et enim voluptate deserunt facere magni amet. Ab eum sint facere omnis.', 3, '2015-09-15', '22:35:00', '5', '8009 Tavares Ways Sawaynchester, SD 47044-2591', NULL, 3, 2),
+(11, 'Soirée pruneau', 'bla bla bla', 4, '2015-09-25', '23:00:00', '8', NULL, NULL, 45, 1);
 
 -- --------------------------------------------------------
 
@@ -160,7 +164,7 @@ INSERT INTO `events` (`event_id`, `event_title`, `event_desc`, `event_guests`, `
 --
 
 CREATE TABLE IF NOT EXISTS `questions` (
-  `question_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `question_text` text,
   `event_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
@@ -173,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `user_name` varchar(50) COLLATE utf8_bin NOT NULL,
   `user_email` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -182,13 +186,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_desc` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_tel` int(10) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `password`, `role`, `user_photo`, `user_desc`, `create_time`, `user_tel`) VALUES
+INSERT INTO `users` (`id`, `user_name`, `user_email`, `password`, `role`, `user_photo`, `user_desc`, `create_time`, `user_tel`) VALUES
 (1, 'Makenna39', 'Bruen.Arlene@hotmail.com', '$2y$10$Y7G/8x2H0/js2F5YG/OidujY8bRuL5J/ZmdERlPgXCdg0hPPXAMo6', '', NULL, NULL, '0000-00-00 00:00:00', NULL),
 (2, 'gLeannon', 'bKemmer@yahoo.com', '$2y$10$Qly47Qimbop2Do5h1jaZyOvWFuEcNbH95wXXxfTbDqMR/V9QuYG0C', '', NULL, NULL, '0000-00-00 00:00:00', NULL),
 (3, 'mWitting', 'Fletcher33@Jones.com', '$2y$10$9l1Mieg/Cx4DwtIPDB.WTuXoHJgMNkzxoddDQbRsxmrLUPCneZl0u', '', NULL, NULL, '0000-00-00 00:00:00', NULL),
@@ -223,7 +227,10 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `password`, `role`, `
 (32, 'bruna', 'mail@mail.com', 'bruna', 'user', NULL, NULL, '0000-00-00 00:00:00', NULL),
 (33, 'clement', 'mail@mail.com', 'clement', 'user', NULL, NULL, '0000-00-00 00:00:00', NULL),
 (40, 'julien', 'mail@mail.com', 'julien', 'user', NULL, NULL, '0000-00-00 00:00:00', NULL),
-(41, 'emilie', 'mail@mail.com', 'emilie', 'user', NULL, NULL, '0000-00-00 00:00:00', NULL);
+(41, 'emilie', 'mail@mail.com', 'emilie', 'user', NULL, NULL, '0000-00-00 00:00:00', NULL),
+(42, 'davidc', 'mailc@mail.com', '$2y$10$CG1YeeEL7SpJTjVDjZjdLuWlWmo3tOZ3LS46E5JEKqDICdldHiWXm', 'user', NULL, NULL, '2015-09-22 12:06:54', NULL),
+(43, 'louis', 'louis@mail.com', '$2y$10$IhDR1GFPLzlKQmYtSEAKAu18Sx7jNFZModNm2Iwugi2zF5SOMpefu', 'user', NULL, NULL, '2015-09-22 12:46:54', NULL),
+(45, 'gaston', 'gaston@mail.com', '$2y$10$ykVe8Ydj7eM6OdBQgWMQaO7UX4f.H/BkMw52KZzZ02qyJEEj7EaUS', 'user', NULL, NULL, '2015-09-23 09:45:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -234,24 +241,27 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `password`, `role`, `
 CREATE TABLE IF NOT EXISTS `users_events_participation` (
   `guest_id` int(11) NOT NULL,
   `event_id` int(11) NOT NULL,
-  `status` enum('tobeconfirmed','confirmed','rejected','cancelled') COLLATE utf8_bin DEFAULT NULL
+  `status` enum('tobeconfirmed','confirmed','rejected','cancelled') COLLATE utf8_bin DEFAULT NULL,
+  `message` text CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Contenu de la table `users_events_participation`
 --
 
-INSERT INTO `users_events_participation` (`guest_id`, `event_id`, `status`) VALUES
-(8, 5, 'rejected'),
-(10, 7, 'cancelled'),
-(15, 8, 'tobeconfirmed'),
-(16, 5, 'rejected'),
-(16, 6, 'tobeconfirmed'),
-(17, 6, 'cancelled'),
-(18, 4, 'confirmed'),
-(23, 9, 'confirmed'),
-(26, 7, 'rejected'),
-(28, 9, 'tobeconfirmed');
+INSERT INTO `users_events_participation` (`guest_id`, `event_id`, `status`, `message`) VALUES
+(8, 5, 'rejected', ''),
+(10, 7, 'cancelled', ''),
+(15, 8, 'tobeconfirmed', ''),
+(16, 5, 'rejected', ''),
+(16, 6, 'tobeconfirmed', ''),
+(17, 6, 'cancelled', ''),
+(18, 4, 'confirmed', ''),
+(23, 9, 'confirmed', ''),
+(26, 7, 'rejected', ''),
+(28, 9, 'tobeconfirmed', ''),
+(45, 5, NULL, ''),
+(45, 9, NULL, '');
 
 --
 -- Index pour les tables exportées
@@ -261,13 +271,13 @@ INSERT INTO `users_events_participation` (`guest_id`, `event_id`, `status`) VALU
 -- Index pour la table `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`comment_id`), ADD KEY `fk_questions_event1_idx` (`event_id`), ADD KEY `fk_questions_users1_idx` (`user_id`);
+  ADD PRIMARY KEY (`id`), ADD KEY `fk_questions_event1_idx` (`event_id`), ADD KEY `fk_questions_users1_idx` (`user_id`);
 
 --
 -- Index pour la table `communities`
 --
 ALTER TABLE `communities`
-  ADD PRIMARY KEY (`community_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `communities_members`
@@ -279,19 +289,19 @@ ALTER TABLE `communities_members`
 -- Index pour la table `events`
 --
 ALTER TABLE `events`
-  ADD PRIMARY KEY (`event_id`), ADD KEY `fk_event_users1_idx` (`user_id`), ADD KEY `fk_event_communities1_idx` (`community_id`);
+  ADD PRIMARY KEY (`id`), ADD KEY `fk_event_users1_idx` (`user_id`), ADD KEY `fk_event_communities1_idx` (`community_id`);
 
 --
 -- Index pour la table `questions`
 --
 ALTER TABLE `questions`
-  ADD PRIMARY KEY (`question_id`), ADD KEY `fk_questions_event1_idx` (`event_id`), ADD KEY `fk_questions_users1_idx` (`user_id`);
+  ADD PRIMARY KEY (`id`), ADD KEY `fk_questions_event1_idx` (`event_id`), ADD KEY `fk_questions_users1_idx` (`user_id`);
 
 --
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`), ADD UNIQUE KEY `user_name_UNIQUE` (`user_name`);
+  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `user_name_UNIQUE` (`user_name`);
 
 --
 -- Index pour la table `users_events_participation`
@@ -307,27 +317,27 @@ ALTER TABLE `users_events_participation`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `communities`
 --
 ALTER TABLE `communities`
-  MODIFY `community_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `events`
 --
 ALTER TABLE `events`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
 --
 -- Contraintes pour les tables exportées
 --
@@ -336,36 +346,36 @@ ALTER TABLE `users`
 -- Contraintes pour la table `comments`
 --
 ALTER TABLE `comments`
-ADD CONSTRAINT `fk_questions_event10` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_questions_users10` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_questions_event10` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_questions_users10` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `communities_members`
 --
 ALTER TABLE `communities_members`
-ADD CONSTRAINT `fk_users_has_communities_communities2` FOREIGN KEY (`community_id`) REFERENCES `communities` (`community_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_users_has_communities_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_users_has_communities_communities2` FOREIGN KEY (`community_id`) REFERENCES `communities` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_users_has_communities_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `events`
 --
 ALTER TABLE `events`
-ADD CONSTRAINT `fk_event_communities1` FOREIGN KEY (`community_id`) REFERENCES `communities` (`community_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_event_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_event_communities1` FOREIGN KEY (`community_id`) REFERENCES `communities` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_event_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `questions`
 --
 ALTER TABLE `questions`
-ADD CONSTRAINT `fk_questions_event1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_questions_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_questions_event1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_questions_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `users_events_participation`
 --
 ALTER TABLE `users_events_participation`
-ADD CONSTRAINT `fk_users_has_event_event1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_users_has_event_users1` FOREIGN KEY (`guest_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_users_has_event_event1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_users_has_event_users1` FOREIGN KEY (`guest_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

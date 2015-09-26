@@ -6,7 +6,7 @@ class EventsManager extends \W\Manager\Manager{
   public function getFutureEvents(){
     //$currentDate = date('Y-m-d');
     $currentDate = '2015-01-01';
-    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate ORDER BY e.event_date DESC ";
+    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate ORDER BY e.event_date ASC ";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->execute();
@@ -17,7 +17,28 @@ class EventsManager extends \W\Manager\Manager{
     //$currentDate = date('Y-m-d');
     $currentDate = '2015-01-01';
 
-    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate AND c.id=:community ORDER BY e.event_date DESC";
+    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate AND c.id=:community ORDER BY e.event_date ASC";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':currentdate',$currentDate);
+    $eventQuery->bindValue(':community',$com);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
+  }
+
+  public function getFutureEventDates(){
+    //$currentDate = date('Y-m-d');
+    $currentDate = '2015-01-01';
+    $query = "SELECT DISTINCT event_date from events WHERE 'event_date'>=:currentdate";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':currentdate',$currentDate);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
+  }
+
+  public function getFutureEventDatesbyCom($com){
+    //$currentDate = date('Y-m-d');
+    $currentDate = '2015-01-01';
+    $query = "SELECT DISTINCT event_date from events WHERE 'event_date'>=:currentdate AND community_id=:community";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->bindValue(':community',$com);
@@ -36,7 +57,7 @@ class EventsManager extends \W\Manager\Manager{
     }
 
     public function getEventGuests($id){
-    $query = "select e.event_title, e.event_desc, e.event_date, e.event_time, e.event_location, e.event_image, e.user_id, uep.guest_id, uep.message, u.user_name
+    $query = "select u.user_name, u.id, uep.message, uep.status
               from events e
               join users_events_participation uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
@@ -47,6 +68,19 @@ class EventsManager extends \W\Manager\Manager{
     $eventQuery->execute();
     return $eventQuery->fetchAll();
   }
+
+  public function getEventInfo($id){
+    $query = "select e.event_title, e.event_desc, e.event_guests, e.event_date, e.event_time, e.event_location, e.event_image, e.user_id, u.user_name, e.community_id, c.com_name, c.com_shortname
+              from events e
+              join communities c on (e.community_id = c.id)
+              join users u on (e.user_id = u.id)
+              WHERE e.id=:id";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':id',(int)$id);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
+  }
+
 
   public static function getValidationFilters(){
     return array(

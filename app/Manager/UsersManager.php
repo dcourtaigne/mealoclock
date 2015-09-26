@@ -46,10 +46,11 @@ class UsersManager extends \W\Manager\UserManager{
   }
 
   public function getUserParticipations($id){
-    $query = "select e.event_title, e.event_desc, e.event_date, e.event_time, e.event_location, e.event_image
+    $query = "select e.event_title, e.event_desc, e.event_date, e.event_time, e.event_location, e.event_image, u2.user_name
               from events e
               join users_events_participation uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
+              join users u2 on (e.user_id = u2.id)
               WHERE u.id=:id
               ORDER BY e.event_date ASC";
     $eventQuery = $this->dbh->prepare($query);
