@@ -122,7 +122,7 @@ class UsersController extends Controller{
     }
 
   }
-
+//méthode modification de profile
 public function updateProfile(){
     $authObj = new AuthentificationManager();
     $userLogin = $authObj->getLoggedUser();
