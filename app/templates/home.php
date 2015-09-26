@@ -17,8 +17,8 @@
     <section class="row text-center">
 
       <a href="#">
-        <article class="col-xs-6 col-sm-3 col-md-3 vertClair color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/vegetarian.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social">
+        <article class="col-xs-6 col-sm-3 col-md-3 vege color-white paddingTB20">
+          <img src="<?= $this->assetUrl('img/vege.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social">
             <div class="caption hidden-xs">
               <h3>5 fruits</h3>
               <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
@@ -28,7 +28,7 @@
 
 
       <a href="#">
-        <article class="col-xs-6 col-sm-3 col-md-3 vertFonce color-white paddingTB20">
+        <article class="col-xs-6 col-sm-3 col-md-3 vegan color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo communauté végans" class="img-responsive center-block social">
           <div class="caption hidden-xs">
             <h3>Animals</h3>
@@ -38,8 +38,8 @@
       </a>
 
       <a href="#">
-        <article class="col-xs-6 col-sm-3 col-md-3 orange color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/gluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social">
+        <article class="col-xs-6 col-sm-3 col-md-3 ssgluten color-white paddingTB20">
+          <img src="<?= $this->assetUrl('img/ssgluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social">
           <div class="caption hidden-xs">
             <h3>gluten</h3>
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
@@ -49,8 +49,8 @@
 
 
       <a href="#">
-        <article class="col-xs-6 col-sm-3 col-md-3 bleuLactose color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/lactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social">
+        <article class="col-xs-6 col-sm-3 col-md-3 sslactose color-white paddingTB20">
+          <img src="<?= $this->assetUrl('img/sslactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social">
           <div class="caption hidden-xs">
             <h3>vaches</h3>
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>

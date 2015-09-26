@@ -4,9 +4,11 @@
   $.get('eventAjax',function(data){
   console.log('OK');
   console.log(data);
-   var $eventList= $("<ul/>");;
+    for (var i=0; i<data.length ; i++){
+      dateArray[i]=data[i].event_date;
+    }
+   /*var $eventList= $("<ul/>");;
     $eventList.addClass('list-unstyled');
-      for (var i=0; i<data.length ; i++){
         dateArray[i] = data[i].event_date;
         if(dateArray[i] !== dateArray[i-1] || i == 0 ){
         var $eventInfo= $('<li/>')
@@ -34,7 +36,8 @@
         $eventInfo.prependTo($eventList);
         $('<br>').appendTo($eventList);
       }
-      $("#event_list").html($eventList);
+
+      $("#event_list").html($eventList);*/
 
       console.log(dateArray);
     })

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 25 Septembre 2015 à 14:42
+-- Généré le :  Sam 26 Septembre 2015 à 11:52
 -- Version du serveur :  5.6.24
 -- Version de PHP :  5.6.8
 
@@ -57,18 +57,19 @@ INSERT INTO `comments` (`id`, `comment_text`, `event_id`, `user_id`) VALUES
 
 CREATE TABLE IF NOT EXISTS `communities` (
   `id` int(11) NOT NULL,
-  `com_name` varchar(150) DEFAULT NULL
+  `com_name` varchar(150) DEFAULT NULL,
+  `com_shortname` varchar(100) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `communities`
 --
 
-INSERT INTO `communities` (`id`, `com_name`) VALUES
-(1, 'Végétariens'),
-(2, 'Vegans'),
-(3, 'Sans Gluten'),
-(4, 'Sans Lactose');
+INSERT INTO `communities` (`id`, `com_name`, `com_shortname`) VALUES
+(1, 'Végétariens', 'vege'),
+(2, 'Vegans', 'vegan'),
+(3, 'Sans Gluten', 'ssgluten'),
+(4, 'Sans Lactose', 'sslactose');
 
 -- --------------------------------------------------------
 

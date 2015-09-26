@@ -1,16 +1,15 @@
  var dateArray = [];
 
  var community = $(".container-fluid[data-type=com]").attr("data-id")
- var classCom = $(".container-fluid[data-type=com]").attr("data-class")
  //debugger;
 
   $.get('eventAjaxCom',{'com':community},function(data){
     console.log(data);
-    var $eventList= $("<ul/>");;
-    $eventList.addClass('list-unstyled');
+    /*var $eventList= $("<ul/>");;
+    $eventList.addClass('list-unstyled');*/
       for (var i=0; i<data.length ; i++){
-        dateArray[i] = data[i].event_date;
-        if(dateArray[i] !== dateArray[i-1] || i == 0 ){
+        dateArray[i] = data[i].event_date; }
+       /* if(dateArray[i] !== dateArray[i-1] || i == 0 ){
         var $eventInfo= $('<li/>')
             $eventInfo.attr('id', data[i].event_date)
             $eventInfo.addClass('row center')
@@ -36,7 +35,7 @@
         $eventInfo.prependTo($eventList);
         $('<br>').appendTo($eventList);
       }
-      $("#event_list").html($eventList);
+      $("#event_list").html($eventList);*/
 
       console.log(dateArray);
     })

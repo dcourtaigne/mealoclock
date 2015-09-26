@@ -3,6 +3,7 @@
 namespace Controller;
 use \W\Controller\Controller;
 use Manager\EventsManager;
+use Manager\CommunitiesManager;
 
 class ReadController extends Controller{
 
@@ -18,81 +19,65 @@ class ReadController extends Controller{
   }
 
   public function showEventsPage(){
-    /*$eventsObj = new EventsManager();
+    $eventsObj = new EventsManager();
     $events = $eventsObj->getFutureEvents();
+    $events = Controller::getFrenchDate($events);
+    //var_dump($events); echo '<br>';
     $lastDate="";
-    $results=[]
+    $results=[];
+
     for ($i = 0 ; $i<count($events); $i++ ){
-      $dateStr = $events[$i]['event_date'];
-      setlocale (LC_TIME, 'fr_FR.utf8','fra');
-      $timestamp = strtotime($dateStr);
-      $dateFR = strftime("%d %B %Y", $timestamp);
-    //var_dump($dateFR);
-      $events[$i]['dateFR'] = $dateFR;
-
-      $results[$dateStr] = $events[$i]
-
-    }*/
-    $this->show('events');
+      if($i == 0 || $events[$i]['event_date'] !== $events[$i-1]['event_date']){
+      $results[$events[$i]['event_date']][0]= $events[$i];
+      }else{
+      $results[$events[$i-1]['event_date']][$i]= $events[$i];
+      }
+    }
+     //var_dump($results);
+    $this->show('events',['events'=>$results]);
   }
 
   public function showComPage($com){
     $community=[];
-    switch ($com) {
-      case 'vege':
-        $community['name'] = "Végétariens";
-        $community['css_id'] = "vegetarian";
-        $community['css_class'] = "vertClair";
-        $community['sql_id'] = "1";
-        break;
-        case 'vegan':
-        $community['name'] = "Vegans";
-        $community['css_id'] = "vegan";
-        $community['css_class'] = "vertFonce";
-        $community['sql_id'] = "2";
-        break;
-        case 'ssgluten':
-        $community['name'] = "Sans Gluten";
-        $community['css_id'] = "gluten";
-        $community['css_class'] = "orange";
-        $community['sql_id'] = "3";
-        break;
-        case 'sslactose':
-        $community['name'] = "Sans Lactose";
-        $community['css_id'] = "lactose";
-        $community['css_class'] = "bleuLactose";
-        $community['sql_id'] = "4";
-        break;
+    $comObj = new CommunitiesManager();
+    $communities = $comObj->findAll();
 
-      default:
-        # code...
-        break;
+    foreach ($communities as $singleCom) {
+      if($com == $singleCom['com_shortname']){
+        $community = $singleCom;
+      }
     }
-    $this->show('community',['community'=>$community]);
+
+    $eventsObj = new EventsManager();
+    $events = $eventsObj->getFutureEventsbyCom(intval($community['id']));
+    $events = Controller::getFrenchDate($events);
+    //var_dump($events); echo '<br>';
+    $lastDate="";
+    $results=[];
+
+    for ($i = 0 ; $i<count($events); $i++ ){
+      if($i == 0 || $events[$i]['event_date'] !== $events[$i-1]['event_date']){
+      $results[$events[$i]['event_date']][0]= $events[$i];
+      }else{
+      $results[$events[$i-1]['event_date']][$i]= $events[$i];
+      }
+    }
+    $this->show('community',['community'=>$community, 'events'=>$results]);
   }
 
   public function getEventsAjax(){
     $eventsObj = new EventsManager();
-    $events = $eventsObj->getFutureEvents();
-    $eventsFR = Controller::getFrenchDate($events);
-    $this->showJson($eventsFR);
+    $eventDates = $eventsObj->getFutureEventDates();
+    //var_dump($eventDates);
+    $this->showJson($eventDates);
   }
 
   public function getEventsAjaxCom(){
     if(isset($_GET['com'])){
       $com = intval($_GET['com']);
       $eventsObj = new EventsManager();
-    $events = $eventsObj->getFutureEventsbyCom($com);
-
-    for ($i = 0 ; $i<count($events); $i++ ){
-      $dateStr = $events[$i]['event_date'];
-      setlocale (LC_TIME, 'fr_FR.utf8','fra');
-      $timestamp = strtotime($dateStr);
-      $dateFR = strftime("%d %B %Y", $timestamp);
-    //var_dump($dateFR);
-      $events[$i]['dateFR'] = $dateFR;
-    }
-    $this->showJson($events);
+      $events = $eventsObj->getFutureEventDatesbyCom($com);
+      $this->showJson($events);
     }
   }
 /*
@@ -108,7 +93,6 @@ class ReadController extends Controller{
     $event = $eventObj->getEventInfo($thisId);
     $event = Controller::getFrenchDate($event);
     $event['guests'] = $eventObj->getEventGuests($thisId);
-    var_dump($event);
     $this->show('event',['event'=>$event]);
 
   }

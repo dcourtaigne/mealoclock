@@ -6,7 +6,7 @@ class EventsManager extends \W\Manager\Manager{
   public function getFutureEvents(){
     //$currentDate = date('Y-m-d');
     $currentDate = '2015-01-01';
-    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate ORDER BY e.event_date DESC ";
+    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate ORDER BY e.event_date ASC ";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->execute();
@@ -17,7 +17,28 @@ class EventsManager extends \W\Manager\Manager{
     //$currentDate = date('Y-m-d');
     $currentDate = '2015-01-01';
 
-    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate AND c.id=:community ORDER BY e.event_date DESC";
+    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate AND c.id=:community ORDER BY e.event_date ASC";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':currentdate',$currentDate);
+    $eventQuery->bindValue(':community',$com);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
+  }
+
+  public function getFutureEventDates(){
+    //$currentDate = date('Y-m-d');
+    $currentDate = '2015-01-01';
+    $query = "SELECT DISTINCT event_date from events WHERE 'event_date'>=:currentdate";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':currentdate',$currentDate);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
+  }
+
+  public function getFutureEventDatesbyCom($com){
+    //$currentDate = date('Y-m-d');
+    $currentDate = '2015-01-01';
+    $query = "SELECT DISTINCT event_date from events WHERE 'event_date'>=:currentdate AND community_id=:community";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->bindValue(':community',$com);

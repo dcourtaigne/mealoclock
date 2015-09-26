@@ -20,22 +20,22 @@
           </section>
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <section id="event_list" class="marginTB20">
-            <!--  <ul class="list-unstyled">
-                        <?php /*foreach($events as $event)
-                  for($i=0;$i<count($events);$i++):?>
-                    <?php if($events[$i]['event_date'] !== $events[$i-1]['event_date'] || $i == 0): ?>
-                      <li class="row center">
-                        <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 vertClair'>
-                          <p class='text-center h4 color-white'><?= $this->e($events[$i]['dateFR'])?></p>
-                        </div>
-                    <?php endif ?>
-                  <?php $this->insert('partials/events-list',['event'=>$event]);?>
+              <ul class="list-unstyled">
+                <?php foreach($events as $event):?>
+                  <li class="row center" id="<?= $this->e($event[0]['event_date'])?>">
+                    <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 vege'>
+                      <p class='text-center h4 color-white'><?= $this->e($event[0]['dateFR'])?></p>
+                    </div>
+                    <?php foreach($event as $singleEvent){
+                      $this->insert('partials/events-list',['singleEvent'=>$singleEvent]);
+                    }?>
                   </li>
-                        <?php endfor */?>
-            </ul> -->
+                <?php endforeach ?>
+            </ul> 
             </section>
           </div>
         </section>
+
 
     <script type="text/javascript" src="<?= $this->assetUrl('js/datepicker_moc.js')?>"></script>
     <script type="text/javascript" src="<?= $this->assetUrl('js/datepicker_fr.js')?>"></script>
