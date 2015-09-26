@@ -49,7 +49,7 @@
                 </div>
             </section>
 
-            <section class='row text-left gluten color-white'>
+            <section class='row text-left ssgluten color-white'>
                 <div class="col-xs-12 col-md-5 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Participez, dégustez, commentez.</strong></h3>
                     <p class="text-justify">Meal ‘o clock est basé sur la confiance mais la confiance ne suffit pas toujours.
