@@ -8,7 +8,7 @@
 
           <!-- rangée pitch communauté -->
     <section id="community" class="row">
-      <article class="col-xs-12 text-center paddingTB40">
+      <article class="col-xs-12 text-center paddingTB40 color-white">
         <h2> Nos communautés </h2>
         <p class="text-center">Meal'o clock regroupe 4 régimes alimentaires principaux. Choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir, consultez les évènements à venir, le profil de nos membres, etc !</p>
       </article>
