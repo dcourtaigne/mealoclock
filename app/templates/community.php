@@ -5,13 +5,13 @@
   <section id="<?= $this->e($community['com_shortname'])?>" data-type="com" data-id="<?= $this->e($community['id'])?>" data-class="<?= $this->e($community['com_shortname'])?>" class="container-fluid">
 
      <section class="row <?= $this->e($community['com_shortname'])?>">
-        <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 marginTB20 ">
+        <div class="col-xs-2 col-sm-2 marginTB20 ">
           <i class="glyphicon glyphicon-leaf logo hidden-sm hidden-md hidden-lg img-responsive marginTop10
         "></i>
           <img src="<?= $this->assetUrl('img/'.$community['com_shortname'].'.png')?>" class="hidden-xs img-responsive thumbnail">
         </div>
 
-        <article class="col-xs-10 col-sm-9 col-md-9 col-lg-9 color-white marginTB20">
+        <article class="col-xs-10 color-white marginTB20">
           <h2 class="marginTB20">Bienvenue dans l'espace <?= $this->e($community['com_name'])?></h2>
           <p class='hidden-xs marginTB20 text-left'>Ami végétarien, par choix ou par obligation, tu rejettes la consommation de viande au profil de végétaux, légumineux, graminés, racines, fruits et autres merveilles que la nature nous offre ! <br>Tu n’es pourtant pas contre un petit oeuf à la coque ou une tartine de miel tant que les poules et les abeilles n’ont pas été maltraitées. Question de principe. Partage ou découvre ce mode alimentaire connu de tous mais pratiqué par peu.</p>
         </article>
