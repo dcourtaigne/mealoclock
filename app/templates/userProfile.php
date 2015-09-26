@@ -22,13 +22,23 @@
             <!-- commentaires -->
 
             <section id="comments" class="row container-fluid">
-                <div class="col-xs-4">
-                    <img class="img-thumbnail" src="http://lorempixel.com/80/80">
-                </div>
-                <div class="col-xs-8">
-                    <p>"Super soirée fondue avec Gaston, on remet ça bientôt!"</p>
-                    <a href="#"><strong> - Barbe Bleue</strong></a>
-                </div>
+                <ul class="list-unstyled list-inline">
+                    <li><img class="img-rounded" src="http://lorempixel.com/50/50"></li>
+                    <li><a href="#"><strong>Barbe Bleue</strong></a>
+                    <br><p>"Super soirée fondue avec Gaston, on remet ça bientôt!"</p></li>
+                </ul>
+                <hr>
+                <ul class="list-unstyled list-inline">
+                    <li><img class="img-rounded" src="http://lorempixel.com/50/50"></li>
+                    <li><a href="#"><strong>ChouFleur</strong></a><br>
+                    <p>"C'était génial, comme d'habitude :) Vivement VeggGiving!"</p></li>
+                </ul>
+                <hr>
+                <ul class="list-unstyled list-inline">
+                    <li><img class="img-rounded" src="http://lorempixel.com/50/50"></li>
+                    <li><a href="#"><strong>Grand Schtroumpf</strong></a><br>
+                    <p>"J'ignorais qu'on pouvait à ce point savourer des brocolis!"</p></li>
+                </ul>
             </section>
 
             <!-- tableau d'exemple en placement -->

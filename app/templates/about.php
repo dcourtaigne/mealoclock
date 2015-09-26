@@ -17,7 +17,7 @@
 
             <section class='row text-left vegan color-white'>
                 <div class="col-xs-12 col-md-8 ">
-                    <img src="img/vous_etes-B.png" alt="illustration de la diversité du genre humain" class="img-responsive">
+                    <img src="<?= $this->assetUrl('img/vous_etes-B.png')?>" alt="illustration de la diversité du genre humain" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-md-4 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Soyez vous-même !</strong></h3>
@@ -33,13 +33,13 @@
                     Avec profils de nos membres, apprenez à connaître vos futurs invités. Et si vous ne souhaitez pas d’un participant à votre évènement, refusez sa demande.</p>
                 </div>
                  <div class="col-xs-12 col-md-7 noPadding ">
-                    <img src="img/maitre-b.png" alt="illustration de superhéro" class="img-responsive">
+                    <img src="<?= $this->assetUrl('img/maitre-b.png')?>" alt="illustration de superhéro" class="img-responsive">
                 </div>
             </section>
 
             <section class='row text-left sslactose color-white'>
                 <div class="col-xs-12 col-md-8 ">
-                    <img src="img/first_step-B.png" alt="illustration d'une tablette avec des bulles de BD" class="img-responsive">
+                    <img src="<?= $this->assetUrl('img/first_step-B.png')?>" alt="illustration d'une tablette avec des bulles de BD" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-md-4 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Faites le premiers pas !</strong></h3>
@@ -58,12 +58,12 @@
                         ou à contrario, pour éviter à d’autres, une mauvaise expérience avec l'un de nos membres. On est tous gagnant en donnant son avis.</p>
                 </div>
                  <div class="col-xs-12 col-md-7 ">
-                    <img src="img/commenter-B.png" alt="illustration de foule donnant son avis" class="img-responsive">
+                    <img src="<?= $this->assetUrl('img/commenter-B.png')?>" alt="illustration de foule donnant son avis" class="img-responsive">
             </section>
 
             <section class='row text-left rose color-white'>
                 <div class="col-xs-12 col-md-8 ">
-                    <img src="img/partager-B.png" alt="illustration d'un groupe de personne autour d'un stand de burger" class="img-responsive">
+                    <img src="<?= $this->assetUrl('img/partager-B.png')?>" alt="illustration d'un groupe de personne autour d'un stand de burger" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-md-4 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Des repas, des rencontres.</strong></h3>

@@ -73,7 +73,8 @@ $('#loginform').submit(function ( e ) { // affectation d'un listener sur l'evene
     e.preventDefault();// empeche la soumission du formulaire
 
     var fromData = $(this).serialize();
-    //console.log(fromData); // récupère toutes les données du formulaire et les encode au format URL ( chaine de caracteres )
+
+    console.log(fromData); // récupère toutes les données du formulaire et les encode au format URL ( chaine de caracteres )
     $.post( // fonction jQuery pour la requete ajax en utilisant la methode HTTP POST
       $(this).attr('action'), // recupere l'url de soumission du formulaire
       fromData, // les données encodées du formulaire
