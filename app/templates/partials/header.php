@@ -43,7 +43,6 @@
                         </ul>
                     </li>
                     <li class=""><a href="<?= $this->url('events'); ?>">Evénements</a></li>
-                    <li class=""><a href="http://jecuisinesansgluten.com/">Blog</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <?php if($w_user==NULL):?>

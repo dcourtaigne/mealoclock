@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
   <section id="entete" class="container-fluid">
     <div class="row">
-      <img src="<?= $this->assetUrl('img/food1.jpg')?>" class="center-block img-responsive" alt="salade">
+      <img src="<?= $this->assetUrl('img/food_700.jpg')?>" class="center-block img-responsive" alt="salade">
     </div>
 
           <!-- rangée pitch communauté -->
@@ -62,7 +62,7 @@
 
     <section id="blog" class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 noPadding">
-          <img src="<?= $this->assetUrl('img/cake_blog.jpg')?>" class="img-responsive" alt='cake miel noisttes sans gluten'>
+          <img src="<?= $this->assetUrl('img/cake_crop.jpg')?>" class="img-responsive" alt='cake miel noisttes sans gluten'>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 color-white">
           <h4 class="text-left">Sans Gluten... c'est bon quand même</h4>

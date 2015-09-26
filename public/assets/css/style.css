@@ -9,13 +9,11 @@ font-family: 'Libre Baskerville', serif;
 
 h2 {
   font-weight: 700;
-
 }
 
 #blog h4 {
   font-family: 'Fredericka the Great', cursive;
   font-size: 2.5em;
-
 }
 
 p {
@@ -23,12 +21,16 @@ p {
   font-size: 1.2em;
 }
 
+#comments p{
+  display: inline;
+}
+
 #community p {
-      font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 footer p {
-      font-size: 1em;
+  font-size: 1em;
 }
 
 /* style de la modale */
@@ -349,6 +351,9 @@ margin-top: 0px;
  display: inline;
 }
 
+#thumbnail {
+  padding: 0;
+}
 /* ----------------------page event------------------------------- */
 
 .thumbnail {                 /* nvl classe */
@@ -495,7 +500,7 @@ footer{
     text-align: left; /*modif 25/09/15*/
   }
   #blog h4{
-    font-size: 3.5em;
+    font-size: 2.5em;
   }
 }
 
@@ -504,7 +509,8 @@ footer{
 @media (min-width: 992px){
 
   #blog h4{
-    font-size: 3.9em;
+    font-size: 3em;
+    margin-top: 20px;
   }
 
 }
@@ -536,6 +542,7 @@ footer{
   }
 
   #blog h4 {
-    font-size: 4.5em;
+    font-size: 3.5em;
+    margin-top: 40px;
   }
 }
