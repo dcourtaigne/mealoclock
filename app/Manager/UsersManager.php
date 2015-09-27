@@ -65,12 +65,7 @@ class UsersManager extends \W\Manager\UserManager{
     WHERE
     u.id=c.user_id=e.user_id=uep.guest_id=cm.user_id=:id &&
 */
-
-
-
   }
-
-
 
 
 }

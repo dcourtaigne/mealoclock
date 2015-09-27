@@ -3,6 +3,5 @@
   <?php if($community['id'] == $com['id']):?>
   checked = "checked"
   <?php endif ?>
-<?php endforeach ?>
-> <?=$this->e($community['com_name'])?>
+<?php endforeach ?> name="community_id[]"><?=$this->e($community['com_name'])?>
 

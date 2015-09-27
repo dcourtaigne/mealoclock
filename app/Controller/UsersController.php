@@ -4,6 +4,7 @@ use \W\Controller\Controller;
 use \W\Security\AuthentificationManager;
 use Manager\UsersManager;
 use Manager\CommunitiesManager;
+use Manager\Communities_membersManager;
 
 
 class UsersController extends Controller{
@@ -126,13 +127,52 @@ class UsersController extends Controller{
 public function updateProfile(){
     $authObj = new AuthentificationManager();
     $userLogin = $authObj->getLoggedUser();
+    $userObj = new UsersManager();
+    $userCom = $userObj->getUserCommunities($userLogin['id']);
+
+
     if($userLogin){
-      $userObj = new UsersManager();
-      $user = $userObj->find($userLogin['id']);
-      $user['com'] = $userObj->getUserCommunities($userLogin['id']);
       $comObj = new CommunitiesManager();
       $communities = $comObj->findAll();
-      var_dump($user);
+
+      if (!empty($_POST)){
+        //var_dump($_POST);
+        $profile = [];
+        $comMemberObj = new Communities_membersManager();
+        //var_dump($userCom);
+        $profile['user_desc']=filter_var($_POST['user_desc'], FILTER_SANITIZE_STRING);
+        $userObj->update($profile, $userLogin['id']);
+
+        $selectedCom = $_POST['community_id'];
+        $previousCom = [];
+
+        foreach ($userCom as $com) {
+          $previousCom[] = $com['id'];
+        }
+        for($i = 0 ; $i<count($previousCom);$i++){
+          if(!in_array($previousCom[$i],$selectedCom)){
+            $comMemberObj->deleteComMembership($userLogin['id'], $previousCom[$i]);
+          }
+        }
+
+        for($i = 0 ; $i<count($selectedCom);$i++){
+          if(!in_array($selectedCom[$i],$previousCom)){
+            $comToAdd = ['user_id'=>$userLogin['id'], 'community_id'=> $selectedCom[$i]];
+            $comMemberObj->insert($comToAdd);
+          }
+        }
+
+        header('Location: '.$this->generateUrl('userProfile',['id'=>$userLogin['id']]));
+
+        }
+
+
+
+
+      
+      $user = $userObj->find($userLogin['id']);
+      $user['com'] = $userCom;
+      //var_dump($user);
       $this->show('updateProfile',['user'=>$user , 'communities'=>$communities]);
     }else{
       $this->show('requireLogin');

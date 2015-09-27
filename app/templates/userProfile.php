@@ -16,6 +16,15 @@
                     <p> Membre depuis le : <?=$this->e($thisUser['create_time'])?></p>
                     <p> Repas organisé(s) : <?= $this->e(count($thisUser['eventsOrg']))?> </br>
                             Repas participé(s) : <?= $this->e(count($thisUser['eventsPart']))?></p>
+                    <p>Présentation: <?=$this->e($thisUser['user_desc'])?></p>
+
+                    <p>Communautés favorites: </p>
+                    <ul>
+                        <?php  foreach($thisUser['communities'] as $com) {
+                           echo "<li>".$com['com_name']."</li>";
+                        }
+                        ?>
+                    </ul>
                 </div>
             </div>
             
@@ -45,11 +54,11 @@
             <!-- tableau d'exemple en placement -->
 
             <section id="evenementProfile" class="row container-fluid">
-                <h2>Les prochains événements <?php if($w_user !== $thisUser['id']) echo 'de '.$this->e($thisUser['user_name'])?></h2>
+                <h2>Les prochains événements <?php if($w_user['id'] !== $thisUser['id']) echo 'de '.$this->e($thisUser['user_name'])?></h2>
                 <?php if($w_user['id'] == $thisUser['id']):?>
                     <ul class="list-unstyled list-inline">
                         <li><a href="#" class="btn btn-default" role="button">Gérer mes événements</a></li>
-                        <li><a href="#" class="btn btn-primary" role="button">Créer un nouvel événement</a></li>
+                        <li><a href="<?=$this->url('editEvent', ['action' => 'create'])?>" class="btn btn-primary" role="button">Créer un nouvel événement</a></li>
                     </ul>
                 <?php endif ?>
                 <section>

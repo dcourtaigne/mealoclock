@@ -45,11 +45,11 @@
 			  		</div>
 
 			  		<div class="form-group">
-						<input type="number" class="form-control" placeholder="Nombre de participants" name="event_guests" value="<?=$this->e($event['event_guests'])?>">
+						<input type="number" class="form-control" placeholder="Nombre de participants" min="1" max="99" name="event_guests" value="<?=$this->e($event['event_guests'])?>">
 			  		</div>
 
 			  		<div class="text-center">
-						<input type="submit" class="btn btn-primary btn-lg" value="<?= $this->e($submitName) ?>" name="submit" min="1" max="99">
+						<input type="submit" class="btn btn-primary btn-lg" value="<?= $this->e($submitName) ?>" name="submit" >
 					</div>
 				</form>
 		</div>

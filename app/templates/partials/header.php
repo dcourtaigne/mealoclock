@@ -49,7 +49,7 @@
                 <li id="login"><button>Se connecter</button></li>
                 <?php else:?>
                 <li><a href="<?=$this->url('logout')?>">Logout</a></li>
-                <li><a href="<?=$this->url('logout')?>"><?="Bonjour ".ucfirst($w_user['user_name'])?></a></li>
+                <li><a href="<?=$this->url('userProfile',['id'=>$w_user['id']])?>"><?="Bonjour ".ucfirst($w_user['user_name'])?></a></li>
                 <?php endif ?>
                 <?php if($w_user==NULL):?>
                 <li id="inscription"><button>Inscription</button></li>
