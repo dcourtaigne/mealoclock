@@ -8,8 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/style.css')?>">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	</head>
@@ -34,7 +34,7 @@
               <ul class="nav navbar-nav">
                     <li><a href="<?= $this->url('about')?>">Comment ça marche</a></li>
                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catégories <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Communautés<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="<?= $this->url('eventsbycom',['com'=>'vege']); ?>">Végétarien</a></li>
                             <li><a href="<?= $this->url('eventsbycom',['com'=>'vegan']); ?>">Végan</a></li>

@@ -7,6 +7,8 @@
     </div>
 
           <!-- rangée pitch communauté -->
+    <div>
+      <hr>
     <section id="community" class="row">
       <article class="col-xs-12 text-center paddingTB40 color-white">
         <h2> Nos communautés </h2>
@@ -20,7 +22,7 @@
         <article class="col-xs-6 col-sm-3 vege color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/vege.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social">
             <div class="caption hidden-xs">
-              <h3>5 fruits</h3>
+              <!-- <h3>5 fruits</h3> -->
               <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
             </div>
         </article>
@@ -31,7 +33,7 @@
         <article class="col-xs-6 col-sm-3 vegan color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo communauté végans" class="img-responsive center-block social">
           <div class="caption hidden-xs">
-            <h3>Animals</h3>
+            <!-- <h3>Animals</h3> -->
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
           </div>
         </article>
@@ -41,7 +43,7 @@
         <article class="col-xs-6 col-sm-3 ssgluten color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/ssgluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social">
           <div class="caption hidden-xs">
-            <h3>gluten</h3>
+            <!-- <h3>gluten</h3> -->
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
           </div>
         </article>
@@ -52,13 +54,15 @@
         <article class="col-xs-6 col-sm-3 sslactose color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/sslactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social">
           <div class="caption hidden-xs">
-            <h3>vaches</h3>
+            <!-- <h3>vaches</h3> -->
             <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
           </div>
         </article>
       </a>
 
     </section>
+    </div>
+    <hr>
 
     <section id="blog" class="row">
         <div class="col-xs-12 col-md-8 noPadding">
@@ -70,8 +74,9 @@
           <a class="btn btn-info btn-lg marginTB20" href="http://jecuisinesansgluten.com/" role="button">J'y vais !</a>
         </div>
 
-      </section>
+    </section>
   </section>
+  <hr>
 
 
 <?php $this->stop('main_content') ?>

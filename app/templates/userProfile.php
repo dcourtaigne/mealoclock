@@ -5,25 +5,32 @@
         <section id="User" class="container-fluid">
             <div class="row">
            <!-- debut de la info du profil -->
-                <div id="thumbnail" class="col-xs-12">
-                    <img src="http://lorempixel.com/1200/300" alt="photo du profil" class="img-responsive">
+                <div id="thumbnail" class="col-xs-4 marginTB20 text-center">
+                    <img src="http://lorempixel.com/250/250" alt="photo du profil" class="img-responsive thumbnail">
+                    <div>
+                    <i class="glyphicon glyphicon-camera">Modifier ma photo</i>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-7">
+                </div>
+                
+                <div class="col-xs-8">
                     <h2><?=$thisUser['greeting']?></h2>
                     <?php if($w_user['id'] == $thisUser['id']):?>
                     <p><a href="<?= $this->url('updateProfile')?>" class="btn btn-default" role="button">Compléter mon profil</a></p>
                     <?php endif ?>
+                    
                     <p> Membre depuis le : <?=$this->e($thisUser['create_time'])?></p>
                     <p> Repas organisé(s) : <?= $this->e(count($thisUser['eventsOrg']))?> </br>
                             Repas participé(s) : <?= $this->e(count($thisUser['eventsPart']))?></p>
-                    <p>Présentation: <?=$this->e($thisUser['user_desc'])?></p>
+                </div>     
 
+                <div class="col-xs-12">
+                    <blockquote><?=$this->e($thisUser['user_desc'])?></blockquote>
                     <p>Communautés favorites: </p>
-                    <ul>
+                    <ul class="list-unstyled list-inline">
                         <?php  foreach($thisUser['communities'] as $com) {
-                           echo "<li>".$com['com_name']."</li>";
-                        }
-                        ?>
+                           echo "<li><img src='".$this->assetUrl('img/'.$com['com_shortname'].'_thumb.png')."'class='img-thumbnail'></li>";
+                            }
+                            ?>     
                     </ul>
                 </div>
             </div>

@@ -20,12 +20,6 @@
 						<input type="email" class="form-control" name="user_email" value="<?= $this->e($user['user_email'])?>" disabled="true">
 				  	</div>
 
-				  	<div class="form-group photoUpload">
-						<label for="photo">Photo</label>
-						<input type="file" name="photo">
-				  		<button type="submit" class="btn btn-primary btn-xs">Ok</button>
-				  	</div>
-
 					<div class="marginTB20">
 						<label for="favcommunaute">Communauté(s) favorite(s)</label></br>
 						<?php foreach ($communities as $community){
