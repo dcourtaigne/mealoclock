@@ -101,7 +101,7 @@ label{
 }
 
 /* overlay + modal styling */
-#overlay {
+#overlay, #modalAttend{
      display: none;
      position: absolute;
      left: 0px;
@@ -116,7 +116,7 @@ label{
   margin: auto;
   text-align: left;
 }
-#button{
+#button, #buttonAttend{
   position: absolute;
   top: -8px;
   right: -8px;

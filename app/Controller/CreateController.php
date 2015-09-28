@@ -126,6 +126,9 @@ class CreateController extends Controller{
 
   }
 
+public function eventRequest(){
+
+}
 
 
 

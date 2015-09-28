@@ -72,7 +72,7 @@ class EventsManager extends \W\Manager\Manager{
               from events e
               join users_events_participation uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
-              WHERE e.id=:id
+              WHERE e.id=:id AND uep.status='confirmed'
               ORDER BY u.user_name ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':id',(int)$id);
@@ -118,6 +118,20 @@ class EventsManager extends \W\Manager\Manager{
     $eventUpdate->bindValue(':pic',$newfichier);
     $eventUpdate->bindValue(':id',(int)$id);
     $eventUpdate->execute();
+  }
+
+
+  public function getEventRequests($id){
+    $query = "select u.user_name, u.id, uep.message, uep.status
+              from events e
+              join users_events_participation uep on (e.id = uep.event_id)
+              join users u on (uep.guest_id = u.id)
+              WHERE e.id=:id
+              ORDER BY u.user_name ASC";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':id',(int)$id);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
   }
 
 

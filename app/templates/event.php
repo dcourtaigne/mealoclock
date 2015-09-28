@@ -33,7 +33,7 @@
 
 
           <div class="col-xs-12 col-sm-3 col-sm-pull-9 paddingTB20 vertical-center">
-            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 green buttonEvent"><a href="#"><strong>Participer à l'événement</strong></a></button>
+            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 green buttonEvent"><a id="attend"><strong>Participer à l'événement</strong></a></button>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 green buttonEvent"><a href="#"><strong>Poser une question</strong></a></button>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 green buttonEvent"><a href="<?= $this->url('eventsbycom',['com'=>$event[0]['com_shortname']])?>"><strong>Evénements de la communauté</strong></a></button>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 green buttonEvent"><a href="<?= $this->url('events')?>"><strong>Tous les événements</strong></a></button>
@@ -66,5 +66,7 @@
       </section>
 
 </section>
+
+<script type="text/javascript" src="<?= $this->assetUrl('js/attend.js')?>"></script>
 
 <?php $this->stop('main_content') ?>

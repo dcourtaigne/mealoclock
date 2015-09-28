@@ -51,7 +51,7 @@ class UsersManager extends \W\Manager\UserManager{
               join users_events_participation uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
               join users u2 on (e.user_id = u2.id)
-              WHERE u.id=:id
+              WHERE u.id=:id AND uep.status='confirmed'
               ORDER BY e.event_date ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':id',(int)$id);

@@ -8,6 +8,7 @@
     ['GET', '/event/[i:id]', 'Read#showEvent', 'event'],
 
     ['GET|POST', '/event/[create|edit:action]/[i:id]?', 'Create#editEvent', 'editEvent'],
+    ['POST', '/event/attend', 'Create#eventRequest', 'eventRequest'],
     ['GET|POST', '/contact', 'Create#contact', 'contact'],
 
     ['POST', '/login', 'Users#login', 'login'],
