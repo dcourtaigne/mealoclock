@@ -190,6 +190,12 @@ a:link {
     color: #8C091E;
 }
 /* ----------------------------- nav -------------------------*/
+.fixNavigation {
+    z-index: 9999;
+    position: fixed;
+    top: 0; /* Mise en forme */
+    width: 100%; /* <-- Largeur de votre site */
+}
 
 .dropdown-submenu {
     position: relative;
@@ -845,7 +851,7 @@ Style des divs display*/
   margin: auto;
   width: 360px;
   position: relative;
-  text-align: center; 
+  text-align: center;
   border: 4px solid #F5F5F5;
   background-color: white;
 }
@@ -1051,4 +1057,11 @@ footer{
     font-size: 3.5em;
     margin-top: 40px;
   }
+
+  .fixNavigation {
+      z-index: 9999;
+      position: fixed;
+      top: 0; /* Mise en forme */
+      width: 1200px; /* <-- Largeur de votre site */
+      }
 }
