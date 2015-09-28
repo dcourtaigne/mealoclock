@@ -5,7 +5,7 @@
   <section id="<?= $this->e($community['com_shortname'])?>" data-type="com" data-id="<?= $this->e($community['id'])?>" data-class="<?= $this->e($community['com_shortname'])?>" class="container-fluid">
 
      <section class="row <?= $this->e($community['com_shortname'])?>">
-        <div class="col-xs-2 col-sm-2 marginTB20 ">
+        <div class="col-xs-2 marginTB20 ">
           <i class="glyphicon glyphicon-leaf logo hidden-sm hidden-md hidden-lg img-responsive marginTop10
         "></i>
           <img src="<?= $this->assetUrl('img/'.$community['com_shortname'].'.png')?>" class="hidden-xs img-responsive thumbnail">
@@ -17,11 +17,11 @@
         </article>
     </section>
     <section class="row">
-      <article class="col-xs-9 col-sm-10 col-md-10 col-lg-10">
+      <article class="col-xs-9 col-sm-10">
       <h3 class="h4 marginTop20">Evénements à venir</h2>
       </article>
 
-      <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 h4 ">
+      <div class="col-xs-3 col-sm-2 h4 ">
         <a href="<?=$this->url('editEvent', ['action' => 'create'])?>"><i class="btn btn-default glyphicon glyphicon-plus pull-right"></i></a>
       </div>
     </section>
@@ -32,12 +32,12 @@
       <input type="text" id="datepicker"></button>
       <input type="button" value="Liste complète" id="resetDate" /></span>
     </section>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-xs-12">
       <section id="event_list" class="marginTB20">
         <ul class="list-unstyled">
           <?php foreach($events as $event):?>
             <li class="row center " id="<?= $this->e($event[0]['event_date'])?>">
-              <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 <?= $this->e($community['com_shortname'])?>'>
+              <div class='col-xs-12 <?= $this->e($community['com_shortname'])?>'>
                 <p class='text-center h4 color-white'><?= $this->e($event[0]['dateFR'])?></p>
               </div>
               <?php foreach($event as $singleEvent){
