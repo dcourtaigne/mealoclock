@@ -14,8 +14,23 @@
           </article>
 
           <article class="col-xs-12 col-sm-3 col-sm-push-3 col-md-3 col-md-push-3 paddingTB25 text-center">
-            <img src="img/croque-monsieur.jpg" class="img-responsive">
+            <?php if($event[0]['event_image']): ?>
+            <img src="<?=$this->assetUrl('img/event/'.$event[0]['event_image'])?>" class="img-responsive">
+          <?php else:?>
+            <img src="<?=$this->assetUrl('img/event/default.jpg')?>" class="img-responsive">
+          <?php endif ?>
+          <?php if($w_user['id'] == $event[0]['user_id']): ?>
+            <div class="col-xs-12 col-sm-2 form-group photoUpload">
+              <form method='POST' action='<?=$this->url('uploadPhotoEvent',['id'=>$event[0]['id']])?>' enctype="multipart/form-data">
+                <label for="photo">Photo</label>
+                <input type="file" name="photo">
+                <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                <button type="submit" class="btn btn-primary btn-xs">Ok</button>
+              </form>
+            </div>
+            <?php endif ?>
           </article>
+
 
           <div class="col-xs-12 col-sm-3 col-sm-pull-9 paddingTB20 vertical-center">
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 green buttonEvent"><a href="#"><strong>Participer à l'événement</strong></a></button>

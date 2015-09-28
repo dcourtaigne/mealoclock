@@ -19,6 +19,7 @@
 
 
     ['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
-    ['GET', '/eventAjaxCom', 'Read#getEventsAjaxCom', 'eventsajaxcom']
+    ['GET', '/eventAjaxCom', 'Read#getEventsAjaxCom', 'eventsajaxcom'],
+    ['POST', '/uploadphoto/event/[i:id]', 'Create#uploadPhotoEvent', 'uploadPhotoEvent']
 
 	);

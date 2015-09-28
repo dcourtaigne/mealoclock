@@ -110,5 +110,13 @@ class EventsManager extends \W\Manager\Manager{
     return $selectQuery->fetch();
   }
 
+  public function updatePhotoEvent($id,$newfichier){
+    $sql = "UPDATE events SET `event_image`=:pic WHERE id =:id";
+    $eventUpdate = $this->dbh->prepare($sql);
+    $eventUpdate->bindValue(':pic',$newfichier);
+    $eventUpdate->bindValue(':id',(int)$id);
+    $eventUpdate->execute();
+  }
+
 
 }
