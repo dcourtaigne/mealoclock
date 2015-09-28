@@ -75,8 +75,9 @@
         </div>
 
     </section>
+    <hr>
   </section>
-  <hr>
+
 
 
 <?php $this->stop('main_content') ?>
