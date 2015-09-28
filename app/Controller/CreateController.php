@@ -96,6 +96,11 @@ class CreateController extends Controller{
     $this->show('contact');
   }
 
+  public function comment(){
+
+    $this->show('comment');
+  }
+
   public function uploadPhotoEvent($id){
     var_dump($_FILES);
      // la première entrée au téléchargement

@@ -279,12 +279,12 @@ a:link {
 
 /* ----------------------------- class couleur -------------------------*/
 
-.bordeauNav {
-    background-color: #8C091E;
+.gris {
+  background-color: #D4D4D4;
 }
 
-.creme {
-    background-color: #F5F5D3;
+.bordeauNav {
+    background-color: #8C091E;
 }
 
 .ssgluten {
@@ -297,10 +297,6 @@ a:link {
 
 .vegan{
     background-color:#993366 ;  /*nv class*/
-}
-
-.rouge {
-background-color:#C72B10 ;
 }
 
 .sslactose {
@@ -323,6 +319,9 @@ background-color:#C72B10 ;
     background-color: #CC6699;
 }
 
+
+
+/*----------------Fin classes couleurs---------------*/
 .paddingTB10 {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -633,15 +632,7 @@ footer{
     float:none;
 }
 
-#contact button {
-    background-color: #8C091E;
-    border: none;
-}
 
-#contact button:hover {
-    background-color: #ABCE48;
-    border: none;
-}
 
 #evenementProfile {
 }
@@ -719,7 +710,7 @@ footer{
         background-color: #D4D4D4;  /* nv couleur */
     }
 
-    header, #community, #contact, #vegan, #vege, #ssgluten, #sslactose, #User,#updateUser, #createEvent, #event, #requireLogin  {
+    header, #community, #contact, #vegan, #vege, #ssgluten, #sslactose, #User,#updateUser, #createEvent, #event, #requireLogin, #commentForm{
         background-color: white; /* nv couleur */
     }
 

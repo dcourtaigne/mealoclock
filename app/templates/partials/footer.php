@@ -2,7 +2,7 @@
             <div class="row">
 
               <div class="col-xs-12 col-sm-4  color-white paddingLR40 paddingTB20">
-                  <p><a href="contact.php" class="color-white"><strong>Contact</strong></a></p>
+                  <p><a href="<?= $this->url('contact')?>"class="color-white"><strong>Contact</strong></a></p>
                   <p>David, Paul, Kevin et Audrey se feront un plaisir de filtrer vos appels au: <strong>01.45.46.47.48</strong> de 8h à 12h et de 14h à 18h du lundi au samedi</p>
               </div>
 

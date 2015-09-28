@@ -1,7 +1,7 @@
 <?php
 $eventDate=explode(' ',$event['dateFR']);
 ?>
-
+<hr>
 <li class="row">
   <div class="col-xs-3">
     <strong class="h3"><?= $this->e($eventDate[0])?></strong></br><?= $this->e($eventDate[1])?>
@@ -14,4 +14,4 @@ $eventDate=explode(' ',$event['dateFR']);
   </div>
 </li>
 
-<hr class="bordeauNav">
+

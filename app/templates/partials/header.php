@@ -18,7 +18,7 @@
     <div id="largeurSite">
       <header>
       <!-- logo du site -->
-      <h1><img src="<?= $this->assetUrl('img/mealoclockB.png')?>" class="center-block img-responsive" alt='logo meal oclock Découvrir, partager, échanger, savourer !'></h1>
+      <h1><a href="<?= $this->url('home')?>"><img src="<?= $this->assetUrl('img/mealoclockB.png')?>" class="center-block img-responsive" alt='logo meal oclock Découvrir, partager, échanger, savourer !'></a></h1>
         <!-- navbar -->
         <nav class="navbar navbar-default bordeauNav" role="navigation">
           <div class="container-fluid">
