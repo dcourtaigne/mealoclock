@@ -46,6 +46,11 @@ class ReadController extends Controller{
       }
     }
 
+    if($com == 'vege') $community['icon']='glyphicon-leaf';
+    if($com == 'vegan') $community['icon']= 'glyphicon-globe';
+    if($com == 'sslactose') $community['icon']= 'glyphicon-glass';
+    if($com == 'ssgluten') $community['icon']= 'glyphicon-grain';
+
     $eventsObj = new EventsManager();
     $events = $eventsObj->getFutureEventsbyCom(intval($community['id']));
     $events = Controller::getFrenchDate($events);

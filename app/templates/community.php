@@ -6,7 +6,7 @@
 
      <section class="row <?= $this->e($community['com_shortname'])?>">
         <div class="col-xs-2 marginTB20 ">
-          <i class="glyphicon glyphicon-leaf logo hidden-sm hidden-md hidden-lg img-responsive marginTop10
+          <i class="glyphicon <?=$this->e($community['icon'])?> logo hidden-sm hidden-md hidden-lg img-responsive marginTop10
         "></i>
           <img src="<?= $this->assetUrl('img/'.$community['com_shortname'].'.png')?>" class="hidden-xs img-responsive thumbnail">
         </div>
