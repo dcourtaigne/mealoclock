@@ -6,19 +6,23 @@
         <section id="events" class="container-fluid">
 
           <section class="row">
-            <article class="col-xs-9 col-sm-10">
+            <article class="col-xs-11">
               <h3 class="h4 marginTop20">Evénements à venir</h3>
+              <p>Retrouvez l'ensemble des événements à venir toutes communautés confondues, par ordre chronologique ou en recherchant une date précise.</p>
             </article>
-            <div class="col-xs-3 col-sm-2 h4 ">
-              <a href="<?=$this->url('editEvent', ['action' => 'create'])?>"><i class="btn btn-default glyphicon glyphicon-plus pull-right"></i></a>
-            </div>
           </section>
 
-          <section>
+          <hr>
+
+          <section class="pull-left">
             <label>Rechercher par date: </label>
             <input type="text" id="datepicker"></button>
             <input type="button" value="Liste complète" id="resetDate" /></span>
           </section>
+
+          <div>
+            <a href="<?=$this->url('editEvent', ['action' => 'create'])?>"><i class="btn btn-default glyphicon glyphicon-plus pull-right marginTop10"></i></a>
+          </div>
 
           <section id="event_list" class="col-xs-12 marginTB20">
             <ul class="list-unstyled">

@@ -2,9 +2,70 @@
 
 <?php $this->start('main_content') ?>
   <section id="entete" class="container-fluid">
-    <div class="row">
-      <img src="<?= $this->assetUrl('img/food_700.jpg')?>" class="center-block img-responsive" alt="salade">
-    </div>
+      <div class="row">
+        <!-- The carousel -->
+            <div id="transition-timer-carousel" class="carousel slide transition-timer-carousel" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#transition-timer-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#transition-timer-carousel" data-slide-to="1"></li>
+            <li data-target="#transition-timer-carousel" data-slide-to="2"></li>
+            <li data-target="#transition-timer-carousel" data-slide-to="3"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+                        <img src="<?= $this->assetUrl('img/vege_fruit.jpg')?>" />
+                        <div class="carousel-caption">
+                            <h1 class="carousel-caption-header">Végétarien</h1>
+                            <p class="carousel-caption-text hidden-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="<?= $this->assetUrl('img/vegan_frie.jpg')?>" />
+                        <div class="carousel-caption">
+                            <h1 class="carousel-caption-header">Vegan</h1>
+                            <p class="carousel-caption-text hidden-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="<?= $this->assetUrl('img/gluten_cake.jpg')?>" />
+                        <div class="carousel-caption">
+                            <h1 class="carousel-caption-header">Sans gluten</h1>
+                            <p class="carousel-caption-text hidden-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="<?= $this->assetUrl('img/lactose_cake.jpg')?>" />
+                        <div class="carousel-caption">
+                            <h1 class="carousel-caption-header">Sans lactose</h1>
+                            <p class="carousel-caption-text hidden-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#transition-timer-carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#transition-timer-carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+
+        </div>
+      </div>
 
           <!-- rangée pitch communauté -->
     <div>
@@ -21,10 +82,6 @@
       <a href="#">
         <article class="col-xs-6 col-sm-3 vege color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/vege.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social">
-            <div class="caption hidden-xs">
-              <!-- <h3>5 fruits</h3> -->
-              <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
-            </div>
         </article>
       </a>
 
@@ -32,20 +89,12 @@
       <a href="#">
         <article class="col-xs-6 col-sm-3 vegan color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo communauté végans" class="img-responsive center-block social">
-          <div class="caption hidden-xs">
-            <!-- <h3>Animals</h3> -->
-            <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
-          </div>
         </article>
       </a>
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 ssgluten color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/ssgluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social">
-          <div class="caption hidden-xs">
-            <!-- <h3>gluten</h3> -->
-            <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
-          </div>
         </article>
       </a>
 
@@ -53,10 +102,6 @@
       <a href="#">
         <article class="col-xs-6 col-sm-3 sslactose color-white paddingTB20">
           <img src="<?= $this->assetUrl('img/sslactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social">
-          <div class="caption hidden-xs">
-            <!-- <h3>vaches</h3> -->
-            <p>Sed ut perspiciatis unde omnis iste natus Sed ut perspiciatis unde omnis iste natus</p>
-          </div>
         </article>
       </a>
 
@@ -75,9 +120,8 @@
         </div>
 
     </section>
-    <hr>
   </section>
-
+  <hr>
 
 
 <?php $this->stop('main_content') ?>
