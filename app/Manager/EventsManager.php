@@ -95,9 +95,11 @@ class EventsManager extends \W\Manager\Manager{
 
   public static function getValidationFilters(){
     return array(
-        'event_title'      => FILTER_SANITIZE_STRING,
+        'event_title'      => array('filter'    => FILTER_SANITIZE_STRING,
+                                    'flags'     => FILTER_FLAG_NO_ENCODE_QUOTES),
         'community_id'    => FILTER_SANITIZE_NUMBER_INT,
-        'event_desc'    => FILTER_SANITIZE_STRING,
+        'event_desc'    => array('filter'    => FILTER_SANITIZE_STRING,
+                                  'flags'     => FILTER_FLAG_NO_ENCODE_QUOTES),
         'event_location'    => FILTER_SANITIZE_STRING,
         'event_date'    => FILTER_SANITIZE_STRING,
         'event_time'    => FILTER_SANITIZE_STRING,
@@ -108,6 +110,14 @@ class EventsManager extends \W\Manager\Manager{
   public function getLastCreatedEvent(){
     $selectQuery = $this->dbh->query("SELECT MAX(id) from events LIMIT 1");
     return $selectQuery->fetch();
+  }
+
+  public function updatePhotoEvent($id,$newfichier){
+    $sql = "UPDATE events SET `event_image`=:pic WHERE id =:id";
+    $eventUpdate = $this->dbh->prepare($sql);
+    $eventUpdate->bindValue(':pic',$newfichier);
+    $eventUpdate->bindValue(':id',(int)$id);
+    $eventUpdate->execute();
   }
 
 

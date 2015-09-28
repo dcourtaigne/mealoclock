@@ -27,9 +27,6 @@ class CreateController extends Controller{
         $submitName = 'Créer l\'événement';
         $formAction = $this->generateUrl('editEvent', ['action' => 'create']);
 
-
-
-
       }elseif($action == 'edit'){
         // cas de la modification d'un event existant
         $idEvent = (int)$id;
@@ -97,6 +94,36 @@ class CreateController extends Controller{
   public function contact(){
 
     $this->show('contact');
+  }
+
+  public function uploadPhotoEvent($id){
+    var_dump($_FILES);
+     // la première entrée au téléchargement
+        $dossier = "c:/xampp/htdocs/mealoclock/public/assets/img/event/";
+        $fichier_tmp = $_FILES["photo"]["tmp_name"];
+        $fichier = $_FILES["photo"]["name"];
+        $extension = strrchr($fichier, '.'); // extension de fichier téléchargé
+        $extensions = array('.jpg', '.png', '.gif', '.jpeg'); // extensions possibles de fichier à télécharger
+        if (in_array($extension, $extensions)) {
+          $newfichier = $id . "_photo" . $extension;
+          $fullPathNew = $dossier . $id . "_photo" . $extension;
+          $stringData = file_get_contents($fichier_tmp);
+          if (smart_resize_image($fichier_tmp, $stringData , 600, 469, true, $fullPathNew, true, false, 100)){
+                    // SQL ajout de l'image dans le profil user ......
+            //move_uploaded_file($fichier_tmp, $dossier . $id . "_photo" . $extension)) {
+                $eventObj = new EventsManager();
+                $eventObj->updatePhotoEvent($id,$newfichier);
+
+                header('location:'.$this->generateUrl('event',['id'=>$id]));
+            }
+            else {
+                echo "echec du téléchargement";
+            }
+        }
+        else {
+            echo  "Vous devez télécharger un fichier de format image : gif , png , jpeg";
+        }
+
   }
 
 
