@@ -26,6 +26,7 @@
   <script type="text/javascript" src="http://jondmiles.com/bootstrap-datepaginator/js/moment.min.js"></script>
   <script type="text/javascript" src="<?= $this->assetUrl('js/loginsignup.js')?>"></script>
   <script type="text/javascript" src="<?= $this->assetUrl('js/carousel.js')?>"></script>
+  <script type="text/javascript" src="<?= $this->assetUrl('js/navbarfix.js')?>"></script>
 
   </script>
 	</body>
