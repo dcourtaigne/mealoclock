@@ -1,4 +1,4 @@
-$("#attend").click(function(){
+$("#attend").offsetParent().click(function(){
 		$(".overlay").toggle()
 })
 
