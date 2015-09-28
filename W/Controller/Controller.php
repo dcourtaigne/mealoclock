@@ -152,7 +152,8 @@ class Controller
 			die($json);
 		}
 		else {
-			die(json_last_error_msg());
+			echo json_last_error_msg();
+			die('erreur json');
 		}
 	}
 

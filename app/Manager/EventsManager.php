@@ -70,9 +70,22 @@ class EventsManager extends \W\Manager\Manager{
     public function getEventGuests($id){
     $query = "select u.user_name, u.id, uep.message, uep.status
               from events e
-              join users_events_participation uep on (e.id = uep.event_id)
+              join users_events_participations uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
               WHERE e.id=:id AND uep.status='confirmed'
+              ORDER BY u.user_name ASC";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':id',(int)$id);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
+  }
+
+  public function getAllEventGuests($id){
+    $query = "select u.user_name, u.id, uep.message, uep.status
+              from events e
+              join users_events_participations uep on (e.id = uep.event_id)
+              join users u on (uep.guest_id = u.id)
+              WHERE e.id=:id
               ORDER BY u.user_name ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':id',(int)$id);
@@ -124,7 +137,7 @@ class EventsManager extends \W\Manager\Manager{
   public function getEventRequests($id){
     $query = "select u.user_name, u.id, uep.message, uep.status
               from events e
-              join users_events_participation uep on (e.id = uep.event_id)
+              join users_events_participations uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
               WHERE e.id=:id
               ORDER BY u.user_name ASC";

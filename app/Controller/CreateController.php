@@ -5,6 +5,7 @@ use \W\Controller\Controller;
 use Manager\UsersManager;
 use Manager\EventsManager;
 use Manager\CommunitiesManager;
+use Manager\Users_events_participationsManager;
 
 
 class CreateController extends Controller{
@@ -132,7 +133,35 @@ class CreateController extends Controller{
   }
 
 public function eventRequest(){
+    $error=[];
+  if(!empty($_POST['message'])){
+    if(empty($_POST['message'])) $error['message']="Vous devez envoyer un message avec votre demande de participation";
 
+    if(empty($error)){
+      $_POST['message']=filter_var($_POST['message'], FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
+      $request = [];
+      $request = $_POST;
+      $request['status'] = "tobeconfirmed";
+
+      $uepObj = new Users_events_participationsManager();
+      $uepObj->insert($request);
+
+      $error['status']=1;
+      $error['result']= "Votre participation a bien été prise en compte";
+    }else{
+      $error['status']=0;
+    }
+    $this->showJson($error);
+  }else{
+    $cancel=[];
+    var_dump($_POST);
+    $guestId = intval($_POST['guest_id']);
+    $eventId = intval($_POST['event_id']);
+    $uepObj = new Users_events_participationsManager();
+    $cancel['status'] = $uepObj->deleteGuest($guestId, $eventId);
+    $cancel['result'] = "Votre annulation a bien été prise en compte";
+    $this->showJson($cancel);
+  }
 }
 
 

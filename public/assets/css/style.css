@@ -634,7 +634,7 @@ span{
   padding-bottom: 150px;
 }
 /* ----------------Modale d'affichage des utilisateurs-----------*/
-  .overlay {
+  .overlay, .overlay2 {
     display: none;
     position: absolute;
     left: 0px;
@@ -829,7 +829,7 @@ Style des divs display*/
   }
 }
 /*Modale d'envoi de message lors de la participation à un evenement*/
-  .fermer_modale_p{
+  .fermer_modale_p, .fermer_modale_2{
     position: absolute;
     top: -12px;
     right: -10px;
