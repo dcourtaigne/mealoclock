@@ -68,14 +68,15 @@ class CreateController extends Controller{
       //var_dump($user);
       $validform = empty($errors['name']) && empty($errors['community']) && empty($errors['desc']) && empty($errors['location'])
                     && empty($errors['date']) && empty($errors['time']) && empty($errors['guests']);
-      var_dump($validform);
-      var_dump($errors);
       if($validform){
         $eventObj = new EventsManager();
         if(!empty($idEvent)){
-          if($eventObj->update($values,$idEvent)) $message = "Modifications enregistrées";
+          if($eventObj->update($values,$idEvent)) header("location:".$this->generateUrl('event', ['id'=>$idEvent]));
         }else{
-          if($eventObj->insert($values)) $message = "L'événement a bien été créé";
+          if($eventObj->insert($values)){
+            $lastItem = $eventObj->getLastCreatedEvent();
+            header("location:".$this->generateUrl('event', ['id'=>$lastItem['MAX(id)']]));
+          }
         }
       }
     }

@@ -27,7 +27,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <hr>
             <!-- commentaires -->
 
@@ -86,7 +86,7 @@
                                     <ul class="list-unstyled">
                                     <hr class="marginTop10 bordeauNav">
                                         <?php foreach ($thisUser['eventsPart'] as $event){
-                                               $this->insert('partials/events-list-profile',['event'=>$event,'userName'=> '']);
+                                               $this->insert('partials/events-list-profile',['event'=>$event,'userName'=> $event['user_name']]);
                                          }
                                          ?>
                                     </ul>

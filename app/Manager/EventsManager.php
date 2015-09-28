@@ -6,7 +6,13 @@ class EventsManager extends \W\Manager\Manager{
   public function getFutureEvents(){
     //$currentDate = date('Y-m-d');
     $currentDate = '2015-01-01';
-    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate ORDER BY e.event_date ASC ";
+    $query="select e.id, e.event_title, e.event_desc, e.event_guests, e.event_date, e.event_time, e.event_location, e.event_address, e.event_image,
+                    e.event_image, e.user_id, e.community_id, u.user_name, c.com_name, c.com_shortname
+              from events e
+              join communities c on (e.community_id = c.id)
+              join users u on (e.user_id = u.id)
+              WHERE e.event_date>=:currentdate
+              ORDER BY e.event_date ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->execute();
@@ -16,8 +22,13 @@ class EventsManager extends \W\Manager\Manager{
   public function getFutureEventsbyCom($com){
     //$currentDate = date('Y-m-d');
     $currentDate = '2015-01-01';
-
-    $query = "SELECT * from events as e, communities as c, users as u WHERE e.user_id = u.id AND e.community_id=c.id AND e.event_date>=:currentdate AND c.id=:community ORDER BY e.event_date ASC";
+    $query="select e.id, e.event_title, e.event_desc, e.event_guests, e.event_date, e.event_time, e.event_location, e.event_address, e.event_image,
+                    e.event_image, e.user_id, e.community_id, u.user_name, c.com_name, c.com_shortname
+              from events e
+              join communities c on (e.community_id = c.id)
+              join users u on (e.user_id = u.id)
+              WHERE e.event_date>=:currentdate AND e.community_id=:community
+              ORDER BY e.event_date ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->bindValue(':community',$com);
@@ -70,7 +81,7 @@ class EventsManager extends \W\Manager\Manager{
   }
 
   public function getEventInfo($id){
-    $query = "select e.event_title, e.event_desc, e.event_guests, e.event_date, e.event_time, e.event_location, e.event_image, e.user_id, u.user_name, e.community_id, c.com_name, c.com_shortname
+    $query = "select e.id, e.event_title, e.event_desc, e.event_guests, e.event_date, e.event_time, e.event_location, e.event_image, e.user_id, u.user_name, e.community_id, c.com_name, c.com_shortname
               from events e
               join communities c on (e.community_id = c.id)
               join users u on (e.user_id = u.id)
@@ -92,6 +103,11 @@ class EventsManager extends \W\Manager\Manager{
         'event_time'    => FILTER_SANITIZE_STRING,
         'event_guests'    => FILTER_SANITIZE_NUMBER_INT
       );
+  }
+
+  public function getLastCreatedEvent(){
+    $selectQuery = $this->dbh->query("SELECT MAX(id) from events LIMIT 1");
+    return $selectQuery->fetch();
   }
 
 

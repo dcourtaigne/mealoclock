@@ -6,8 +6,8 @@
       <section class="row">
 
           <article class="col-xs-12 col-sm-6 col-sm-push-3 col-md-6 col-md-push-3 paddingTB25">
-            <h2 class="marginTB20"><?=$this->e($event[0]['event_title'])?></h2>
-              <p>Organisé par <a href="#"><strong><?=$this->e($event[0]['user_name'])?></strong></a></p> <br>
+            <h2 class="marginTB20"><a href="<?=$this->url('event',['id'=>$event[0]['id']])?>"><?=$this->e($event[0]['event_title'])?></a></h2>
+              <p>Organisé par <a href="<?=$this->url('userProfile',['id'=>$event[0]['user_id']])?>"><strong><?=$this->e($event[0]['user_name'])?></strong></a></p> <br>
               <p><?=$this->e($event[0]['event_date'])?> à <?=$this->e($event[0]['event_time'])?></p>
               <p>Paris, <?=$this->e($event[0]['event_location'])?>e</p>
               <p>Participants : <?=$this->e(count($event['guests']))?>/<?=$this->e($event[0]['event_guests'])?></p>

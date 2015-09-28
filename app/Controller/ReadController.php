@@ -22,18 +22,16 @@ class ReadController extends Controller{
     $eventsObj = new EventsManager();
     $events = $eventsObj->getFutureEvents();
     $events = Controller::getFrenchDate($events);
-    //var_dump($events); echo '<br>';
-    $lastDate="";
     $results=[];
 
     for ($i = 0 ; $i<count($events); $i++ ){
+      $events[$i]['event_time'] = formatTime($events[$i]['event_time'] );
       if($i == 0 || $events[$i]['event_date'] !== $events[$i-1]['event_date']){
       $results[$events[$i]['event_date']][0]= $events[$i];
       }else{
       $results[$events[$i-1]['event_date']][$i]= $events[$i];
       }
     }
-     //var_dump($results);
     $this->show('events',['events'=>$results]);
   }
 
@@ -56,6 +54,7 @@ class ReadController extends Controller{
     $results=[];
 
     for ($i = 0 ; $i<count($events); $i++ ){
+      $events[$i]['event_time'] = formatTime($events[$i]['event_time'] );
       if($i == 0 || $events[$i]['event_date'] !== $events[$i-1]['event_date']){
       $results[$events[$i]['event_date']][0]= $events[$i];
       }else{
@@ -91,7 +90,7 @@ class ReadController extends Controller{
     $eventObj = new EventsManager();
     $thisId = (int)$id;
     $event = $eventObj->getEventInfo($thisId);
-    $event = Controller::getFrenchDate($event);
+    //$event = Controller::getFrenchDate($event);
     $event['guests'] = $eventObj->getEventGuests($thisId);
     $event[0]['event_time'] = formatTime($event[0]['event_time'] );
     $event[0]['event_date'] = formatDateFR($event[0]['event_date'] );
