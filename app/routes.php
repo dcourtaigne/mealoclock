@@ -10,6 +10,7 @@
     ['GET|POST', '/event/[create|edit:action]/[i:id]?', 'Create#editEvent', 'editEvent'],
     ['POST', '/event/attend', 'Create#eventRequest', 'eventRequest'],
     ['GET|POST', '/contact', 'Create#contact', 'contact'],
+    ['GET|POST','/comment','Create#comment', 'comment'],
 
     ['POST', '/login', 'Users#login', 'login'],
     ['POST|GET', '/logout', 'Users#logout', 'logout'],

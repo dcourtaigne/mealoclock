@@ -39,10 +39,11 @@
                                     }
                                     ?>
                             </ul>
-                        <hr>
+                        
                             <!-- commentaires -->
 
-                            <section id="comments" class="row container-fluid">
+                            <section id="comments" class="row container-fluid marginTB20">
+                                <h4>Les avis des gens</h4><br>
                                 <ul class="list-unstyled list-inline">
                                     <li><img class="img-rounded" src="http://lorempixel.com/50/50"></li>
                                     <li><a href="#"><strong>Barbe Bleue</strong></a>
@@ -61,6 +62,7 @@
                                     <p>"J'ignorais qu'on pouvait à ce point savourer des brocolis!"</p></li>
                                 </ul>
                             </section>
+
                         </div>
                     </div>
                 </div>
@@ -68,7 +70,7 @@
             <!-- tableau d'exemple en placement -->
             <?php if(!empty($thisUser['eventsOrg']) || !empty($thisUser['eventsPart'])):?>
             <div class="col-sm-5 col-sm-offset-1">
-                <section id="evenementProfile" class="row container-fluid">
+                <section id="evenementProfile" class="row container-fluid gris marginTB20">
                     <h3>Les prochains événements <?php if($w_user['id'] !== $thisUser['id']) echo 'de '.$this->e($thisUser['user_name'])?></h3>
                     <?php if($w_user['id'] == $thisUser['id']):?>
                         <ul class="list-unstyled list-inline">
@@ -83,7 +85,7 @@
                                 <div class="col-xs-12">
                                     <section id="event_list" class="marginTB20">
                                         <ul class="list-unstyled">
-                                        <hr class="marginTop10 bordeauNav">
+                                        
                                             <?php foreach ($thisUser['eventsOrg'] as $event){
                                                    $this->insert('partials/events-list-profile',['event'=>$event,'userName'=>$thisUser['user_name']]);
                                              }
@@ -101,8 +103,8 @@
                                 <div class="col-xs-12">
                                     <section id="event_list" class="marginTB20">
                                         <ul class="list-unstyled">
-                                        <hr class="marginTop10 bordeauNav">
-                                            <?php foreach ($thisUser['eventsPart'] as $event){
+                                            
+                                                <?php foreach ($thisUser['eventsPart'] as $event){
                                                    $this->insert('partials/events-list-profile',['event'=>$event,'userName'=> $event['user_name']]);
                                              }
                                              ?>

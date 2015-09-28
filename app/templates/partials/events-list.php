@@ -1,5 +1,5 @@
     <div class='col-xs-12 col-sm-3 bg-success marginTB20'>
-        <h4 class='text-center noMargin'><?= $this->e($singleEvent['event_time'])?></h4>
+        <h4 class='noMargin'><?= $this->e($singleEvent['event_time'])?></h4>
     </div>
 
     <article class='col-xs-12 col-sm-7'>
@@ -9,7 +9,7 @@
     </article>
 
     <div class='col-xs-12 col-sm-2'>
-        <div class='text-center marginTop20'>
+        <div class='marginTop20'>
             <a href='#'><img src='/mealoclock/public/assets/img/saladebis.jpg' class='img-responsive'></a>
         </div>
     </div>

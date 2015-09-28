@@ -8,7 +8,7 @@
 			<form role="form" method='POST' action='<?=$this->url('updateProfile')?>'>
 				<h1>Compléter mon profil</h1>
 
-					<div class="form-group">
+					
 
 			  		<div class="form-group">
 			  			<label for="pseudo">Pseudo</label>
