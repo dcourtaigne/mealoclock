@@ -822,6 +822,54 @@ Style des divs display*/
     width: auto;
   }
 }
+/*Modale d'envoi de message lors de la participation à un evenement*/
+  .fermer_modale_p{
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    color: lightblue;
+    font-style: bold;
+    background-color: white;
+    border: 2px solid lightblue;
+    border-radius: 88px;
+    z-index: 2;
+    width: 22px;
+    text-align: center;
+}
+#modale_participation{
+  display: block;
+  margin-top: 350px;
+}
+#modale_participation form{
+  margin-top: 500px;
+  margin: auto;
+  width: 360px;
+  position: relative;
+  text-align: center; 
+  border: 4px solid #F5F5F5;
+  background-color: white;
+}
+#champ_message{
+  width: 350px;
+  height: 110px;
+  text-align: top;
+  resize: none;
+}
+#submit_button_p{
+  display: block;
+  width: 350px;
+  height: 35px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #337ab7;
+  border: 1px solid #2e6da4;
+  margin: auto;
+  color: white;
+  margin-top: 10px;
+}
+#submit_button:hover{
+  background-color: #468CC7;
+}
 
 /* ----------------------------- footer -------------------------*/
 

@@ -60,13 +60,24 @@
               </ul>
 
             </div>
+            
           </article>
 
 
       </section>
 
 </section>
+<div class="overlay"> 
+  <div id="modale_participation">
+    <form>
+      <button class="fermer_modale_p">x</button>
+      <textarea id="champ_message" placeholder="Cliquer pour saisir"></textarea>
+      <input type="submit" id="submit_button_p" label="Envoyer" value="Envoyer"> </input>
+    </form>
+  </div>
+</div>
 
+<script type="text/javascript" src="<?= $this->assetUrl('js/modale_participation.js')?>"></script>
 <script type="text/javascript" src="<?= $this->assetUrl('js/attend.js')?>"></script>
 
 <?php $this->stop('main_content') ?>
