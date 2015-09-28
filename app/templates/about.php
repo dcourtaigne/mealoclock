@@ -51,11 +51,11 @@
 
             <section class='row text-left ssgluten color-white'>
                 <div class="col-xs-12 col-md-5 paddingTB40 paddingLR40">
-                    <h3 class='text-center'><strong>Participez, dégustez, commentez.</strong></h3>
-                    <p class="text-justify">Meal ‘o clock est basé sur la confiance mais la confiance ne suffit pas toujours.
-                        C’est pourquoi vous avez la possibilitez de donner votre avis sur un évènement,
+                    <h3 class='text-center'><strong>Participez, dégustez, commentez</strong></h3>
+                    <p class="text-justify">Meal o'clock est basé sur la confiance mais la confiance ne suffit pas toujours.
+                        C’est pourquoi vous pouvez donner votre avis sur un événement,
                         un organisateur ou un participant afin que tout le monde sache le bien que vous en pensez,
-                        ou à contrario, pour éviter à d’autres, une mauvaise expérience avec l'un de nos membres. On est tous gagnant en donnant son avis.</p>
+                        ou a contrario, pour éviter à d’autres une mauvaise expérience avec l'un de nos membres. On est tous gagnants en donnant son avis.</p>
                 </div>
                  <div class="col-xs-12 col-md-7 ">
                     <img src="<?= $this->assetUrl('img/commenter-B.png')?>" alt="illustration de foule donnant son avis" class="img-responsive">
@@ -66,20 +66,20 @@
                     <img src="<?= $this->assetUrl('img/partager-B.png')?>" alt="illustration d'un groupe de personne autour d'un stand de burger" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-md-4 paddingTB40 paddingLR40">
-                    <h3 class='text-center'><strong>Des repas, des rencontres.</strong></h3>
+                    <h3 class='text-center'><strong>Des repas, des rencontres</strong></h3>
                     <p class="text-justify">Grâce à meal’o clock, vous avez la possibilité de partagez sans restriction vos choix
                         et vos goût avec les curieux ou les habitués. Entre connaisseurs ou néophytes, profitez du repas pour découvrir plus que des recettes, de véritables personnalités.</p>
                 </div>
             </section>
 
-            <section class='row text-left anthracite color-white'>
+            <section class='row text-left anthracite color-white text-center'>
                 <div class="col-xs-12 paddingTB40 paddingLR40">
-                    <h3 class='text-center'><strong>Alors qu’attendez-vous ?</strong></h3>
-                    <p class='text-center'>Parmi nos 4 régimes alimentaires principaux, choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir.
+                    <h3 ><strong>Alors qu’attendez-vous ?</strong></h3>
+                    <p>Parmi nos 4 régimes alimentaires principaux, choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir.
                         Vous n'aurez plus qu'à choisir un événement, envoyer une requête à l'organisateur pour y participer et attendre sa réponse.
                         Et pourquoi ne pas organiser vous-même quelque chose ? Notre interface de création d'événement est très simple.
-                        Alors, qu'attendez-vous pour vous asseoir à notre table ?
-                    </p>
+                        Alors, qu'attendez-vous pour vous asseoir à notre table ?</p></br>
+                    <p><a href="#"><button type="button" class="btn btn-info btn-lg">Je m'inscris !</button></a></p>  
                 </div>
             </section>
 

@@ -34,7 +34,7 @@ class UsersManager extends \W\Manager\UserManager{
 
 
   public function getUserCommunities($id){
-    $query = "select c.id, c.com_name
+    $query = "select c.id, c.com_name, c.com_shortname
               from communities c
               join communities_members cm on (c.id = cm.community_id)
               join users u on (cm.user_id = u.id)
