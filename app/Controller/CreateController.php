@@ -27,9 +27,6 @@ class CreateController extends Controller{
         $submitName = 'Créer l\'événement';
         $formAction = $this->generateUrl('editEvent', ['action' => 'create']);
 
-
-
-
       }elseif($action == 'edit'){
         // cas de la modification d'un event existant
         $idEvent = (int)$id;
@@ -54,7 +51,6 @@ class CreateController extends Controller{
     //$values = $event;
 
     if(!empty($_POST)) {
-      var_dump($_FILES); exit();
       if(empty($_POST['event_title'])) $errors['name']="Ce champ ne peut être vide";
       if($_POST['community_id'] == 0) $errors['community']="Vous devez choisir une communauté";
       if(empty($_POST['event_desc'])) $errors['desc']="Ce champ ne peut être vide";
@@ -102,7 +98,7 @@ class CreateController extends Controller{
 
   public function uploadPhotoEvent($id){
     var_dump($_FILES);
-    if (isset($_FILES["photo"])) { // la première entrée au téléchargement
+     // la première entrée au téléchargement
         $dossier = "c:/xampp/htdocs/mealoclock/public/assets/img/event/";
         $fichier_tmp = $_FILES["photo"]["tmp_name"];
         $fichier = $_FILES["photo"]["name"];
@@ -127,7 +123,7 @@ class CreateController extends Controller{
         else {
             echo  "Vous devez télécharger un fichier de format image : gif , png , jpeg";
         }
-    }
+
   }
 
 

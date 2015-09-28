@@ -11,26 +11,26 @@
                     <i class="glyphicon glyphicon-camera">Modifier ma photo</i>
                 </div>
                 </div>
-                
+
                 <div class="col-xs-8">
                     <h2><?=$thisUser['greeting']?></h2>
                     <?php if($w_user['id'] == $thisUser['id']):?>
                     <p><a href="<?= $this->url('updateProfile')?>" class="btn btn-default" role="button">Compléter mon profil</a></p>
                     <?php endif ?>
-                    
+
                     <p> Membre depuis le : <?=$this->e($thisUser['create_time'])?></p>
                     <p> Repas organisé(s) : <?= $this->e(count($thisUser['eventsOrg']))?> </br>
                             Repas participé(s) : <?= $this->e(count($thisUser['eventsPart']))?></p>
-                </div>     
+                </div>
 
                 <div class="col-xs-12">
-                    <blockquote><?=$this->e($thisUser['user_desc'])?></blockquote>
+                    <blockquote><?=nl2br($thisUser['user_desc'])?></blockquote>
                     <p>Communautés favorites: </p>
                     <ul class="list-unstyled list-inline">
                         <?php  foreach($thisUser['communities'] as $com) {
                            echo "<li><img src='".$this->assetUrl('img/'.$com['com_shortname'].'_thumb.png')."'class='img-thumbnail'></li>";
                             }
-                            ?>     
+                            ?>
                     </ul>
                 </div>
             </div>
@@ -59,7 +59,7 @@
             </section>
 
             <!-- tableau d'exemple en placement -->
-
+            <?php if(!empty($thisUser['eventsOrg']) || !empty($thisUser['eventsPart'])):?>
             <section id="evenementProfile" class="row container-fluid">
                 <h2>Les prochains événements <?php if($w_user['id'] !== $thisUser['id']) echo 'de '.$this->e($thisUser['user_name'])?></h2>
                 <?php if($w_user['id'] == $thisUser['id']):?>
@@ -68,6 +68,7 @@
                         <li><a href="<?=$this->url('editEvent', ['action' => 'create'])?>" class="btn btn-primary" role="button">Créer un nouvel événement</a></li>
                     </ul>
                 <?php endif ?>
+                <?php if(!empty($thisUser['eventsOrg'])):?>
                 <section>
                     <h4 class="col-xs-12"><?= $this->e($thisUser['orgTitle'])?></h4>
                         <article id="events">
@@ -84,7 +85,8 @@
                             </div>
                         </article>
                 </section>
-
+                <?php endif?>
+                <?php if(!empty($thisUser['eventsPart'])):?>
                 <section>
                     <h4 class="col-xs-12"><?= $this->e($thisUser['partTitle'])?></h4>
                         <article id="events">
@@ -101,7 +103,9 @@
                             </div>
                         </article>
                 </section>
+            <?php endif?>
             </section>
+            <?php endif?>
 
             <!-- fin du tableau de placement -->
         </section>

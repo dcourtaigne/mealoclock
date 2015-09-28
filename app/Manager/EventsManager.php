@@ -95,9 +95,11 @@ class EventsManager extends \W\Manager\Manager{
 
   public static function getValidationFilters(){
     return array(
-        'event_title'      => FILTER_SANITIZE_STRING,
+        'event_title'      => array('filter'    => FILTER_SANITIZE_STRING,
+                                    'flags'     => FILTER_FLAG_NO_ENCODE_QUOTES),
         'community_id'    => FILTER_SANITIZE_NUMBER_INT,
-        'event_desc'    => FILTER_SANITIZE_STRING,
+        'event_desc'    => array('filter'    => FILTER_SANITIZE_STRING,
+                                  'flags'     => FILTER_FLAG_NO_ENCODE_QUOTES),
         'event_location'    => FILTER_SANITIZE_STRING,
         'event_date'    => FILTER_SANITIZE_STRING,
         'event_time'    => FILTER_SANITIZE_STRING,

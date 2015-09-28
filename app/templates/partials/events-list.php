@@ -4,8 +4,8 @@
 
     <article class='col-xs-12 col-sm-7'>
         <h3 class='noMargin marginTop20'><a href="<?=$this->url('event',['id'=>$singleEvent['id']])?>"><strong><?= $this->e($singleEvent['event_title'])?></strong></a></h3>
-        <p class='noMargin'>Chez <a href="<?=$this->url('userProfile',['id'=>$singleEvent['user_id']])?>"><?= $this->e($singleEvent['user_name'])?></a>, Paris <?= $this->e($singleEvent['event_location'])?></p>
-        <p class='marginTop20 hidden-xs'><?= $this->e($singleEvent['event_desc'])?></p>
+        <p class='noMargin'>Chez <a href="<?=$this->url('userProfile',['id'=>$singleEvent['user_id']])?>"><?= $this->e(ucfirst($singleEvent['user_name']))?></a>, Paris <?= $this->e($singleEvent['event_location'])?></p>
+        <p class='marginTop20 hidden-xs'><?= nl2br($singleEvent['event_desc'])?></p>
     </article>
 
     <div class='col-xs-12 col-sm-2'>

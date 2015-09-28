@@ -96,7 +96,8 @@ class UsersController extends Controller{
     if($userLogin){
       $user = new UsersManager();
       $thisId = intval($id);
-      $thisUser = $user->find(intval($thisId));
+      $thisUser = $user->find($thisId);
+      $thisUser['create_time'] = formatDateFR(substr($thisUser['create_time'], 0, 10));
       $thisUser['communities'] = $user ->getUserCommunities($thisId);
 
       $eventsOrg = $user->getUserEvents($thisId);
@@ -140,7 +141,7 @@ public function updateProfile(){
         $profile = [];
         $comMemberObj = new Communities_membersManager();
         //var_dump($userCom);
-        $profile['user_desc']=filter_var($_POST['user_desc'], FILTER_SANITIZE_STRING);
+        $profile['user_desc']=filter_var($_POST['user_desc'], FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
         $userObj->update($profile, $userLogin['id']);
 
         $selectedCom = $_POST['community_id'];
@@ -169,7 +170,7 @@ public function updateProfile(){
 
 
 
-      
+
       $user = $userObj->find($userLogin['id']);
       $user['com'] = $userCom;
       //var_dump($user);
