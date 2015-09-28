@@ -1,29 +1,29 @@
 <?php $this->layout('layout', ['title' => 'Accueil !']) ?>
 
 <?php $this->start('main_content') ?>
-    <div id="largeurSite">
+    <div class="largeurSite">
         <section id="User" class="container-fluid">
                 <div class="col-xs-12">
                     <div class="row">
                    <!-- debut de la info du profil -->
                         <div id="thumbnail" class="col-xs-4 marginTB20 text-center">
                             <img src="http://lorempixel.com/250/250" alt="photo du profil" class="img-responsive thumbnail">
-                        </div>    
+                        </div>
                         <div class="col-xs-8">
                             <h2><?=$thisUser['greeting']?></h2>
                             <?php if($w_user['id'] == $thisUser['id']):?>
                             <ul class="list-unstyled list-inline">
                                 <li><a href="<?= $this->url('updateProfile')?>" class="btn btn-default" role="button">Compléter mon profil</a></li>
-                                <li><a href="" class="btn btn-default" role="button">Modifier ma photo</a></li>                    
+                                <li><a href="" class="btn btn-default" role="button">Modifier ma photo</a></li>
                             </ul>
 
                             <?php endif ?>
                         </div>
-                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">   
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                             <p> Membre depuis le : <?=$this->e($thisUser['create_time'])?></p>
                             <p> Repas organisé(s) : <?= $this->e(count($thisUser['eventsOrg']))?> </br>
                                     Repas participé(s) : <?= $this->e(count($thisUser['eventsPart']))?></p>
-                        </div>     
+                        </div>
                     </div>
 
                 </div>
@@ -37,7 +37,7 @@
                                 <?php  foreach($thisUser['communities'] as $com) {
                                    echo "<li><img src='".$this->assetUrl('img/'.$com['com_shortname'].'_thumb.png')."'class='img-thumbnail'></li>";
                                     }
-                                    ?>     
+                                    ?>
                             </ul>
                         <hr>
                             <!-- commentaires -->
@@ -66,7 +66,7 @@
                 </div>
 
             <!-- tableau d'exemple en placement -->
-            <?php if(!empty($thisUser['eventsOrg']) || !empty($thisUser['eventsPart'])):?>    
+            <?php if(!empty($thisUser['eventsOrg']) || !empty($thisUser['eventsPart'])):?>
             <div class="col-sm-5 col-sm-offset-1">
                 <section id="evenementProfile" class="row container-fluid">
                     <h3>Les prochains événements <?php if($w_user['id'] !== $thisUser['id']) echo 'de '.$this->e($thisUser['user_name'])?></h3>
@@ -113,8 +113,8 @@
                     </section>
                     <?php endif?>
                 </section>
-            </div> 
-            <?php endif?> 
+            </div>
+            <?php endif?>
             <!-- fin du tableau de placement -->
         </section>
     </div>

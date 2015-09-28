@@ -104,7 +104,7 @@ class UsersController extends Controller{
       $eventsOrgDateFR = Controller::getFrenchDate($eventsOrg);
       $thisUser['eventsOrg'] = $eventsOrgDateFR;
 
-      $eventsPart = $user->getUserParticipations($thisId);
+      $eventsPart = $user->getUserParticipations($thisId,'confirmed');
       $eventsPartDateFR = Controller::getFrenchDate($eventsPart);
       $thisUser['eventsPart'] = $eventsPartDateFR;
 
@@ -183,7 +183,36 @@ public function updateProfile(){
   }
 
 public function displayEvents(){
-    $this->show('myevents');
+  $authObj = new AuthentificationManager();
+  $userLogin = $authObj->getLoggedUser();
+
+  if($userLogin){
+    $thisUserId = $userLogin['id'];
+    $results=[];
+    $userObj=new UsersManager();
+    $results['orgEvents'] = $userObj->getUserEvents($thisUserId);
+    $results['confirmedEvents'] = $userObj->getUserParticipations($thisUserId,'confirmed');
+    $results['pendingEvents'] = $userObj->getUserParticipations($thisUserId,'tobeconfirmed');
+
+    for($i=0 ; $i<count($results['orgEvents']); $i++) {
+      $results['orgEvents'][$i]['time'] = formatTime($results['orgEvents'][$i]['event_time']);
+      $results['orgEvents'][$i]['dateFR'] = formatDateFR($results['orgEvents'][$i]['event_date']);
+    }
+
+    for($i=0 ; $i<count($results['confirmedEvents']); $i++) {
+      $results['confirmedEvents'][$i]['time'] = formatTime($results['confirmedEvents'][$i]['event_time']);
+      $results['confirmedEvents'][$i]['dateFR'] = formatDateFR($results['confirmedEvents'][$i]['event_date']);
+    }
+
+    for($i=0 ; $i<count($results['pendingEvents']); $i++) {
+      $results['pendingEvents'][$i]['time'] = formatTime($results['pendingEvents'][$i]['event_time']);
+      $results['pendingEvents'][$i]['dateFR'] = formatDateFR($results['pendingEvents'][$i]['event_date']);
+    }
+
+    $this->show('myevents',['events'=>$results]);
+  }else{
+    $this->show('requireLogin');
+  }
 
 }
 

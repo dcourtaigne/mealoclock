@@ -20,8 +20,9 @@ class UsersManager extends \W\Manager\UserManager{
   }*/
 
   public function getUserEvents($id){
-    $query = "select event_title, event_desc, event_date, event_time, event_location, event_image
+    $query = "select event_title, event_desc, event_date, event_time, event_location, event_image, u.user_name
               from events e
+              join users u on (e.user_id = u.id)
               WHERE user_id=:id
               ORDER BY event_date ASC";
     $eventQuery = $this->dbh->prepare($query);
@@ -45,16 +46,17 @@ class UsersManager extends \W\Manager\UserManager{
     return $eventQuery->fetchAll();
   }
 
-  public function getUserParticipations($id){
+  public function getUserParticipations($id,$status){
     $query = "select e.event_title, e.event_desc, e.event_date, e.event_time, e.event_location, e.event_image, u2.user_name
               from events e
               join users_events_participation uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
               join users u2 on (e.user_id = u2.id)
-              WHERE u.id=:id AND uep.status='confirmed'
+              WHERE u.id=:id AND uep.status=:status
               ORDER BY e.event_date ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':id',(int)$id);
+    $eventQuery->bindValue(':status',$status);
     $eventQuery->execute();
     return $eventQuery->fetchAll();
   }
