@@ -18,7 +18,6 @@ h2 {
 
 p {
   font-family: 'Gudea', sans-serif;
-  font-size: 1.2em;
 }
 
 #comments p{
@@ -41,7 +40,7 @@ footer p {
   font-size: 1em;
 }
 
-hr {
+#entete hr {
   margin-top: 0px;
   margin-bottom: 15px;
   border: none;
@@ -411,6 +410,17 @@ margin-top: 0px;
 #thumbnail {
   padding: 0;
 }
+
+/*----------------page userProfile----------------------------*/
+
+blockquote {
+  font-size: 14px;
+}
+
+#user p {
+  font-size: 1em;
+}
+
 /* ----------------------page event------------------------------- */
 
 .thumbnail {                 /* nvl classe */
@@ -637,6 +647,14 @@ footer{
 }
  /**********************************************************************/
   @media (min-width: 768px) {
+
+        p {
+      font-size: 1.2em;
+    }
+
+    blockquote {
+      font-size: 17.5px;
+    }
 
     .navbar-default .navbar-nav .open .dropdown-menu>li>a {
     color: white;
