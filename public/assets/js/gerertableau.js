@@ -59,7 +59,7 @@ start();
 			$(this).next().slideToggle("300", function(){})
 	})
 
-function getRequests(id){
+/*function getRequests(id){
 	$.get('eventrequests',{'id':id},function(data){
 		console.log('ok')
 		console.log(data)
@@ -86,14 +86,14 @@ function getRequests(id){
 		$requestList.prepend("<button class='fermer_modale'>X</button>");
 		$('.overlay').html($requestList)
   })
-}
+}*/
 
 
 
 $(".confirmer_event").click(function overlaystatus(){
-	var eventId = $(this).attr('data-id');
+	/*var eventId = $(this).attr('data-id');
 	console.log(eventId);
-	getRequests(eventId);
+	getRequests(eventId);*/
     var overlaystate = $(".overlay").css("display")
       if (overlaystate == "none") {
         $(".overlay").css({"display":"block"})

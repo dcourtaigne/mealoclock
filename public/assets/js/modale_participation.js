@@ -4,7 +4,6 @@ $("#buttonmsg").click(function(){
 
 $(".fermer_modale_p").click(function(event){
     $(".overlay").toggle()
-    debugger
     event.stopPropagation()
 })
 

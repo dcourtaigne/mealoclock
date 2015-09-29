@@ -168,10 +168,6 @@ public function updateProfile(){
 
         }
 
-
-
-
-
       $user = $userObj->find($userLogin['id']);
       $user['com'] = $userCom;
       //var_dump($user);
@@ -246,9 +242,10 @@ public function loginJS(){
 
 
 public function uploadPhotoProfile($id){
-  //var_dump($_FILES);
-     // la première entrée au téléchargement
-        $dossier = "c:/xampp/htdocs/mealoclock/public/assets/img/avatar/";
+        $app = getApp();
+        $baseURL = $app->getConfig('base_url');
+
+        $dossier = 'c:/xampp/htdocs'.$baseURL.'/assets/img/avatar/';
         $fichier_tmp = $_FILES["photo"]["tmp_name"];
         $fichier = $_FILES["photo"]["name"];
         $extension = strrchr($fichier, '.'); // extension de fichier téléchargé
@@ -262,7 +259,6 @@ public function uploadPhotoProfile($id){
             //move_uploaded_file($fichier_tmp, $dossier . $id . "_photo" . $extension)) {
                 $userObj = new UsersManager();
                 $userObj->updatePhotoProfile($id,$newfichier);
-
                 header('location:'.$this->generateUrl('userProfile',['id'=>$id]));
             }
             else {
