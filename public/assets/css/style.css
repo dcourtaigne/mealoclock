@@ -556,16 +556,6 @@ span{
   .tab-content .comment{
    padding-top: 20px
   }
-  .tab-content article h3{
-    position: absolute;
-    top: 62px;
-    left: 20px;
-}
-  .tab-content article .chez{
-    position: absolute;
-    top: 110px;
-    left: 20px;
-}
   .tab-content #inscriptions.active, #enattente.active, #organises.active, ul li{
     position: relative;
   }
