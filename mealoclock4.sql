@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_photo` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `user_photo_thumb` varchar(255) COLLATE utf8_bin NOT NULL,
   `user_desc` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_tel` int(10) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 

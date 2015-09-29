@@ -81,16 +81,18 @@
                 </div>
 
             <!-- tableau d'exemple en placement -->
-            <?php if(!empty($thisUser['eventsOrg']) || !empty($thisUser['eventsPart'])):?>
             <div class="col-sm-5 col-sm-offset-1">
                 <section id="evenementProfile" class="row container-fluid gris marginTB20">
                     <h3>Les prochains événements <?php if($w_user['id'] !== $thisUser['id']) echo 'de '.$this->e($thisUser['user_name'])?></h3>
-                    <?php if($w_user['id'] == $thisUser['id']):?>
                         <ul class="list-unstyled list-inline">
+                    <?php if($w_user['id'] == $thisUser['id']):?>
                             <li><a href="<?=$this->url('myEvents')?>" class="btn btn-default" role="button">Gérer mes événements</a></li>
+                    <?php endif ?>
                             <li><a href="<?=$this->url('editEvent',['action'=>'create'])?>" class="btn btn-primary" role="button">Créer un événement</a></li>
                         </ul>
-                    <?php endif ?>
+			            <?php if(empty($thisUser['eventsOrg']) && empty($thisUser['eventsPart'])):?>
+			            <p>Vous n'avez pas d'événements planifiés</p>
+			            <?php endif?>
                     <?php if(!empty($thisUser['eventsOrg'])):?>
                     <section>
                         <h4 class="col-xs-12"><?= $this->e($thisUser['orgTitle'])?></h4>
@@ -129,7 +131,6 @@
                     <?php endif?>
                 </section>
             </div>
-            <?php endif?>
             <!-- fin du tableau de placement -->
         </section>
     </div>

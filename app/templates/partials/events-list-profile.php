@@ -8,7 +8,7 @@ $eventDate=explode(' ',$event['dateFR']);
   </div>
 
   <div class="col-xs-7">
-      <h4><?= $this->e($event['event_title'])?></h4>
+      <h4><a href="<?=$this->url('event',['id'=>$event['id']])?>"><?= $this->e($event['event_title'])?></a></h4>
       <p><?= $this->e($event['event_time'])?></p>
       <p>Chez <a href="#"><?= $this->e(ucfirst($userName))?></a>, Paris <?= $this->e($event['event_location'])?></p>
   </div>
