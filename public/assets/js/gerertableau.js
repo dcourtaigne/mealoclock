@@ -64,12 +64,10 @@ function getRequests(id){
 		console.log('ok')
 		console.log(data)
 		$requestList=$('<div/>');
-		$requestList.addClass('overlay');
 		for (var i=0; i<data.length ; i++){
 		var $eventRequest = $('<div/>');
 		$eventRequest.addClass('conteneur_bis');
-		$eventRequest.append("<button class='fermer_modale'>X</button>\
-													<section class='utilisateur'>\
+		$eventRequest.append("<section class='utilisateur'>\
 														<div class='alignright'>\
 															<div class='image_prenom'>\
 																<img src='http://img15.hostingpics.net/pics/740435visage.jpg'>\
@@ -80,13 +78,13 @@ function getRequests(id){
 		$eventRequest.append("<ul><li>Confirmer l'inscription</li><li>Refuser l'inscription</li></ul></span></div>")
 		$eventRequest.append("<div class='display_bottom_comment'><strong>Afficher son message</strong></div>");
 
-		$eventRequest.append("<p class='commentaire'>"+data[i].message+"<br></p><div class='display_bottom_profile'><strong>Apercu du profil</strong></div>")
+		$eventRequest.append("<p class='commentaire'>"+data[i].message+"<br><div class='display_bottom_profile'><strong>Apercu du profil</strong></div>")
 		$eventRequest.append("<article class='profile_preview'><p><strong>Introduction:</strong>"+data[i].user_desc+"</p><span><strong>Repas participes: 8</strong></span>")
 		$eventRequest.append("<br><span><strong>Repas organises: 2</strong></span><br><a href='#''>Consulter son profil</a></article></section>");
 		$eventRequest.appendTo($requestList);
 		}
-		$requestList.appendTo($('#gererevenements'));
-
+		$requestList.prepend("<button class='fermer_modale'>X</button>");
+		$('.overlay').html($requestList)
   })
 }
 

@@ -92,14 +92,14 @@
 </div>
 
 <div class="overlay2">
-  <div id="modale_participation">
+  <div id="modale_annulation">
     <form id="annulation" method="POST" action="<?=$this->url('eventRequest')?>">
       <button class="fermer_modale_2">x</button>
       <p>Etes vous sûr de vouloir annuler votre participation à cet événement?</p>
       <div class="text-danger" id="error"></div>
       <input type="hidden" value="<?=$w_user['id']?>" name="guest_id">
       <input type="hidden" value="<?=$event[0]['id']?>" name="event_id">
-      <input type="submit" id="submit_button_p" label="Envoyer" name="cancel" value="OK">
+      <input type="submit" label="Envoyer" name="cancel" value="OK">
     </form>
   </div>
 </div>

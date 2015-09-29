@@ -1,9 +1,11 @@
-$("#attend").offsetParent().click(function(){
+$("#attend").click(function(){
 		$(".overlay").toggle()
 })
 
-$(".fermer_modale_p").click(function(){
-		$(".overlay").toggle()
+$(".fermer_modale_p").click(function(event){
+    $(".overlay").toggle()
+    debugger
+    event.stopPropagation()
 })
 
  $('#participation').submit(function ( e ) { // affectation d'un listener sur l'evenement "submit" du formulaire d'inscription
@@ -28,12 +30,13 @@ $(".fermer_modale_p").click(function(){
     );
   });
 
-$("#cancel").offsetParent().click(function(){
+$("#cancel").click(function(){
 		$(".overlay2").toggle()
 })
 
-$(".fermer_modale_2").click(function(){
-		$(".overlay2").toggle()
+$(".fermer_modale_2").click(function(event){
+    event.stopPropagation()
+    $(".overlay2").toggle()
 })
 
 $('#annulation').submit(function ( e ) { // affectation d'un listener sur l'evenement "submit" du formulaire d'inscription

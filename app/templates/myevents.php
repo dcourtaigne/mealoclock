@@ -76,6 +76,9 @@
 
 </div>
 </div>
+<div class="overlay">
+
+</div>
 
 
 <script type="text/javascript" src="<?= $this->assetUrl("js/gerertableau.js") ?>"></script>

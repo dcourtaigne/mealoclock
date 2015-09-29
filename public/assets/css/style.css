@@ -821,11 +821,11 @@ Style des divs display*/
     width: 22px;
     text-align: center;
 }
-#modale_participation{
+#modale_participation, #modale_annulation{
   display: block;
   margin-top: 350px;
 }
-#modale_participation form{
+#modale_participation form, #modale_annulation form{
   margin-top: 500px;
   margin: auto;
   width: 360px;
