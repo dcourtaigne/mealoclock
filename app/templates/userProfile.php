@@ -87,8 +87,8 @@
                     <h3>Les prochains événements <?php if($w_user['id'] !== $thisUser['id']) echo 'de '.$this->e($thisUser['user_name'])?></h3>
                     <?php if($w_user['id'] == $thisUser['id']):?>
                         <ul class="list-unstyled list-inline">
-                            <li><a href="#" class="btn btn-default" role="button">Gérer mes événements</a></li>
-                            <li><a href="<?=$this->url('editEvent', ['action' => 'create'])?>" class="btn btn-primary" role="button">Créer un nouvel événement</a></li>
+                            <li><a href="<?=$this->url('myEvents')?>" class="btn btn-default" role="button">Gérer mes événements</a></li>
+
                         </ul>
                     <?php endif ?>
                     <?php if(!empty($thisUser['eventsOrg'])):?>

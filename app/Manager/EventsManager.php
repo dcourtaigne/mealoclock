@@ -12,7 +12,7 @@ class EventsManager extends \W\Manager\Manager{
               join communities c on (e.community_id = c.id)
               join users u on (e.user_id = u.id)
               WHERE e.event_date>=:currentdate
-              ORDER BY e.event_date ASC";
+              ORDER BY e.event_date ASC, e.event_time ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->execute();
@@ -28,7 +28,7 @@ class EventsManager extends \W\Manager\Manager{
               join communities c on (e.community_id = c.id)
               join users u on (e.user_id = u.id)
               WHERE e.event_date>=:currentdate AND e.community_id=:community
-              ORDER BY e.event_date ASC";
+              ORDER BY e.event_date ASC, e.event_time ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':currentdate',$currentDate);
     $eventQuery->bindValue(':community',$com);

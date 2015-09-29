@@ -38,8 +38,6 @@ class CreateController extends Controller{
         $submitName = 'Modifier';
         $formAction = $this->generateUrl('editEvent', ['action' =>  'edit', 'id' => $idEvent]);
       }
-
-
     $message = "";
     $errors = [
       'name'=>"",
@@ -71,6 +69,31 @@ class CreateController extends Controller{
         if(!empty($idEvent)){
           if($eventObj->update($values,$idEvent)) header("location:".$this->generateUrl('event', ['id'=>$idEvent]));
         }else{
+          $defaultPic1=array("burger-vege.jpg","legume-vege.jpg","poele-vege.jpg","sandwich-vege.jpg");
+          $defaultPic2=array("burger-vegan.jpg","dessert-vegan.jpg","poele-vegan.jpg","sandwich-vegan.jpg");
+          $defaultPic3=array("biscuit-gluten.jpg","dessert-gluten.jpg","pate-gluten.jpg","plat-gluten.jpg");
+          $defaultPic4=array("chocolat-lactose.jpg","dessert-lactose.jpg","smoothie-lactose.jpg","verine-lactose.jpg");
+
+          $number = rand(1,4);
+          switch ($values['community_id']) {
+            case '1':
+              $default = $defaultPic1;
+              break;
+            case '2':
+              $default = $defaultPic2;
+              break;
+            case '3':
+              $default = $defaultPic3;
+              break;
+            case '4':
+              $default = $defaultPic4;
+              break;
+            default:
+              $default = $defaultPic1;
+              break;
+          }
+          $values['event_image'] = $default[$number];
+
           if($eventObj->insert($values)){
             $lastItem = $eventObj->getLastCreatedEvent();
             header("location:".$this->generateUrl('event', ['id'=>$lastItem['MAX(id)']]));

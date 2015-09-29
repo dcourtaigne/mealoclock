@@ -9,8 +9,8 @@
     </article>
 
     <div class='col-xs-12 col-sm-2'>
-        <div class='marginTop20'>
-            <a href='#'><img src='/mealoclock/public/assets/img/saladebis.jpg' class='img-responsive'></a>
+        <div class='marginTB20'>
+            <a href='<?=$this->url('event',['id'=>$singleEvent['id']])?>'><img src="<?=$this->assetUrl('img/event/'.$singleEvent['event_image'])?>" class='img-responsive'></a>
         </div>
     </div>
 

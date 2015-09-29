@@ -836,7 +836,6 @@ Style des divs display*/
 }
 
 .center {
-    height : 100px;
     display : block;
     vertical-align : middle;
     float:none;

@@ -26,7 +26,7 @@
                <!--  <label for="photo">Photo</label>-->
                 <input type="file" name="photo">
                 <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-                <!-- <button type="submit" class="btn btn-primary btn-xs">Ok</button> -->
+                <button type="submit" class="btn btn-primary btn-xs">Ok</button>
               </form>
             </div>
             <?php endif ?>
@@ -52,7 +52,7 @@
                   <li><a href="<?= $this->url('eventsbycom',['com'=>$event[0]['com_shortname']])?>">Evénements de la communauté</a></li>
                   <li><a href="<?= $this->url('events')?>">Tous les événements</a></li>
                 </ul>
-             </div> 
+             </div>
           </div>
       </section>
 
