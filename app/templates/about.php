@@ -10,8 +10,8 @@
             <section class='row text-center anthracite color-white'>
                 <div class="col-xs-12 paddingTB40 paddingLR40">
                     <h2> Comment ça marche ?</h2>
-                    <p >Meal ’o clock est un site communautaire dont le but est de vous permettre d’organiser des repas,
-                        des activités, des initiations ou tous types d'évènements liés à un régime alimentaire spécifique. Que vous soyez Végétarien, Végan, Intolérant ou allergique au gluten ou au lactose, organisez ou participez à des évènements avec des personnes qui partagent cette spécificité alimentaire.</p>
+                    <p >Meal o'clock est un site communautaire dont le but est de vous permettre d’organiser des repas,
+                        des activités, des initiations ou tous types d'événements liés à un régime alimentaire spécifique. Que vous soyez végétarien, végan, intolérant ou allergique au gluten ou au lactose, organisez ou participez à des événements avec des personnes qui partagent cette spécificité alimentaire.</p>
                 </div>
             </section>
 
@@ -19,7 +19,7 @@
                 <div class="col-xs-12 col-md-4 col-md-push-8 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Soyez vous-même !</strong></h3>
                     <p class="text-justify">Fini les tracas et les prises de têtes pour plaire à tout le monde, fini les regards noirs et les plats “rien que pour toi” : vivez pleinement votre régime alimentaire !
-                        <br> Aujourd'hui, c'est vous qui êtes la norme alors, faites vous plaisir.</p>
+                        <br> Aujourd'hui, c'est vous qui êtes la norme alors, faites-vous plaisir.</p>
                 </div>
                 <div class="col-xs-12 col-md-8 col-md-pull-4 ">
                     <img src="<?= $this->assetUrl('img/vous_etes-B.png')?>" alt="illustration de la diversité du genre humain" class="img-responsive">
@@ -29,20 +29,20 @@
             <section class='row text-left vege color-white'>
                 <div class="col-xs-12 col-md-5 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Organisateur, <br>vous êtes le maître !</strong></h3>
-                    <p class="text-justify">Avec des inconnus ou avec vos amis, organisez les évènements qui vous ressemblent grâce à un large choix d’options et de personnalisation.
-                    Avec profils de nos membres, apprenez à connaître vos futurs invités. Et si vous ne souhaitez pas d’un participant à votre évènement, refusez sa demande.</p>
+                    <p class="text-justify">Avec des inconnus ou avec vos amis, organisez les événements qui vous ressemblent grâce à un large choix d’options et de personnalisation.
+                    Grâce aux profils de nos membres, apprenez à connaître vos futurs invités. Et si vous ne souhaitez pas d’un participant à votre événement, refusez sa demande.</p>
                 </div>
-                 <div class="col-xs-12 col-md-7 noPadding ">
+                <div class="col-xs-12 col-md-7 noPadding ">
                     <img src="<?= $this->assetUrl('img/maitre-b.png')?>" alt="illustration de superhéro" class="img-responsive">
                 </div>
             </section>
 
             <section class='row text-left sslactose color-white'>
                 <div class="col-xs-12 col-md-4 col-md-push-8 paddingTB40 paddingLR40">
-                    <h3 class='text-center'><strong>Faites le premiers pas !</strong></h3>
+                    <h3 class='text-center'><strong>Faites le premier pas !</strong></h3>
                     <p class="text-justify">Pas besoin d’être cuisinier pour profiter de bons plats. De vrais chefs n’attendent que vous
-                        autour de leur table. Alors complétez votre profil et donnez leur envie d’en apprendre plus sur vous.<br>
-                        L’organisateur a toujours le dernier mot concernant votre participation alors montrez que derrière votre profil, il y a un être humain.</p>
+                        autour de leur table. Alors complétez votre profil et donnez-leur envie d’en apprendre plus sur vous.<br>
+                        L’organisateur a toujours le dernier mot concernant votre participation alors montrez que derrière votre profil, il y a un être humain doué de sensibilité.</p>
                 </div>
                 <div class="col-xs-12 col-md-8 col-md-pull-4 ">
                     <img src="<?= $this->assetUrl('img/first_step-B.png')?>" alt="illustration d'une tablette avec des bulles de BD" class="img-responsive">
@@ -64,8 +64,8 @@
             <section class='row text-left rose color-white'>
                 <div class="col-xs-12 col-md-4 col-md-push-8 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Des repas, des rencontres</strong></h3>
-                    <p class="text-justify">Grâce à meal’o clock, vous avez la possibilité de partagez sans restriction vos choix
-                        et vos goût avec les curieux ou les habitués. Entre connaisseurs ou néophytes, profitez du repas pour découvrir plus que des recettes, de véritables personnalités.</p>
+                    <p class="text-justify">Grâce à meal o'clock, vous avez la possibilité de partager sans restriction vos choix
+                        et vos goûts avec les curieux ou les habitués. Entre connaisseurs ou néophytes, profitez du repas pour découvrir plus que des recettes, de véritables personnalités.</p>
                 </div>
                 <div class="col-xs-12 col-md-8 col-md-pull-4 ">
                     <img src="<?= $this->assetUrl('img/partager-B.png')?>" alt="illustration d'un groupe de personne autour d'un stand de burger" class="img-responsive">
@@ -74,7 +74,7 @@
 
             <section class='row text-left anthracite color-white text-center'>
                 <div class="col-xs-12 paddingTB40 paddingLR40">
-                    <h3 ><strong>Alors qu’attendez-vous ?</strong></h3>
+                    <h3 ><strong>Alors, qu’attendez-vous ?</strong></h3>
                     <p>Parmi nos 4 régimes alimentaires principaux, choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir.
                         Vous n'aurez plus qu'à choisir un événement, envoyer une requête à l'organisateur pour y participer et attendre sa réponse.
                         Et pourquoi ne pas organiser vous-même quelque chose ? Notre interface de création d'événement est très simple.

@@ -46,13 +46,13 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <?php if($w_user==NULL):?>
-                <li id="login"><button>Se connecter</button></li>
+                <li id="login" class="paddingLR15"><button>Se connecter</button></li>
                 <?php else:?>
                 <li><a href="<?=$this->url('logout')?>">Logout</a></li>
                 <li><a href="<?=$this->url('userProfile',['id'=>$w_user['id']])?>"><?="Bonjour ".ucfirst($w_user['user_name'])?></a></li>
                 <?php endif ?>
                 <?php if($w_user==NULL):?>
-                <li id="inscription"><button>Inscription</button></li>
+                <li id="inscription" class="paddingLR15"><button>Inscription</button></li>
                 <?php endif ?>
               </ul>
             </div><!--/.nav-collapse -->

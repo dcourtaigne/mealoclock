@@ -41,9 +41,9 @@
               <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10"><a href="#" id="cancel"><strong>Annuler ma participation</strong></a></button>
               <?php endif ?>
             <?php else:?>
-            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10" id="open_register_form"><a href="#" id="inscription"><strong>Inscrivez-vous pour participer!</strong></a></button>
+            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10" id="open_register_form"><a href="#" id="inscription" class="color-white"><strong>Inscrivez-vous pour participer!</strong></a></button>
             <?php endif?>
-            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10"><a href="#"><i class="glyphicon glyphicon-pencil"></i><strong>   Question</strong></a></button>
+            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10"><a href="#" class="color-white"><i class="glyphicon glyphicon-pencil"></i><strong>   Question</strong></a></button>
             <div class="btn-group btn-block">
             <button type="button" class="btn-group btn btn-primary dropdown-toggle btn-block marginTop10" name="events" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-search"></i>
                   <strong>  Evénements</strong> <span class="caret"></span>
