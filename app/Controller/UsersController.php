@@ -6,6 +6,7 @@ use Manager\UsersManager;
 use Manager\EventsManager;
 use Manager\CommunitiesManager;
 use Manager\Communities_membersManager;
+use Manager\Users_events_participationsManager;
 
 
 class UsersController extends Controller{
@@ -236,10 +237,13 @@ public function getEventRequests($id){
       }else{
         $results[$i]['countOrg'] = '0';
       }
-    }
-    var_dump($results);*/
+    }*/
+    var_dump($results);
+    if($results){
     $this->show('eventrequests',['requests'=>$results]);
-
+    }else{
+      $this->redirectToRoute('myEvents');
+    }
   }
 
 public function loginJS(){
@@ -277,6 +281,22 @@ public function uploadPhotoProfile($id){
         }
 
 
+}
+
+public function confirmEventRequest($id, $iduser){
+  echo $id.'<br>';
+  echo $iduser.'<br>';
+  $uepObj = new Users_events_participationsManager();
+  $uepObj->updateRequest($iduser, $id,'confirmed');
+  $this->redirectToRoute('getEventRequests',['id'=>$id]);
+}
+
+public function rejectEventRequest($id, $iduser){
+  echo $id.'<br>';
+  echo $iduser.'<br>';
+  $uepObj = new Users_events_participationsManager();
+  $uepObj->updateRequest($iduser, $id,'rejected');
+  $this->redirectToRoute('getEventRequests',['id'=>$id]);
 }
 
 

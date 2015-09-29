@@ -20,6 +20,8 @@
     ['GET|POST', '/myaccount/profile', 'Users#updateProfile', 'updateProfile'],
     ['GET', '/myaccount/myevents', 'Users#displayEvents', 'myEvents'],
     ['GET', '/myaccount/myevents/[i:id]/eventrequests', 'Users#getEventRequests', 'getEventRequests'],
+    ['GET', '/myaccount/myevents/[i:id]/eventsrequests/[i:iduser]', 'Users#confirmEventRequest', 'confirmEventRequest'],
+    ['GET', '/myaccount/myevents/[i:id]/eventsrequests/[i:iduser]', 'Users#rejectEventRequest', 'rejectEventRequest'],
 
 
     ['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],

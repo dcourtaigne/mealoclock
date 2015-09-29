@@ -10,8 +10,8 @@
             </p>
             <span class="liste">
               <ul>
-                <li>Confirmer l'inscription</li>
-                <li>Refuser l'inscription</li>
+                <li><a href="<?=$this->url('confirmEventRequest', ['id'=>$request['event_id'],'iduser'=>$request['id']])?>">Confirmer l'inscription</a></li>
+                <li><a href="<?=$this->url('rejectEventRequest', ['id'=>$request['event_id'],'iduser'=>$request['id']])?>">Refuser l'inscription</a></li>
               </ul>
             </span>
           </div>

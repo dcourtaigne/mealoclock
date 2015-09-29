@@ -12,5 +12,14 @@ class Users_events_participationsManager extends \W\Manager\Manager{
     	return 1;
 	}
 
+  public function updateRequest($id, $eventId,$status){
+    $sql = "UPDATE `users_events_participations` SET `status`=:status WHERE guest_id=:id AND event_id=:idevent";
+    $updateQuery = $this->dbh->prepare($sql);
+    $updateQuery->bindValue(':id',(int)$id);
+    $updateQuery->bindValue(':idevent',(int)$eventId);
+    $updateQuery->bindValue(':status',$status);
+    $updateQuery->execute();
+  }
+
 
 }

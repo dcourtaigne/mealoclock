@@ -68,7 +68,7 @@ class EventsManager extends \W\Manager\Manager{
     }
 
     public function getEventGuests($id, $status="confirmed"){
-    $query = "select u.user_name, u.id, uep.message, uep.status, u.user_desc, u.user_photo, e.event_title
+    $query = "select u.user_name, u.id, uep.message, uep.status, uep.event_id, u.user_desc, u.user_photo, e.event_title
               from events e
               join users_events_participations uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
