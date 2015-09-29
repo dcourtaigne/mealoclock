@@ -29,7 +29,7 @@ margin-top: 0px;
 p {
   font-family: 'Gudea', sans-serif;
 }
-  
+
 footer p, #community p, #user p {
   font-size: 1em;
 }
@@ -406,22 +406,22 @@ blockquote {
   font-size: 14px;
 }
 /* ----------------------page event------------------------------- */
-.thumbnail {                 
+.thumbnail {
     padding: 10px;
 }
 
-.thumbnail img {               
+.thumbnail img {
     margin-bottom: 10px;
     border: solid 1px black;
 }
 
 #event button {
-    padding-left: 10px;         
+    padding-left: 10px;
     border: none;
 }
 
 button:active {
-    background-color: #87B30B !important; 
+    background-color: #87B30B !important;
     border: 1px solid #87B30B
 }
 /* --------------------------Gerer events------------------------*/
@@ -891,7 +891,7 @@ Style des divs display*/
 
     #community p {
       font-size: 1.4em;
-    } 
+    }
 
     #inscription button , #login button{
       padding-top: 15px;
@@ -958,7 +958,7 @@ Style des divs display*/
     }
 
 
-    header, #community, #contact, #vegan, #vege, #ssgluten, #sslactose, #User,#updateUser, #createEvent, #event, #requireLogin, #myevents, #commentForm, #events {
+    header, #community, #contact, #vegan, #vege, #ssgluten, #sslactose, #User,#updateUser, #createEvent, #event, #requireLogin, #myevents, #commentForm, #events, #requests {
         background-color: white; /* nv couleur */
     }
 
