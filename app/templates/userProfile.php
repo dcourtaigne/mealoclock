@@ -7,14 +7,27 @@
                     <div class="row">
                    <!-- debut de la info du profil -->
                         <div id="thumbnail" class="col-xs-4 marginTB20 text-center">
-                            <img src="http://lorempixel.com/250/250" alt="photo du profil" class="img-responsive thumbnail">
+                             <?php if($thisUser['user_photo']): ?>
+                            <img src="<?=$this->assetUrl('img/avatar/'.$thisUser['user_photo'])?>" alt="photo du profil" class="img-responsive thumbnail">
+                            <?php else:?>
+                            <img src="<?=$this->assetUrl('img/avatar/avatar.png')?>" alt="photo du profil" class="img-responsive">
+                            <?php endif ?>
                         </div>
                         <div class="col-xs-8">
                             <h2><?=$thisUser['greeting']?></h2>
                             <?php if($w_user['id'] == $thisUser['id']):?>
                             <ul class="list-unstyled list-inline">
                                 <li><a href="<?= $this->url('updateProfile')?>" class="btn btn-default" role="button">Compléter mon profil</a></li>
-                                <li><a href="" class="btn btn-default" role="button">Modifier ma photo</a></li>
+                                <li class="btn btn-default" role="button">Modifier ma photo
+                                    <form method='POST' action='<?=$this->url('uploadPhotoProfile',['id'=>$thisUser['id']])?>' enctype="multipart/form-data">
+                                    <!--  <label for="photo">Photo</label>-->
+                                    <input style="opacity:0;position:absolute;z-index:99" type="file" name="photo">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                                </li>
+                                <li>
+                                    <input type="submit" class="btn btn-primary btn-xs" value="ok">
+                                </form>
+                                </li>
                             </ul>
 
                             <?php endif ?>
@@ -39,7 +52,7 @@
                                     }
                                     ?>
                             </ul>
-                        
+
                             <!-- commentaires -->
 
                             <section id="comments" class="row container-fluid marginTB20">
@@ -85,7 +98,7 @@
                                 <div class="col-xs-12">
                                     <section id="event_list" class="marginTB20">
                                         <ul class="list-unstyled">
-                                        
+
                                             <?php foreach ($thisUser['eventsOrg'] as $event){
                                                    $this->insert('partials/events-list-profile',['event'=>$event,'userName'=>$thisUser['user_name']]);
                                              }
@@ -103,7 +116,7 @@
                                 <div class="col-xs-12">
                                     <section id="event_list" class="marginTB20">
                                         <ul class="list-unstyled">
-                                            
+
                                                 <?php foreach ($thisUser['eventsPart'] as $event){
                                                    $this->insert('partials/events-list-profile',['event'=>$event,'userName'=> $event['user_name']]);
                                              }

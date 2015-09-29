@@ -1,5 +1,5 @@
 <li>
-  <button class="confirmer_event">Gerer l'evenement</button>
+  <button class="confirmer_event" data-id="<?=$singleEvent['id']?>">Gerer l'evenement</button>
   <div class="vege col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <p class=" h4 color-white"><?= $this->e($singleEvent['dateFR'])?></p>
 

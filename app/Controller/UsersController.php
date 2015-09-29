@@ -194,17 +194,9 @@ public function displayEvents(){
     $results['orgEvents'] = $userObj->getUserEvents($thisUserId);
     $results['confirmedEvents'] = $userObj->getUserParticipations($thisUserId,'confirmed');
     $results['pendingEvents'] = $userObj->getUserParticipations($thisUserId,'tobeconfirmed');
-    
+
     $eventObj=new EventsManager();
 
-    $results['requests']=[];
-    foreach ($results['orgEvents'] as $event) {
-      $results['requests'][$event['id']][] = $eventObj->getEventGuests($event['id'], $status="tobeconfirmed");
-      for($i=0;$i>count($results['requests'][$event['id']]);$i++){
-        $results['requests'][$event['id']][$i]['countOrg']=count($userObj->getUserEvents($results['requests'][$i]['id']));
-        $results['requests'][$event['id']][$i]['countPart']=count($userObj->getUserParticipations($results['requests'][$i]['id']),'confirmed');
-      }
-    }
 
     for($i=0 ; $i<count($results['orgEvents']); $i++) {
       $results['orgEvents'][$i]['time'] = formatTime($results['orgEvents'][$i]['event_time']);
@@ -228,9 +220,60 @@ public function displayEvents(){
 
 }
 
+
+public function getEventRequests(){
+  if(!empty($_GET)){
+    $eventId = intval($_GET['id']);
+    $eventObj=new EventsManager();
+    $userObj = new UsersManager();
+    $results=$eventObj->getEventGuests($eventId, $status="tobeconfirmed");
+    for($i=0;$i>count($results);$i++){
+        $results[$i]['countOrg']=count($userObj->getUserEvents(intval($results[$i]['id'])));
+        $results[$i]['countPart']=count($userObj->getUserParticipations(intval($results[$i]['id'])),'confirmed');
+      }
+    //var_dump($results);
+    $this->showJson($results);
+
+  }
+
+
+}
+
 public function loginJS(){
   $status=["status"=>1];
   $this->showJson($status);
+}
+
+
+public function uploadPhotoProfile($id){
+  //var_dump($_FILES);
+     // la première entrée au téléchargement
+        $dossier = "c:/xampp/htdocs/mealoclock/public/assets/img/avatar/";
+        $fichier_tmp = $_FILES["photo"]["tmp_name"];
+        $fichier = $_FILES["photo"]["name"];
+        $extension = strrchr($fichier, '.'); // extension de fichier téléchargé
+        $extensions = array('.jpg', '.png', '.gif', '.jpeg'); // extensions possibles de fichier à télécharger
+        if (in_array($extension, $extensions)) {
+          $newfichier = $id . "_photo" . $extension;
+          $fullPathNew = $dossier . $id . "_photo" . $extension;
+          $stringData = file_get_contents($fichier_tmp);
+          if (smart_resize_image($fichier_tmp, $stringData , 250, 250, true, $fullPathNew, true, false, 100)){
+                    // SQL ajout de l'image dans le profil user ......
+            //move_uploaded_file($fichier_tmp, $dossier . $id . "_photo" . $extension)) {
+                $userObj = new UsersManager();
+                $userObj->updatePhotoProfile($id,$newfichier);
+
+                header('location:'.$this->generateUrl('userProfile',['id'=>$id]));
+            }
+            else {
+                echo "echec du téléchargement";
+            }
+        }
+        else {
+            echo  "Vous devez télécharger un fichier de format image : gif , png , jpeg";
+        }
+
+
 }
 
 

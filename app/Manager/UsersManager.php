@@ -69,5 +69,13 @@ class UsersManager extends \W\Manager\UserManager{
 */
   }
 
+  public function updatePhotoProfile($id,$newfichier){
+    $sql = "UPDATE users SET `user_photo`=:pic WHERE id =:id";
+    $userUpdate = $this->dbh->prepare($sql);
+    $userUpdate->bindValue(':pic',$newfichier);
+    $userUpdate->bindValue(':id',(int)$id);
+    $userUpdate->execute();
+  }
+
 
 }

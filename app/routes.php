@@ -18,10 +18,12 @@
     ['GET', '/profile/[i:id]', 'Users#userProfile', 'userProfile'],
     ['GET|POST', '/myaccount/profile', 'Users#updateProfile', 'updateProfile'],
     ['GET', '/myaccount/myevents', 'Users#displayEvents', 'myEvents'],
+    ['GET', '/myaccount/eventrequests', 'Users#getEventRequests', 'getEventRequest'],
 
 
     ['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
     ['GET', '/eventAjaxCom', 'Read#getEventsAjaxCom', 'eventsajaxcom'],
-    ['POST', '/uploadphoto/event/[i:id]', 'Create#uploadPhotoEvent', 'uploadPhotoEvent']
+    ['POST', '/uploadphoto/event/[i:id]', 'Create#uploadPhotoEvent', 'uploadPhotoEvent'],
+    ['POST', '/uploadphoto/profile/[i:id]', 'Users#uploadPhotoProfile', 'uploadPhotoProfile']
 
 	);

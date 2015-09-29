@@ -31,7 +31,7 @@
 					<div class="tab-content">
 						<section id="inscriptions" class="active">
 							<ul>
-								<?php 
+								<?php
 								if(!empty($events['confirmedEvents'] )){
 									foreach($events['confirmedEvents'] as $singleEvent){
                     				$this->insert('partials/myevents-list-confirmed',['singleEvent'=>$singleEvent]);
@@ -45,7 +45,7 @@
 
 						<section id="enattente">
 							<ul>
-								<?php 
+								<?php
 								if(!empty($events['pendingEvents'] )){
 									foreach($events['pendingEvents'] as $singleEvent){
                     				$this->insert('partials/myevents-list-pending',['singleEvent'=>$singleEvent]);
@@ -59,7 +59,7 @@
 
 						<section id="organises">
 							<ul>
-								<?php 
+								<?php
 								if(!empty($events['orgEvents'] )){
 									foreach($events['orgEvents'] as $singleEvent){
                     				$this->insert('partials/myevents-list',['singleEvent'=>$singleEvent]);
@@ -73,16 +73,7 @@
 					</div>
 				</div>
 	</div>
-	<div class="overlay paddingTB20 paddingLR20">
-		<?php if(!empty($events['orgEvents'] )){
-			foreach($events['orgEvents'] as $singleEvent){
-            $this->insert('partials/myevents-list',['singleEvent'=>$singleEvent]);
-            }
-        }
-            	
-            ?>
 
-	</div>
 </div>
 </div>
 

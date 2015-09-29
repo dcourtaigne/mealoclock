@@ -34,11 +34,15 @@
 
 
           <div class="col-xs-12 col-sm-3 col-sm-pull-9 paddingTB20 vertical-center">
-          	<?php if(!in_array($w_user['id'], $event['guestsId'])):?>
-            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 green buttonEvent"><a id="attend"><strong>Participer à l'événement</strong></a></button>
-            <?php else :?>
-            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 red buttonEvent"><a id="cancel"><strong>Annuler ma participation</strong></a></button>
-            <?php endif ?>
+            <?php if($w_user):?>
+            	<?php if(!in_array($w_user['id'], $event['guestsId'])):?>
+              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 green buttonEvent"><a id="attend"><strong>Participer à l'événement</strong></a></button>
+              <?php else :?>
+              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 red buttonEvent"><a id="cancel"><strong>Annuler ma participation</strong></a></button>
+              <?php endif ?>
+            <?php else:?>
+            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 green buttonEvent"><a id="inscription"><strong>Inscriver vous pour participer!</strong></a></button>
+            <?php endif?>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 green buttonEvent"><a href="#"><strong>Poser une question</strong></a></button>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 green buttonEvent"><a href="<?= $this->url('eventsbycom',['com'=>$event[0]['com_shortname']])?>"><strong>Evénements de la communauté</strong></a></button>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 green buttonEvent"><a href="<?= $this->url('events')?>"><strong>Tous les événements</strong></a></button>
@@ -65,14 +69,14 @@
               </ul>
 
             </div>
-            
+
           </article>
 
 
       </section>
 
 </section>
-<div class="overlay"> 
+<div class="overlay">
   <div id="modale_participation">
     <form id="participation" method="POST" action="<?=$this->url('eventRequest')?>">
       <button class="fermer_modale_p">x</button>
@@ -87,7 +91,7 @@
   </div>
 </div>
 
-<div class="overlay2"> 
+<div class="overlay2">
   <div id="modale_participation">
     <form id="annulation" method="POST" action="<?=$this->url('eventRequest')?>">
       <button class="fermer_modale_2">x</button>
@@ -100,6 +104,6 @@
   </div>
 </div>
 
-<script type="text/javascript" src="<?= $this->assetUrl('js/modale_participation.js')?>"></script>x
+<script type="text/javascript" src="<?= $this->assetUrl('js/modale_participation.js')?>"></script>
 
 <?php $this->stop('main_content') ?>
