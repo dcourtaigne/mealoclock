@@ -88,7 +88,7 @@
                     <?php if($w_user['id'] == $thisUser['id']):?>
                         <ul class="list-unstyled list-inline">
                             <li><a href="<?=$this->url('myEvents')?>" class="btn btn-default" role="button">Gérer mes événements</a></li>
-
+                            <li><a href="<?=$this->url('editEvent',['action'=>'create'])?>" class="btn btn-primary" role="button">Créer un événement</a></li>
                         </ul>
                     <?php endif ?>
                     <?php if(!empty($thisUser['eventsOrg'])):?>
