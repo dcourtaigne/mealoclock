@@ -20,7 +20,7 @@
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Végétarien</h1>
                             <p class="carousel-caption-text hidden-xs">
-                                Manger 5 fruits et légumes ne date pas d'hier pour les végétariens. Découvrez cette communauté et la variété culinaire qui la caractérise avec notre communauté.
+                                Manger 5 fruits et légumes ne date pas d'hier pour les végétariens. Découvrez cette communauté et la variété culinaire qui la caractérise.
                             </p>
                         </div>
                     </div>
@@ -28,9 +28,9 @@
                     <div class="item">
                         <img src="<?= $this->assetUrl('img/vegan_frie.jpg')?>" />
                         <div class="carousel-caption">
-                            <h1 class="carousel-caption-header">Vegan</h1>
+                            <h1 class="carousel-caption-header">Végan</h1>
                             <p class="carousel-caption-text hidden-xs">
-                             <strong>Un régime alimantaire sans produits d'origine animal, c'est possible et ce n'est pas un sacrifice. Notre communauté vegan en est la preuve. Soyez curieux et goutez !</strong></p>
+                             <strong>Un régime alimentaire sans produits d'origine animale, c'est possible et ce n'est pas un sacrifice. Notre communauté végan en est la preuve. Soyez curieux et goûtez !</strong></p>
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Sans lactose</h1>
                             <p class="carousel-caption-text hidden-xs">
-                                <strong>Lait, yaourt, chocolat, fromage et l'ensemble des produits communs existent sans lactose, pour le bien être de tous le monde. Prenez un repas sans lactose avec nous !</strong>
+                                <strong>Lait, yaourt, chocolat, fromage et l'ensemble des produits communs existent sans lactose, pour le bien-être de tous. Prenez un repas sans lactose avec nous !</strong>
                             </p>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
     <section id="community" class="row">
       <article class="col-xs-12 text-center paddingTB40 color-white anthracite">
         <h2> Nos communautés </h2>
-        <p class="text-center"><strong>Meal'o clock regroupe 4 régimes alimentaires principaux. Choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir, consultez les évènements à venir, le profil de nos membres, etc !</strong></p>
+        <p class="text-center"><strong>Meal o'clock regroupe 4 régimes alimentaires principaux. Choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir, consultez les événements à venir, le profil de nos membres, etc !</strong></p>
       </article>
     </section>
 
