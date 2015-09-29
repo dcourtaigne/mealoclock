@@ -6,14 +6,14 @@
                 <div class="col-xs-12">
                     <div class="row">
                    <!-- debut de la info du profil -->
-                        <div id="thumbnail" class="col-xs-4 marginTB20 text-center">
+                        <div class="col-xs-5 col-sm-3 marginTB20 text-center">
                              <?php if($thisUser['user_photo']): ?>
                             <img src="<?=$this->assetUrl('img/avatar/'.$thisUser['user_photo'])?>" alt="photo du profil" class="img-responsive thumbnail">
                             <?php else:?>
-                            <img src="<?=$this->assetUrl('img/avatar/avatar.png')?>" alt="photo du profil" class="img-responsive">
+                            <img src="<?=$this->assetUrl('img/avatar/avatar.png')?>" alt="photo du profil" class="img-responsive thumbnail">
                             <?php endif ?>
                         </div>
-                        <div class="col-xs-8">
+                        <div class="col-xs-7 col-sm-9">
                             <h2><?=$thisUser['greeting']?></h2>
                             <?php if($w_user['id'] == $thisUser['id']):?>
                             <ul class="list-unstyled list-inline">
@@ -32,7 +32,7 @@
 
                             <?php endif ?>
                         </div>
-                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                        <div class="col-xs-12 col-sm-9">
                             <p> Membre depuis le : <?=$this->e($thisUser['create_time'])?></p>
                             <p> Repas organisé(s) : <?= $this->e(count($thisUser['eventsOrg']))?> </br>
                                     Repas participé(s) : <?= $this->e(count($thisUser['eventsPart']))?></p>

@@ -20,7 +20,7 @@
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Végétarien</h1>
                             <p class="carousel-caption-text hidden-xs">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                                Manger 5 fruits et légumes ne date pas d'hier pour les végétariens. Découvrez cette communauté et la variété culinaire qui la caractérise avec notre communauté.
                             </p>
                         </div>
                     </div>
@@ -30,8 +30,7 @@
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Vegan</h1>
                             <p class="carousel-caption-text hidden-xs">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
-                            </p>
+                             <strong>Un régime alimantaire sans produits d'origine animal, c'est possible et ce n'est pas un sacrifice. Notre communauté vegan en est la preuve. Soyez curieux et goutez !</strong></p>
                         </div>
                     </div>
 
@@ -40,7 +39,7 @@
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Sans gluten</h1>
                             <p class="carousel-caption-text hidden-xs">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                               <strong> Les alternatives aux produits contenant du gluten sont nombreuses. Les connaissez-vous ? Venez en apprendre plus dans les repas sans gluten de notre communauté.</strong>
                             </p>
                         </div>
                     </div>
@@ -50,7 +49,7 @@
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Sans lactose</h1>
                             <p class="carousel-caption-text hidden-xs">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                                <strong>Lait, yaourt, chocolat, fromage et l'ensemble des produits communs existent sans lactose, pour le bien être de tous le monde. Prenez un repas sans lactose avec nous !</strong>
                             </p>
                         </div>
                     </div>
@@ -73,7 +72,7 @@
     <section id="community" class="row">
       <article class="col-xs-12 text-center paddingTB40 color-white anthracite">
         <h2> Nos communautés </h2>
-        <p class="text-center">Meal'o clock regroupe 4 régimes alimentaires principaux. Choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir, consultez les évènements à venir, le profil de nos membres, etc !</p>
+        <p class="text-center"><strong>Meal'o clock regroupe 4 régimes alimentaires principaux. Choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir, consultez les évènements à venir, le profil de nos membres, etc !</strong></p>
       </article>
     </section>
 
@@ -81,27 +80,27 @@
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 vege color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/vege.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social">
+          <a href="<?= $this->url('eventsbycom',['com'=>'vege']); ?>"><img src="<?= $this->assetUrl('img/vege.png')?>" alt="logo communauté végétariens" class="img-responsive center-block social"></a>
         </article>
       </a>
 
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 vegan color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo communauté végans" class="img-responsive center-block social">
+          <a href="<?= $this->url('eventsbycom',['com'=>'vegan']); ?>"><img src="<?= $this->assetUrl('img/vegan.png')?>" alt="logo communauté végans" class="img-responsive center-block social"></a>
         </article>
       </a>
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 ssgluten color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/ssgluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social">
+          <a href="<?= $this->url('eventsbycom',['com'=>'ssgluten']); ?>"><img src="<?= $this->assetUrl('img/ssgluten.png')?>" alt="logo communauté sans gluten" class="img-responsive center-block social"></a>
         </article>
       </a>
 
 
       <a href="#">
         <article class="col-xs-6 col-sm-3 sslactose color-white paddingTB20">
-          <img src="<?= $this->assetUrl('img/sslactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social">
+          <a href="<?= $this->url('eventsbycom',['com'=>'sslactose']); ?>"><img src="<?= $this->assetUrl('img/sslactose.png')?>" alt="logo communauté sans lactose" class="img-responsive center-block social"></a>
         </article>
       </a>
 
@@ -111,18 +110,54 @@
 
     <section id="blog" class="row anthracite">
         <div class="col-xs-12 col-md-8 noPadding">
-          <img src="<?= $this->assetUrl('img/cake_crop.jpg')?>" class="img-responsive" alt='cake miel noisttes sans gluten'>
+          <img src="<?= $this->assetUrl('img/vege_crop.jpg')?>" class="img-responsive" alt='cake miel noisttes sans gluten'>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 color-white">
-          <h4 class="text-left">Sans Gluten... c'est bon quand même</h4>
-          <p>Retrouvez toutes nos recettes sur le blog !</p>
+        <div class="col-xs-12 col-md-4 color-white paddingLR20">
+          <h4 class="text-left">Végé-miam miam</h4>
+          <p>Testez toutes nos recettes végétariennes et bien d'autres choses !</p>
           <a class="btn btn-info btn-lg marginTB20" href="http://jecuisinesansgluten.com/" role="button">J'y vais !</a>
         </div>
-
     </section>
     <hr>
-  </section>
-  
+
+    <section id="blog" class="row anthracite">
+        <div class="col-xs-12 col-md-8 col-md-push-4 noPadding">
+          <img src="<?= $this->assetUrl('img/cake_crop.jpg')?>" class="img-responsive" alt='cake miel noisttes sans gluten'>
+        </div>
+        <div class="col-xs-12  col-md-4 col-md-pull-8 color-white paddingLR20">
+          <h4 class="text-left">Sans Gluten... c'est bon quand même</h4>
+          <p>Retrouvez toutes nos recettes sur le blog !</p>
+          <a class="btn btn-info btn-lg marginTB20" href="http://vegemiam.fr/" role="button">J'y vais !</a>
+        </div>
+    </section>
+    <hr>
+
+    <section id="blog" class="row anthracite">
+        <div class="col-xs-12 col-md-8 noPadding">
+          <img src="<?= $this->assetUrl('img/vegan_crop.jpg')?>" class="img-responsive" alt='cake miel noisttes sans gluten'>
+        </div>
+        <div class="col-xs-12 col-md-4 color-white paddingLR20">
+          <h4 class="text-left"> The Vegan society</h4>
+          <p>Découvrez toutes nos recettes et le monde végan !</p>
+          <a class="btn btn-info btn-lg marginTB20" href="http://www.vegan-france.fr/recettes-vegan.php/" role="button">J'y vais !</a>
+        </div>
+    </section>
+    <hr>
+
+     <section id="blog" class="row anthracite">
+        <div class="col-xs-12 col-md-8 col-md-push-4 noPadding">
+          <img src="<?= $this->assetUrl('img/lactose_crop.jpg')?>" class="img-responsive" alt='cake miel noisttes sans gluten'>
+        </div>
+        <div class="col-xs-12  col-md-4 col-md-pull-8 color-white paddingLR20">
+          <h4 class="text-left">Sans lactose... mais pas sans plaisir</h4>
+          <p>Retrouvez de surprenantes recettes sans lactose !</p>
+          <a class="btn btn-info btn-lg marginTB20" href="http://www.750g.com/recettes_sans_lactose.htm" role="button">J'y vais !</a>
+        </div>
+    </section>
+
+    <hr>
+  </section><i class="fi-torsos-male-female"></i>
+
 
 
 <?php $this->stop('main_content') ?>
