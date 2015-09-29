@@ -16,13 +16,13 @@
             </section>
 
             <section class='row text-left vegan color-white'>
-                <div class="col-xs-12 col-md-8 ">
-                    <img src="<?= $this->assetUrl('img/vous_etes-B.png')?>" alt="illustration de la diversité du genre humain" class="img-responsive">
-                </div>
-                <div class="col-xs-12 col-md-4 paddingTB40 paddingLR40">
+                <div class="col-xs-12 col-md-4 col-md-push-8 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Soyez vous-même !</strong></h3>
                     <p class="text-justify">Fini les tracas et les prises de têtes pour plaire à tout le monde, fini les regards noirs et les plats “rien que pour toi” : vivez pleinement votre régime alimentaire !
                         <br> Aujourd'hui, c'est vous qui êtes la norme alors, faites vous plaisir.</p>
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-pull-4 ">
+                    <img src="<?= $this->assetUrl('img/vous_etes-B.png')?>" alt="illustration de la diversité du genre humain" class="img-responsive">
                 </div>
             </section>
 
@@ -38,14 +38,14 @@
             </section>
 
             <section class='row text-left sslactose color-white'>
-                <div class="col-xs-12 col-md-8 ">
-                    <img src="<?= $this->assetUrl('img/first_step-B.png')?>" alt="illustration d'une tablette avec des bulles de BD" class="img-responsive">
-                </div>
-                <div class="col-xs-12 col-md-4 paddingTB40 paddingLR40">
+                <div class="col-xs-12 col-md-4 col-md-push-8 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Faites le premiers pas !</strong></h3>
                     <p class="text-justify">Pas besoin d’être cuisinier pour profiter de bons plats. De vrais chefs n’attendent que vous
                         autour de leur table. Alors complétez votre profil et donnez leur envie d’en apprendre plus sur vous.<br>
                         L’organisateur a toujours le dernier mot concernant votre participation alors montrez que derrière votre profil, il y a un être humain.</p>
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-pull-4 ">
+                    <img src="<?= $this->assetUrl('img/first_step-B.png')?>" alt="illustration d'une tablette avec des bulles de BD" class="img-responsive">
                 </div>
             </section>
 
@@ -62,13 +62,13 @@
             </section>
 
             <section class='row text-left rose color-white'>
-                <div class="col-xs-12 col-md-8 ">
-                    <img src="<?= $this->assetUrl('img/partager-B.png')?>" alt="illustration d'un groupe de personne autour d'un stand de burger" class="img-responsive">
-                </div>
-                <div class="col-xs-12 col-md-4 paddingTB40 paddingLR40">
+                <div class="col-xs-12 col-md-4 col-md-push-8 paddingTB40 paddingLR40">
                     <h3 class='text-center'><strong>Des repas, des rencontres</strong></h3>
                     <p class="text-justify">Grâce à meal’o clock, vous avez la possibilité de partagez sans restriction vos choix
                         et vos goût avec les curieux ou les habitués. Entre connaisseurs ou néophytes, profitez du repas pour découvrir plus que des recettes, de véritables personnalités.</p>
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-pull-4 ">
+                    <img src="<?= $this->assetUrl('img/partager-B.png')?>" alt="illustration d'un groupe de personne autour d'un stand de burger" class="img-responsive">
                 </div>
             </section>
 
@@ -79,7 +79,7 @@
                         Vous n'aurez plus qu'à choisir un événement, envoyer une requête à l'organisateur pour y participer et attendre sa réponse.
                         Et pourquoi ne pas organiser vous-même quelque chose ? Notre interface de création d'événement est très simple.
                         Alors, qu'attendez-vous pour vous asseoir à notre table ?</p></br>
-                    <p><a href="#"><button type="button" class="btn btn-info btn-lg">Je m'inscris !</button></a></p>  
+                    <p><a href="#"><button type="button" class="btn btn-info btn-lg">Je m'inscris !</button></a></p>
                 </div>
             </section>
 
