@@ -13,12 +13,12 @@
 
         <article class="col-xs-10 color-white marginTB20">
           <h2 class="marginTB20">Bienvenue dans l'espace <?= $this->e($community['com_name'])?></h2>
-          <p class='hidden-xs marginTB20 text-left'>Ami végétarien, par choix ou par obligation, tu rejettes la consommation de viande au profil de végétaux, légumineux, graminés, racines, fruits et autres merveilles que la nature nous offre ! <br>Tu n’es pourtant pas contre un petit oeuf à la coque ou une tartine de miel tant que les poules et les abeilles n’ont pas été maltraitées. Question de principe. Partage ou découvre ce mode alimentaire connu de tous mais pratiqué par peu.</p>
+          <p class='hidden-xs marginTB20 text-left'><?= $this->e($community['com_desc'])?></p>
         </article>
     </section>
     <section class="row marginTop20">
       <article class="col-xs-12 col-sm-4">
-      <h3 >Evénements à venir</h3>
+      <h3>Evénements à venir</h3>
       </article>
 
       <div class="col-xs-12 col-sm-6 marginTop10">
