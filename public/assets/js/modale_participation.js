@@ -1,4 +1,4 @@
-$("#attend").click(function(){
+$("#buttonmsg").click(function(){
 		$(".overlay").toggle()
 })
 

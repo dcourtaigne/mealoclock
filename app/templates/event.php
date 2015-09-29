@@ -41,7 +41,7 @@
               <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 red buttonEvent"><a id="cancel"><strong>Annuler ma participation</strong></a></button>
               <?php endif ?>
             <?php else:?>
-            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 green buttonEvent"><a id="inscription"><strong>Inscriver vous pour participer!</strong></a></button>
+            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 paddingTB20 green buttonEvent" id="buttonmsg"><a id="inscription"><strong>Inscriver vous pour participer!</strong></a></button>
             <?php endif?>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 green buttonEvent"><a href="#"><strong>Poser une question</strong></a></button>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 green buttonEvent"><a href="<?= $this->url('eventsbycom',['com'=>$event[0]['com_shortname']])?>"><strong>Evénements de la communauté</strong></a></button>
