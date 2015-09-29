@@ -79,7 +79,7 @@
                         Vous n'aurez plus qu'à choisir un événement, envoyer une requête à l'organisateur pour y participer et attendre sa réponse.
                         Et pourquoi ne pas organiser vous-même quelque chose ? Notre interface de création d'événement est très simple.
                         Alors, qu'attendez-vous pour vous asseoir à notre table ?</p></br>
-                    <p><a href="#"><button type="button" class="btn btn-info btn-lg">Je m'inscris !</button></a></p>
+                    <p><a href="#"><button type="button" class="btn btn-info btn-lg" id="button_inscription_about">Je m'inscris !</button></a></p>
                 </div>
             </section>
 

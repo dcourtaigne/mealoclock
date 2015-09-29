@@ -32,7 +32,7 @@
     })
 
 
-    $("#inscription, #open_register_form").click(function(){
+    $("#inscription, #open_register_form, #button_inscription_about").click(function(){
       $("#overlay").animate({top:'125px'})
       overlay();
       setTitle();
