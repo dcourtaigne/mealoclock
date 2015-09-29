@@ -149,7 +149,7 @@ a {
 }
 
 a:hover {
-    color: #ABCE48;
+    color: #BBB9B9;
 }
 
 a:link {
@@ -212,8 +212,12 @@ nav .dropdown-menu {
     background-color: #8C091E;
 }
 
+.dropdown-menu>li>a {
+  color: white !important;
+}
+
 .dropdown-menu li a:hover {
-    color: #ABCE48 !important;
+    color: #BBB9B9 !important;
 }
 
 .dropdown-submenu>.dropdown-menu {
@@ -279,7 +283,7 @@ nav .dropdown-menu {
 }
 
 .navbar-default .navbar-nav li a:hover {
-    color: #ABCE48;
+    color: #BBB9B9;
 }
 
 .navbar-default .navbar-nav>.open>a {
@@ -371,6 +375,11 @@ nav .dropdown-menu {
 .paddingLR10 {              /*-- nv classe --*/
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.paddingLR15 {              /*-- nv classe --*/
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .paddingLR40 {              /*-- nv classe --*/
@@ -858,7 +867,7 @@ Style des divs display*/
     }
 
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
-    color: #ABCE48 !important;
+    color: #BBB9B9 !important;
     }
 
     .navbar {
@@ -889,7 +898,7 @@ Style des divs display*/
       padding-bottom: 15px;
     }
     #inscription button:hover , #login button:hover, #requireLogin button:hover{
-      color: #ABCE48;
+      color: #BBB9B9;
     }
 
     .conteneur_bis{
