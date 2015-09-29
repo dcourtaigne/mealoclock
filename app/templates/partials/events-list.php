@@ -9,7 +9,7 @@
     </article>
 
     <div class='col-xs-12 col-sm-2'>
-        <div class='marginTB20'>
+        <div class='marginTB10'>
             <a href='<?=$this->url('event',['id'=>$singleEvent['id']])?>'><img src="<?=$this->assetUrl('img/event/'.$singleEvent['event_image'])?>" class='img-responsive'></a>
         </div>
     </div>
