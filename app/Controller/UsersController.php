@@ -217,9 +217,8 @@ public function displayEvents(){
 }
 
 
-public function getEventRequests(){
-  if(!empty($_GET)){
-    $eventId = intval($_GET['id']);
+public function getEventRequests($id){
+    $eventId = intval($id);
     $eventObj=new EventsManager();
     $userObj = new UsersManager();
     $results=$eventObj->getEventGuests($eventId, $status="tobeconfirmed");
@@ -227,13 +226,10 @@ public function getEventRequests(){
         $results[$i]['countOrg']=count($userObj->getUserEvents(intval($results[$i]['id'])));
         $results[$i]['countPart']=count($userObj->getUserParticipations(intval($results[$i]['id'])),'confirmed');
       }
-    //var_dump($results);
-    $this->showJson($results);
+    var_dump($results);
+    $this->show('eventrequests',['requests'=>$results]);
 
   }
-
-
-}
 
 public function loginJS(){
   $status=["status"=>1];
