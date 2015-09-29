@@ -67,15 +67,16 @@ class EventsManager extends \W\Manager\Manager{
       return $emptyPost;
     }
 
-    public function getEventGuests($id){
-    $query = "select u.user_name, u.id, uep.message, uep.status
+    public function getEventGuests($id, $status="confirmed"){
+    $query = "select u.user_name, u.id, uep.message, uep.status, u.user_desc
               from events e
               join users_events_participations uep on (e.id = uep.event_id)
               join users u on (uep.guest_id = u.id)
-              WHERE e.id=:id AND uep.status='confirmed'
+              WHERE e.id=:id AND uep.status=:status
               ORDER BY u.user_name ASC";
     $eventQuery = $this->dbh->prepare($query);
     $eventQuery->bindValue(':id',(int)$id);
+    $eventQuery->bindValue(':status',$status);
     $eventQuery->execute();
     return $eventQuery->fetchAll();
   }

@@ -20,7 +20,7 @@ class UsersManager extends \W\Manager\UserManager{
   }*/
 
   public function getUserEvents($id){
-    $query = "select event_title, event_desc, event_date, event_time, event_location, event_image, u.user_name
+    $query = "select event_title, event_desc, event_date, event_time, event_location, event_image, u.user_name, e.id
               from events e
               join users u on (e.user_id = u.id)
               WHERE user_id=:id

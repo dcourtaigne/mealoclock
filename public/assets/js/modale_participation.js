@@ -48,11 +48,12 @@ $('#annulation').submit(function ( e ) { // affectation d'un listener sur l'even
       function (data) {//fonction callback un fois la requête PHP terminée
         console.log('ko');//un ptit console.log pour checker les données renvoyées par PHP dans la fonction de callback
         console.log(data);//un ptit console.log pour checker les données renvoyées par PHP dans la fonction de callback
-        javascript:window.location.reload();
-     /* if(data.status == 1){ // si PHP dit tout est ok (statut = 1) on ferme la modale
+        //javascript:window.location.reload();
+      if(data.status == 1){ // si PHP dit tout est ok (statut = 1) on ferme la modale
           $(".overlay2").toggle();
           $('#feedback').html(data.result)
-      }*/
+          $('#feedback').addClass("alert alert-success fade in")
+      }
   }
     );
   });

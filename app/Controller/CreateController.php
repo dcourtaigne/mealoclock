@@ -154,12 +154,13 @@ public function eventRequest(){
     $this->showJson($error);
   }else{
     $cancel=[];
-    var_dump($_POST);
+    //var_dump($_POST);
     $guestId = intval($_POST['guest_id']);
     $eventId = intval($_POST['event_id']);
     $uepObj = new Users_events_participationsManager();
     $cancel['status'] = $uepObj->deleteGuest($guestId, $eventId);
     $cancel['result'] = "Votre annulation a bien été prise en compte";
+    //var_dump($cancel);
     $this->showJson($cancel);
   }
 }

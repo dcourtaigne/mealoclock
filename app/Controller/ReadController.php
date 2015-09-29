@@ -96,7 +96,7 @@ class ReadController extends Controller{
     $thisId = (int)$id;
     $event = $eventObj->getEventInfo($thisId);
     //$event = Controller::getFrenchDate($event);
-    $event['guests'] = $eventObj->getEventGuests($thisId);
+    $event['guests'] = $eventObj->getEventGuests($thisId, 'confirmed');
     $tempGuests = $eventObj->getAllEventGuests($thisId);
     $event['guestsId']=[];
     foreach ($tempGuests as $tempGuest) {

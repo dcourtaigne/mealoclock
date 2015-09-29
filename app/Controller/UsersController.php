@@ -3,6 +3,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use \W\Security\AuthentificationManager;
 use Manager\UsersManager;
+use Manager\EventsManager;
 use Manager\CommunitiesManager;
 use Manager\Communities_membersManager;
 
@@ -193,6 +194,17 @@ public function displayEvents(){
     $results['orgEvents'] = $userObj->getUserEvents($thisUserId);
     $results['confirmedEvents'] = $userObj->getUserParticipations($thisUserId,'confirmed');
     $results['pendingEvents'] = $userObj->getUserParticipations($thisUserId,'tobeconfirmed');
+    
+    $eventObj=new EventsManager();
+
+    $results['requests']=[];
+    foreach ($results['orgEvents'] as $event) {
+      $results['requests'][$event['id']][] = $eventObj->getEventGuests($event['id'], $status="tobeconfirmed");
+      for($i=0;$i>count($results['requests'][$event['id']]);$i++){
+        $results['requests'][$event['id']][$i]['countOrg']=count($userObj->getUserEvents($results['requests'][$i]['id']));
+        $results['requests'][$event['id']][$i]['countPart']=count($userObj->getUserParticipations($results['requests'][$i]['id']),'confirmed');
+      }
+    }
 
     for($i=0 ; $i<count($results['orgEvents']); $i++) {
       $results['orgEvents'][$i]['time'] = formatTime($results['orgEvents'][$i]['event_time']);
