@@ -2,8 +2,7 @@
 
 <?php $this->start('main_content') ?>
 
-		<div class="conteneur_bis">
-			<button class="fermer_modale">X</button>	
+		<div class="conteneur_bis">	
 				<section class="utilisateur">
 					<div class="alignright">	
 						<div class="image_prenom">
@@ -31,7 +30,7 @@
 					<strong>Apercu du profil</strong>
 					</div>
 					<article class="profile_preview">
-						<p><strong>Introduction:</strong> Originaire de franche comte, j'aime le bon vin et le bon fromage. Bonne vivante, je m'apprete a satisfaire vos desirs culinaires divers et varies.</p>
+						<p><strong>Introduction:</strong> Originaire de franche comte, j'aime le bon vin et le bon fromage.  Originaire de franche comte, j'aime le bon vin et le bon fromage. Cuisinant depuis que je suis petite, c'est une passion que je souhaite partager avec le monde.</p>
 						<span><strong>Repas participes: 8</strong></span>
 						<br>
 						<span><strong>Repas organises: 2</strong></span>
