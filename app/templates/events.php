@@ -29,7 +29,7 @@
               <?php foreach($events as $event):?>
                 <li class="row center" id="<?= $this->e($event[0]['event_date'])?>">
                   <div class='col-xs-12 vege'>
-                    <p class='text-center h4 color-white'><?= $this->e($event[0]['dateFR'])?></p>
+                    <p class='text-left h4 color-white'><?= $this->e($event[0]['dateFR'])?></p>
                   </div>
                   <?php foreach($event as $singleEvent){
                     $this->insert('partials/events-list',['singleEvent'=>$singleEvent]);

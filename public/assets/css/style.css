@@ -3,12 +3,22 @@
     padding: 0;
 }
 
-h2,h3 {
+header h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+h2, h3 {
 font-family: 'Hammersmith One', sans-serif;
 }
 
 h2 {
   font-weight: 700;
+}
+
+#evenement h3, #updateUser label{
+margin-top: 0px;
 }
 
 #blog h4 {
@@ -19,16 +29,8 @@ h2 {
 p {
   font-family: 'Gudea', sans-serif;
 }
-
-#comments p{
-  display: inline;
-}
-
-#community article {
-    background-color: #303B34;
-  }
-
-#community p {
+  
+footer p, #community p, #user p {
   font-size: 1em;
 }
 
@@ -36,8 +38,16 @@ p {
   font-size: 1.1em;
 }
 
-footer p {
-  font-size: 1em;
+#comments p{
+  display: inline;
+}
+
+#event p {
+    margin-bottom: 0px;
+}
+
+#infosEvent p{
+  font-size: 1.2em;
 }
 
 #entete hr {
@@ -73,7 +83,7 @@ footer p {
   width: 400px;
   background-color: white;
 }
-input#exampleInputEmail1, input#exampleInputPassword1 {
+input #exampleInputEmail1, input #exampleInputPassword1 {
     margin-top: 5px;
 }
 label{
@@ -129,13 +139,7 @@ label{
   text-align: center;
 }
 
-/* fin style modale */
-
-header h1 {
-    margin-top: 0px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
+/*------------------ fin style modale--------- */
 
 a {
     text-decoration: none;
@@ -169,7 +173,6 @@ a:link {
   color: black;
 }
 
-
 #vegetarian a:hover {
     color: #A6B06D;
 }
@@ -201,12 +204,12 @@ a:link {
     position: relative;
 }
 
-.dropdown-menu {
+nav .dropdown-menu {
     background-color: #8C091E;
 }
 
 .dropdown-menu li a:hover {
-    color: ##ABCE48 !important;
+    color: #ABCE48 !important;
 }
 
 .dropdown-submenu>.dropdown-menu {
@@ -279,8 +282,6 @@ a:link {
     background-color: white;
 }
 
-
-
 /* ----------------------------- fin de la nav -------------------------*/
 
 /* ----------------------------- class couleur -------------------------*/
@@ -309,7 +310,7 @@ a:link {
     background-color:#669999  ;  /*nv class*/
 }
 
-.color-white, #event button a {  /*nv class*/
+.color-white {  /*nv class*/
     color: white;
  }
 
@@ -388,74 +389,38 @@ a:link {
     margin: 0;
 }
 
-/*Blog Home Page*/
-#blog  {
-background-color: #303B34 ;
-}
-
-/* liste des events */
-
-#event_list p, #event_list h3 {
-    text-align: center;
-}
-
-#evenement h3{
-margin-top: 0px;
-}
-
+/*----------------- liste des events ----------*/
 #updateUser label{
     margin-top: 0;
 }
 
-/*Formulaire update profil user */
+/*-------Formulaire update profil user -----*/
 .photoUpload input {
  display: inline;
 }
-
-#thumbnail {
-  padding: 0;
-}
-
 /*----------------page userProfile----------------------------*/
-
 blockquote {
   font-size: 14px;
 }
-
-#user p {
-  font-size: 1em;
-}
-
 /* ----------------------page event------------------------------- */
-
-.thumbnail {                 /* nvl classe */
+.thumbnail {                 
     padding: 10px;
-
 }
 
-.thumbnail img {               /* nvl classe */
+.thumbnail img {               
     margin-bottom: 10px;
     border: solid 1px black;
 }
 
 #event button {
-    padding-left: 10px;         /* nvl classe */
+    padding-left: 10px;         
     border: none;
 }
 
-.buttonEvent:hover {
-    background-color: #97B73C !important; /* nvl classe */
-}
-
 button:active {
-    background-color: #87B30B !important; /* nvl classe */
+    background-color: #87B30B !important; 
     border: 1px solid #87B30B
 }
-
-#event p {                      /*nv class*/
-    margin-bottom: 0px;
-}
-
 /* --------------------------Gerer events------------------------*/
 /* Structure du conteneur */
 
@@ -513,10 +478,6 @@ ul.nav-justified{
   list-style: none;
   text-align: left;
 }
-.tab-content ul li{
-  display: inline-table;
-  width: 100%;
-}
 .tab-content ul li p, .gerer_event{
   display: block;
 }
@@ -543,7 +504,14 @@ ul.nav-justified{
   right: 17px;
   top: 75px;
 }
+.tab-content article {
+  position: relative;
+}
 
+.tab-content ul li{
+  display: inline-table;
+  width: 100%;
+}
 
 #evenement{
   width: 100%;
@@ -571,22 +539,29 @@ ul.nav-justified{
 span{
   font-size: 15px;
 }
-.gerer_button{
-
-}
 
 /* FonctionnalitÃ© */
 .active{
   display: none;
 }
-@media (max-width: 768px){
+
   #gererevenements{
     width: 100%;
   }
+
   .tab-content .comment{
-    margin-left: 10px;
-    margin-right: 10px;
+   padding-top: 20px
   }
+  .tab-content article h3{
+    position: absolute;
+    top: 62px;
+    left: 20px;
+}
+  .tab-content article .chez{
+    position: absolute;
+    top: 110px;
+    left: 20px;
+}
   .tab-content #inscriptions.active, #enattente.active, #organises.active, ul li{
     position: relative;
   }
@@ -597,12 +572,7 @@ span{
   position: absolute;
   right: 3px;
 }
-}
-@media (min-width: 1200px){
-  #gererevenements{
-    width: 900px;
-  }
-}
+
 
 
 
@@ -706,9 +676,10 @@ Style apercu profil*/
 /* Fin style commentaire utilisateur
 Style boutons */
   .utilisateur ul{
-    padding: 0 0 0 0;
+    padding: 0px;
   }
-  .utilisateur li{
+
+    .utilisateur li{
     list-style: none;
     padding: 12px 0px 10px 0px;
     background-color: #337ab7;
@@ -728,6 +699,23 @@ Style boutons */
     display: inline-block;
     width: 60%;
   }
+
+  .utilisateur{
+        width: 100%
+      }
+
+    .wide {
+      display: none;
+    }
+
+    .display_bottom_profile{
+      display: none;
+    }
+
+    .commentaire{
+      margin-top: 0;
+    }
+
 /*Fin style boutons
 Style des divs display*/
   .display_bottom_comment, .display_bottom_profile{
@@ -744,69 +732,7 @@ Style des divs display*/
     background-color: lightgreen;
     cursor: pointer;
   }
-@media (max-width: 768px){
-  .utilisateur{
-    width: 100%
-  }
-  .wide {
-    display: none;
-  }
-  .display_bottom_profile{
-    display: none;
-  }
-  .commentaire{
-    margin-top: 0;
-  }
-}
 
-@media (min-width: 769px){
-  .conteneur_bis{
-    max-width: 900px;
-  }
-  .wide {
-    display: inline-block;
-    float: left;
-    text-align: left;
-    margin-left: 15px;
-    width: 55%;
-    padding-right: 0;
-  }
-  .utilisateur .liste{
-    width: 25%;
-    padding-left: 7.5px;
-    padding-right: 7.5px;
-    border-left: 2px solid #8C091E;
-  }
-  .utilisateur ul{
-    float: right;
-    width: 100%;
-  }
-  .utilisateur li{
-    width: auto;
-  }
-  .display_bottom_comment{
-    display: none;
-  }
-  .display_bottom_profile{
-    display: block;
-  }
-
-
-}
-@media (min-width: 1200px){
-  .conteneur_bis{
-    width: 900px
-  }
-  .wide {
-    display: inline;
-  }
-  .utilisateur ul{
-    float: right;
-  }
-  .utilisateur li{
-    width: auto;
-  }
-}
 /*Modale d'envoi de message lors de la participation à un evenement*/
   .fermer_modale_p, .fermer_modale_2{
     position: absolute;
@@ -898,33 +824,20 @@ Style des divs display*/
     padding-top: 12px;
  }
 
+  footer{
+    text-align: center; /*modif 25/09/15*/
+  }
+
  footer li {
     vertical-align: middle;
     padding: 20px 0px 0px 0px;
-
- }
-
- .img-responsive {
-    margin: auto;
+    font-size: 0.8em;
  }
 
 #vegetarian h2, #events h2 {
     font-size: 1.3em;
     font-weight: 700;
     text-align: center;
-}
-
-footer li {
-    font-size: 0.8em;
-}
-
-
-footer{
-  text-align: center; /*modif 25/09/15*/
-}
-
-#vegetarian, #events {
-    background-color: white;
 }
 
 .center {
@@ -934,14 +847,10 @@ footer{
     float:none;
 }
 
-
-
-#evenementProfile {
-}
  /**********************************************************************/
   @media (min-width: 768px) {
 
-        p {
+    p {
       font-size: 1.2em;
     }
 
@@ -953,17 +862,14 @@ footer{
     color: white;
     }
 
-    .navbar {
-    border-radius: 0px;
-    }
-
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
     color: #ABCE48 !important;
     }
 
-    #event_list p, #event_list h3 {
-    text-align: left;
+    .navbar {
+    border-radius: 0px;
     }
+
 
     #vegetarian h2, #events h2 {
         font-size: 1.8em;
@@ -971,27 +877,62 @@ footer{
         text-align: left;
     }
 
-   footer p, footer p>a{
-    text-align: left; /*modif 25/09/15*/
-  }
-  #blog h4{
-    font-size: 2.5em;
-  }
+    footer p, footer p>a{
+    text-align: left;
+    }
 
-  #community p {
-    font-size: 1.4em;
-}
+    #blog h4{
+      font-size: 2.5em;
+    }
 
-  #inscription button , #login button{
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  #inscription button:hover , #login button:hover, #requireLogin button:hover{
-    color: #ABCE48;
+    #community p {
+      font-size: 1.4em;
+    } 
 
-  }
-}
+    #inscription button , #login button{
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    #inscription button:hover , #login button:hover, #requireLogin button:hover{
+      color: #ABCE48;
+    }
 
+    .conteneur_bis{
+      max-width: 900px;
+    }
+
+    .wide {
+      display: inline-block;
+      float: left;
+      text-align: left;
+      margin-left: 15px;
+      width: 55%;
+      padding-right: 0;
+    }
+
+    .utilisateur .liste{
+      width: 25%;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
+      border-left: 2px solid #8C091E;
+    }
+
+    .utilisateur ul{
+      float: right;
+      width: 100%;
+    }
+
+    .utilisateur li{
+      width: auto;
+    }
+
+    .display_bottom_comment{
+      display: none;
+    }
+
+    .display_bottom_profile{
+      display: block;
+    }
 }
 
 /*******************************************************************/
@@ -1013,7 +954,7 @@ footer{
     }
 
 
-    header, #community, #contact, #vegan, #vege, #ssgluten, #sslactose, #User,#updateUser, #createEvent, #event, #requireLogin, #myevents, #commentForm {
+    header, #community, #contact, #vegan, #vege, #ssgluten, #sslactose, #User,#updateUser, #createEvent, #event, #requireLogin, #myevents, #commentForm, #events {
         background-color: white; /* nv couleur */
     }
 
@@ -1043,4 +984,21 @@ footer{
       top: 0; /* Mise en forme */
       width: 1200px; /* <-- Largeur de votre site */
       }
+
+  .conteneur_bis{
+    width: 900px
+  }
+  .wide {
+    display: inline;
+  }
+  .utilisateur ul{
+    float: right;
+  }
+  .utilisateur li{
+    width: auto;
+  }
+
+  #gererevenements{
+    width: 900px;
+  }
 }
