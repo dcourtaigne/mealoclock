@@ -71,7 +71,7 @@
     <div>
       <hr>
     <section id="community" class="row">
-      <article class="col-xs-12 text-center paddingTB40 color-white">
+      <article class="col-xs-12 text-center paddingTB40 color-white anthracite">
         <h2> Nos communautés </h2>
         <p class="text-center">Meal'o clock regroupe 4 régimes alimentaires principaux. Choisissez celui qui vous correspond ou bien celui que vous souhaitez découvrir, consultez les évènements à venir, le profil de nos membres, etc !</p>
       </article>
@@ -109,7 +109,7 @@
     </div>
     <hr>
 
-    <section id="blog" class="row">
+    <section id="blog" class="row anthracite">
         <div class="col-xs-12 col-md-8 noPadding">
           <img src="<?= $this->assetUrl('img/cake_crop.jpg')?>" class="img-responsive" alt='cake miel noisttes sans gluten'>
         </div>
