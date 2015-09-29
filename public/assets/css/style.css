@@ -513,8 +513,12 @@ ul.nav-justified{
   list-style: none;
   text-align: left;
 }
+.tab-content ul li{
+  display: inline-table;
+  width: 100%;
+}
 .tab-content ul li p, .gerer_event{
-  display: inline-block;
+  display: block;
 }
 .tab-content #inscriptions.active, #enattente.active, #organises.active, ul li{
   position: relative;
@@ -539,22 +543,7 @@ ul.nav-justified{
   right: 17px;
   top: 75px;
 }
-.tab-content article {
-  position: relative;
-}
-.tab-content article h3{
-  position: absolute;
-  top: 36px;
-  left: 240px;
-}
-.tab-content article .chez{
-  position: absolute;
-  top: 80px;
-  left: 240px;
-}
-.tab-content .comment{
-  margin-left: 240px;
-}
+
 
 #evenement{
   width: 100%;
@@ -598,16 +587,6 @@ span{
     margin-left: 10px;
     margin-right: 10px;
   }
-  .tab-content article h3{
-    position: absolute;
-    top: 62px;
-    left: 20px;
-}
-  .tab-content article .chez{
-    position: absolute;
-    top: 110px;
-    left: 20px;
-}
   .tab-content #inscriptions.active, #enattente.active, #organises.active, ul li{
     position: relative;
   }
