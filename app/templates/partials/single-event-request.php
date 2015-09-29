@@ -2,7 +2,7 @@
         <section class="utilisateur">
           <div class="alignright">
             <div class="image_prenom">
-              <img src="http://img15.hostingpics.net/pics/740435visage.jpg">
+              <img src="<?=$this->assetUrl('img/avatar/'.$request['user_photo'])?>">
                 <h4><?= $this->e($request['user_name']) ?></h4>
             </div>
             <p class="commentaire wide">

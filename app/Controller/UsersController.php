@@ -238,7 +238,6 @@ public function getEventRequests($id){
         $results[$i]['countOrg'] = '0';
       }
     }*/
-    var_dump($results);
     if($results){
     $this->show('eventrequests',['requests'=>$results]);
     }else{
@@ -263,13 +262,17 @@ public function uploadPhotoProfile($id){
         $extensions = array('.jpg', '.png', '.gif', '.jpeg'); // extensions possibles de fichier à télécharger
         if (in_array($extension, $extensions)) {
           $newfichier = $id . "_photo" . $extension;
-          $fullPathNew = $dossier . $id . "_photo" . $extension;
+          $newfichierThumb = $id . "_photoThumb" . $extension;
+          $fullPathNew = $dossier . $newfichier;
+          $fullPathNewThumb = $dossier . $newfichierThumb;
           $stringData = file_get_contents($fichier_tmp);
-          if (smart_resize_image($fichier_tmp, $stringData , 250, 250, true, $fullPathNew, true, false, 100)){
+          if (smart_resize_image($fichier_tmp, $stringData , 250, 250, true, $fullPathNew, false, false, 100)){
+              smart_resize_image($fichier_tmp, $stringData , 50, 50, true, $fullPathNewThumb, true, false, 100);
                     // SQL ajout de l'image dans le profil user ......
             //move_uploaded_file($fichier_tmp, $dossier . $id . "_photo" . $extension)) {
                 $userObj = new UsersManager();
                 $userObj->updatePhotoProfile($id,$newfichier);
+                $userObj->updatePhotoProfileThumb($id,$newfichierThumb);
                 header('location:'.$this->generateUrl('userProfile',['id'=>$id]));
             }
             else {
