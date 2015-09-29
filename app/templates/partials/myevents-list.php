@@ -1,6 +1,6 @@
 
 <li class="center">
-  <button class="confirmer_event" data-id="<?=$singleEvent['id']?>">Gerer l'evenement</button>
+  <button class="confirmer_event" data-id="<?=$singleEvent['id']?>"><a href="<?= $this->url('getEventRequests',['id'=>$singleEvent['id']])?>">Gerer l'evenement</a></button>
   <div class="vege col-xs-12">
     <p class=" h4 color-white"><?= $this->e($singleEvent['dateFR'])?></p>
   </div>

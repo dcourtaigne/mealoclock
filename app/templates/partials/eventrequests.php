@@ -3,9 +3,8 @@
 <?php $this->start('main_content') ?>
 
 		<div class="conteneur_bis">
-			<button class="fermer_modale">X</button>	
 				<section class="utilisateur">
-					<div class="alignright">	
+					<div class="alignright">
 						<div class="image_prenom">
 							<img src="http://img15.hostingpics.net/pics/740435visage.jpg">
 								<h4>Prenom</h4>
@@ -23,7 +22,7 @@
 
 					<div class="display_bottom_comment">
 						<strong>Afficher son message</strong>
-					</div>	
+					</div>
 					<p class="commentaire">
 						"Bonjour, je suis Christine, j'ai 32 ans, et j'aime cuisiner sans viande. Realiser l'entree me plairait, j'ai en tete une salade de crudites. J'attends votre retour avec impatience :)"
 						<br>
@@ -40,10 +39,10 @@
 					</article>
 			</section>
 		</div>
-	
-		<div class="conteneur_bis">	
+
+		<div class="conteneur_bis">
 			<section class="utilisateur">
-				<div class="alignright">	
+				<div class="alignright">
 				<div class="image_prenom">
 					<img src="http://img15.hostingpics.net/pics/740435visage.jpg">
 					<h4>Prenom</h4>
@@ -51,7 +50,7 @@
 				<p class="commentaire wide">
 					"Bonjour, je suis Christine, j'ai 32 ans, et j'aime cuisiner sans viande. Realiser l'entree me plairait, j'ai en tete une salade de crudites. J'attends votre retour avec impatience :)"
 					<br>
-					
+
 				</p>
 				<span class="liste">
 					<ul>
@@ -59,11 +58,11 @@
 						<li>Refuser l'inscription</li>
 					</ul>
 				</span>
-				
+
 				</div>
 				<div class="display_bottom_comment">
 					<strong>Afficher son message</strong>
-				</div>	
+				</div>
 				<p class="commentaire">
 					"Bonjour, je suis Christine, j'ai 32 ans, et j'aime cuisiner sans viande. Realiser l'entree me plairait, j'ai en tete une salade de crudites. J'attends votre retour avec impatience :)"
 					<br>
@@ -77,14 +76,14 @@
 					<span><strong>Repas organises: 2</strong></span>
 					<br>
 					<a href="#">Consulter son profil</a>
-				</article>		
+				</article>
 				</p>
 			</section>
 		</div>
 
-		<div class="conteneur_bis">	
+		<div class="conteneur_bis">
 			<section class="utilisateur">
-				<div class="alignright">	
+				<div class="alignright">
 				<div class="image_prenom">
 					<img src="http://img15.hostingpics.net/pics/740435visage.jpg">
 					<h4>Prenom</h4>
@@ -92,7 +91,7 @@
 				<p class="commentaire wide">
 					"Bonjour, je suis Christine, j'ai 32 ans, et j'aime cuisiner sans viande. Realiser l'entree me plairait, j'ai en tete une salade de crudites. J'attends votre retour avec impatience :)"
 					<br>
-					
+
 				</p>
 				<span class="liste">
 					<ul>
@@ -100,11 +99,11 @@
 						<li>Refuser l'inscription</li>
 					</ul>
 				</span>
-				
+
 				</div>
 				<div class="display_bottom_comment">
 					<strong>Afficher son message</strong>
-				</div>	
+				</div>
 				<p class="commentaire">
 					"Bonjour, je suis Christine, j'ai 32 ans, et j'aime cuisiner sans viande. Realiser l'entree me plairait, j'ai en tete une salade de crudites. J'attends votre retour avec impatience :)"
 					<br>
@@ -118,7 +117,7 @@
 					<span><strong>Repas organises: 2</strong></span>
 					<br>
 					<a href="#">Consulter son profil</a>
-				</article>		
+				</article>
 				</p>
 			</section>
 		</div>
