@@ -49,7 +49,7 @@ class CreateController extends Controller{
       'date'=>"",
       'time'=>"",
       'guests'=>""];
-    //$values = $event;
+    $values = $event;
 
     if(!empty($_POST)) {
       if(empty($_POST['event_title'])) $errors['name']="Ce champ ne peut être vide";

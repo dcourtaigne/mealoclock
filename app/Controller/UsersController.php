@@ -222,11 +222,22 @@ public function getEventRequests($id){
     $eventObj=new EventsManager();
     $userObj = new UsersManager();
     $results=$eventObj->getEventGuests($eventId, $status="tobeconfirmed");
-    for($i=0;$i>count($results);$i++){
-        $results[$i]['countOrg']=count($userObj->getUserEvents(intval($results[$i]['id'])));
-        $results[$i]['countPart']=count($userObj->getUserParticipations(intval($results[$i]['id'])),'confirmed');
+
+    /*for($i=0;$i>count($results);$i++){
+      $part = $userObj->getUserParticipations(intval($results[$i]['id']),'confirmed');
+      if($part){
+        $results[$i]['countPart'] = count($part);
+      }else{
+        $results[$i]['countPart'] = '0';
       }
-    var_dump($results);
+      $org = $userObj->$userObj->getUserEvents(intval($results[$i]['id']));
+      if($org){
+        $results[$i]['countOrg'] = count($org);
+      }else{
+        $results[$i]['countOrg'] = '0';
+      }
+    }
+    var_dump($results);*/
     $this->show('eventrequests',['requests'=>$results]);
 
   }
