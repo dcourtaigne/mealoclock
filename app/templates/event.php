@@ -93,7 +93,7 @@
 
 <div class="overlay2">
   <div id="modale_annulation">
-    <form id="annulation" method="POST" action="<?=$this->url('eventRequest')?>">
+    <form id="annulation" method="POST" action="<?=$this->url('eventCancelRequest')?>">
       <button class="fermer_modale_2">x</button>
       <p>Etes vous sûr de vouloir annuler votre participation à cet événement?</p>
       <div class="text-danger" id="error"></div>

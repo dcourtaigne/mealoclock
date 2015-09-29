@@ -152,7 +152,10 @@ public function eventRequest(){
       $error['status']=0;
     }
     $this->showJson($error);
-  }else{
+  }
+}
+
+public function eventCancelRequest(){
     $cancel=[];
     //var_dump($_POST);
     $guestId = intval($_POST['guest_id']);
@@ -162,8 +165,8 @@ public function eventRequest(){
     $cancel['result'] = "Votre annulation a bien été prise en compte";
     //var_dump($cancel);
     $this->showJson($cancel);
-  }
 }
+
 
 
 
