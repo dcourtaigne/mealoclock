@@ -85,4 +85,13 @@ class UsersManager extends \W\Manager\UserManager{
     $userUpdate->execute();
   }
 
+  public function deleteUser($id){
+
+    $thisId= intval($id);
+    $sql="DELETE FROM `users` WHERE id=:id";
+    $userDelete = $this->dbh->prepare($sql);
+    $userDelete->bindValue(':id',$thisId);
+    return $userDelete->execute();
+  }
+
 }

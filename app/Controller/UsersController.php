@@ -304,5 +304,26 @@ public function rejectEventRequest($id, $iduser){
   $this->redirectToRoute('getEventRequests',['id'=>$id]);
 }
 
+public function deleteProfile(){
+  $authObj = new AuthentificationManager();
+  $userLogin = $authObj->getLoggedUser();
+  $thisId=intval($userLogin['id']);
+  $userObj = new UsersManager();
+
+  $events = $userObj->getUserEvents($thisId);
+
+  if(!empty($events)){
+    $eventObj = new EventsManager();
+    foreach ($events as $event) {
+      $eventObj->delete($event['id']);
+    }
+  }
+  
+  $authObj->logUserOut();
+  $userObj->deleteUser($userLogin['id']);
+  //$this->redirectToRoute('home');
+
+}
+
 
 }

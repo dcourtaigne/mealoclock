@@ -22,6 +22,7 @@
     ['GET', '/myaccount/myevents/[i:id]/eventrequests', 'Users#getEventRequests', 'getEventRequests'],
     ['GET', '/myaccount/myevents/[i:id]/eventsrequests/[i:iduser]', 'Users#confirmEventRequest', 'confirmEventRequest'],
     ['GET', '/myaccount/myevents/[i:id]/eventsrequests/[i:iduser]', 'Users#rejectEventRequest', 'rejectEventRequest'],
+    ['GET', '/myaccount/delete', 'Users#deleteProfile', 'deleteProfile'],
 
 
     ['GET', '/eventAjax', 'Read#getEventsAjax', 'eventsajax'],
