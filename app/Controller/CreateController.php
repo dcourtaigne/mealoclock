@@ -55,7 +55,7 @@ class CreateController extends Controller{
       if(empty($_POST['event_desc'])) $errors['desc']="Ce champ ne peut être vide";
       if($_POST['event_location'] == 0) $errors['location']="Vous devez choisir un lieu";
       if($_POST['event_date'] == 0) $errors['date']="Vous devez choisir une date";
-      //if($_POST['event_time']== 0) $errors['time']="Vous devez choisir une heure";
+      if($_POST['event_time']== 0) $errors['time']="Vous devez choisir une heure";
       if(empty($_POST['event_guests'])) $errors['guests']="Ce champ ne peut être vide";
 
       $filters = EventsManager::getValidationFilters();
@@ -106,11 +106,12 @@ class CreateController extends Controller{
     $this->show('editEvent',[
       'message'=>$message,
       'communities'=>$communities,
-      'event'=>$event,
+      'event'=>$values,
       'idEvent'=>$idEvent,
       'title'=>$title,
       'submitName'=>$submitName,
       'formAction'=>$formAction,
+      'errors'=>$errors,
       'currentDate'=> $currentDate
       ]);
   }
