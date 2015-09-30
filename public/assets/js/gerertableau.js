@@ -70,15 +70,14 @@ $(".fermer_modale").click(function(){
 
 
 
-$(".confirmer_event").click(function overlaystatus(){
+/*$(".confirmer_event").click(function overlaystatus(){
 	/*var eventId = $(this).attr('data-id');
 	console.log(eventId);
-	getRequests(eventId);*/
+	getRequests(eventId);
     var overlaystate = $(".overlay").css("display")
       if (overlaystate == "none") {
         $(".overlay").css({"display":"block"})
         }
-    })
-
+    })*/
 
 

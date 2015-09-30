@@ -494,9 +494,17 @@ ul.nav-justified{
 }
 .tab-content ul li p, .gerer_event{
   display: block;
+  float: left;
 }
 .tab-content #inscriptions.active, #enattente.active, #organises.active, ul li{
   position: relative;
+}
+.cancel_event{
+  padding: 6px 2px 6px 2px;
+  margin-top: 2px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 .tab-content .gerer_event, .confirmer_event{
   padding: 6px 2px 6px 2px;
@@ -505,11 +513,20 @@ ul.nav-justified{
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 3px;
+  margin-left: 10px;
 }
 .gerer_event, .confirmer_event{
   z-index: 80;
-  position: absolute;
-  right: 3px;
+}
+.buttons_gerer_event, .dropdown_menu{
+  float: right;
+  margin-top: 1px;
+}
+.comment_field{
+  width: 80%;
+}
+.buttons_gerer_event{
+  display: none;
 }
 
 .tab-content .gerer_insc{
@@ -572,10 +589,6 @@ span{
   .tab-content .comment{
     padding-top: 20px;
   }
-  .gerer_event, .confirmer_event{
-  position: absolute;
-  right: 3px;
-}
 
 
 
@@ -935,6 +948,12 @@ Style des divs display*/
     }
 
     .display_bottom_profile{
+      display: block;
+    }
+    .dropdown_menu{
+      display: none;
+    }
+    .buttons_gerer_event{
       display: block;
     }
 }

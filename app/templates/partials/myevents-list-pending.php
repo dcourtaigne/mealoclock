@@ -1,7 +1,7 @@
 <li class="center">
-  <button class="gerer_event">Annuler mon inscription</button>
   <div class="vege col-xs-12">
     <p class=" h4 color-white"><?= $this->e($singleEvent['dateFR'])?></p>
+    <button class="gerer_event">Annuler mon inscription</button>
   </div>
 
   <div class="col-xs-12 col-sm-3 bg-success marginTB20">
