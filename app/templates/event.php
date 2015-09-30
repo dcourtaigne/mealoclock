@@ -35,9 +35,12 @@
 
           <div class="col-xs-12 col-sm-3 col-sm-pull-9">
             <?php if($w_user):?>
-            	<?php if(!in_array($w_user['id'], $event['guestsId'])):?>
+            <?php if($w_user['id'] == $event[0]['user_id']):?>
+            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop20 color-white"><a href="<?=$this->url('myEvents')?>" class="color-white"><i class="glyphicon glyphicon-user color-white"></i><strong>  Gérer mes événements</strong></a></button>
+            <?php endif ?>
+              <?php if(!in_array($w_user['id'], $event['guestsId']) && $w_user['id'] !== $event[0]['user_id']):?>
               <button type="button" name="Participer" class="btn btn-primary btn-block marginTop20 color-white" id="buttonmsg"><a href="#" id="attend" class="color-white"><i class="glyphicon glyphicon-user color-white"></i><strong>  Participer</strong></a></button>
-              <?php else :?>
+              <?php elseif(in_array($w_user['id'], $event['guestsId']) && $w_user['id'] !== $event[0]['user_id']):?>
               <button type="button" name="Participer" class="btn btn-primary btn-block marginTop20"><a href="#" id="cancel" class="color-white"><strong>Annuler ma participation</strong></a></button>
               <?php endif ?>
             <?php else:?>
