@@ -20,9 +20,10 @@ class Communities_membersManager extends \W\Manager\Manager{
     	return $selectQuery->fetchAll();
 	}
 
-	public function updateFakeUser($id){
-    $sql = "UPDATE `users_events_participations` SET `user_id`=:id WHERE user_id=:id";
+	public function updateFakeUser($fakeid, $id){
+    $sql = "UPDATE `communities_members` SET user_id=:fakeid WHERE user_id=:id";
     $updateQuery = $this->dbh->prepare($sql);
+    $updateQuery->bindValue(':fakeid',(int)$fakeid);
     $updateQuery->bindValue(':id',(int)$id);
     $updateQuery->execute();
   }
