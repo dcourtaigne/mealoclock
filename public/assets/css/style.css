@@ -30,7 +30,7 @@ p {
   font-family: 'Gudea', sans-serif;
 }
 
-footer p, #community p, #user p {
+footer p, #community p, #user p, #contact p, #createEvent p {
   font-size: 1em;
 }
 

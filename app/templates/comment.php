@@ -9,6 +9,7 @@
 				<h4 class="text-center paddingTB10 "><strong>
 				Laisser un commentaire</strong>
 				</h4>
+				<p><em>Tous les champs sont obligatoires</em></p>
 			  	
 				<div class="form-group form-inline">
 					<label>De :</label>

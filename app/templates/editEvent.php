@@ -5,6 +5,7 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<h1><?= $this->e($title) ?></h1>
+			<p><em>Tous les champs sont obligatoires</em></p>
 			<?php if(!empty($message)) {
   						echo '<p class="bg-success">'.$message.'</p>';
 						}
