@@ -61,11 +61,11 @@
 
       <section class="row ">
 
-        <article class="col-xs-12 col-sm-8 col-sm-push-3 marginTB40">
+        <article class="col-xs-12 col-sm-8 col-sm-push-3 marginTB20">
             <p class="text-left"><?=nl2br($event[0]['event_desc'])?></p>
         </article>
 
-         <article class="col-xs-12 col-sm-3 col-sm-pull-8 marginTB10">
+         <article class="col-xs-12 col-sm-3 col-sm-pull-8 marginTB20">
             <div class=" row thumbnail noMargin text-center">
 
                 <p>Membres participants</p>
