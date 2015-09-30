@@ -27,9 +27,9 @@
           </div>
           <article class="profile_preview">
             <p><strong>Introduction:</strong> <?= $this->e($request['user_desc']) ?></p>
-            <span><strong>Repas participes: 8</strong></span>
+            <span><strong>Repas participes:  <?= $this->e($request['countPart']) ?></strong></span>
             <br>
-            <span><strong>Repas organises: 2</strong></span>
+            <span><strong>Repas organises:  <?= $this->e($request['countOrg']) ?></strong></span>
             <br>
             <a href="<?=$this->url('userProfile', ['id'=>$request['id']])?>" target="_blank">Consulter son profil</a>
           </article>

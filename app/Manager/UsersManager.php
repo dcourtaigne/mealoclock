@@ -61,6 +61,20 @@ class UsersManager extends \W\Manager\UserManager{
     return $eventQuery->fetchAll();
   }
 
+  public function getAllUserParticipations($id){
+    $query = "select e.event_title, e.event_desc, e.event_date, e.event_time, e.event_location, e.event_image, u2.user_name
+              from events e
+              join users_events_participations uep on (e.id = uep.event_id)
+              join users u on (uep.guest_id = u.id)
+              join users u2 on (e.user_id = u2.id)
+              WHERE u.id=:id
+              ORDER BY e.event_date ASC";
+    $eventQuery = $this->dbh->prepare($query);
+    $eventQuery->bindValue(':id',(int)$id);
+    $eventQuery->execute();
+    return $eventQuery->fetchAll();
+  }
+
   public function getUserComments($id){
 
  /*   SELECT * from users as u, events as e, communities as c, users_events_participation as uep, communities_members as cm, comment as co
@@ -83,6 +97,15 @@ class UsersManager extends \W\Manager\UserManager{
     $userUpdate->bindValue(':pic',$newfichier);
     $userUpdate->bindValue(':id',(int)$id);
     $userUpdate->execute();
+  }
+
+  public function deleteUser($id){
+
+    $thisId= intval($id);
+    $sql="DELETE FROM `users` WHERE id=:id";
+    $userDelete = $this->dbh->prepare($sql);
+    $userDelete->bindValue(':id',$thisId);
+    return $userDelete->execute();
   }
 
 }

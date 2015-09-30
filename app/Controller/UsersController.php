@@ -104,20 +104,30 @@ class UsersController extends Controller{
 
       $eventsOrg = $user->getUserEvents($thisId);
       $eventsOrgDateFR = Controller::getFrenchDate($eventsOrg);
+      if(!empty($eventsOrgDateFR)){
+        for($i=0;$i<count($eventsOrgDateFR);$i++){
+          $eventsOrgDateFR[$i]['event_time']=formatTime($eventsOrgDateFR[$i]['event_time']);
+        }
+      }
       $thisUser['eventsOrg'] = $eventsOrgDateFR;
 
       $eventsPart = $user->getUserParticipations($thisId,'confirmed');
       $eventsPartDateFR = Controller::getFrenchDate($eventsPart);
+      if(!empty($eventsPartDateFR)){
+        for($i=0;$i<count($eventsPartDateFR);$i++){
+          $eventsPartDateFR[$i]['event_time']=formatTime($eventsPartDateFR[$i]['event_time']);
+        }
+      }
       $thisUser['eventsPart'] = $eventsPartDateFR;
 
       if($userLogin['id'] == $thisUser['id']){
-        $thisUser['greeting'] = 'Bienvenue, '.$thisUser['user_name'];
+        $thisUser['greeting'] = 'Bienvenue, '.ucfirst($thisUser['user_name']);
         $thisUser['orgTitle'] = 'J\'organise';
         $thisUser['partTitle'] = 'Je participe';
       }else{
-        $thisUser['greeting'] = 'Bienvenue sur le profil de '.$thisUser['user_name'];
-        $thisUser['orgTitle'] = 'Evénement(s) organisé(s) par '.$thisUser['user_name'];
-        $thisUser['partTitle'] = 'Evénement(s) au(x)quel(s) participe '.$thisUser['user_name'];
+        $thisUser['greeting'] = 'Bienvenue sur le profil de '.ucfirst($thisUser['user_name']);
+        $thisUser['orgTitle'] = 'Evénement(s) organisé(s) par '.ucfirst($thisUser['user_name']);
+        $thisUser['partTitle'] = 'Evénement(s) au(x)quel(s) participe '.ucfirst($thisUser['user_name']);
       }
 
       $this->show('userProfile', ['thisUser'=>$thisUser]);
@@ -224,20 +234,12 @@ public function getEventRequests($id){
     $userObj = new UsersManager();
     $results=$eventObj->getEventGuests($eventId, $status="tobeconfirmed");
 
-    /*for($i=0;$i>count($results);$i++){
+    for($i=0;$i<count($results);$i++){
       $part = $userObj->getUserParticipations(intval($results[$i]['id']),'confirmed');
-      if($part){
-        $results[$i]['countPart'] = count($part);
-      }else{
-        $results[$i]['countPart'] = '0';
-      }
-      $org = $userObj->$userObj->getUserEvents(intval($results[$i]['id']));
-      if($org){
-        $results[$i]['countOrg'] = count($org);
-      }else{
-        $results[$i]['countOrg'] = '0';
-      }
-    }*/
+      $results[$i]['countPart'] = count($part);
+      $org = $userObj->getUserEvents(intval($results[$i]['id']));
+      $results[$i]['countOrg'] = count($org);
+    }
     if($results){
     $this->show('eventrequests',['requests'=>$results]);
     }else{
@@ -300,6 +302,45 @@ public function rejectEventRequest($id, $iduser){
   $uepObj = new Users_events_participationsManager();
   $uepObj->updateRequest($iduser, $id,'rejected');
   $this->redirectToRoute('getEventRequests',['id'=>$id]);
+}
+
+public function deleteProfile(){
+  $authObj = new AuthentificationManager();
+  $userLogin = $authObj->getLoggedUser();
+  $thisId=intval($userLogin['id']);
+  $userObj = new UsersManager();
+
+  $events = $userObj->getUserEvents($thisId);
+  if(!empty($events)){
+    $eventObj = new EventsManager();
+    foreach ($events as $event) {
+      $fakeUser=["user_id"=>999];
+      $eventObj->update($fakeUser,$event['id']);
+    }
+  }
+
+  $communities = $userObj->getUserCommunities($thisId);
+  if(!empty($communities)){
+    $comObj = new CommunitiesManager();
+    foreach ($communities as $community) {
+      $fakeUser=["user_id"=>999];
+      $comObj->updateFakeUser($fakeUser);
+    }
+  }
+
+  $participations = $userObj->getAllUserParticipations($thisId);
+  if(!empty($participationss)){
+    $uepObj = new Users_events_participationsManager();
+    foreach ($participations as $participation) {
+      $fakeUser=["user_id"=>999];
+      $uepObj->updateFakeUser($fakeUser);
+    }
+  }
+  
+  $authObj->logUserOut();
+  $userObj->deleteUser($userLogin['id']);
+  $this->redirectToRoute('home');
+
 }
 
 
