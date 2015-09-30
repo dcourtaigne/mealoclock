@@ -212,11 +212,11 @@ nav .dropdown-menu {
     background-color: #8C091E;
 }
 
-.dropdown-menu>li>a {
+#navigation .dropdown-menu>li>a {
   color: white !important;
 }
 
-.dropdown-menu li a:hover {
+#navigation .dropdown-menu li a:hover {
     color: #BBB9B9 !important;
 }
 
@@ -431,10 +431,10 @@ blockquote {
     border: none;
 }
 
-button:active {
-    background-color: #87B30B !important;
-    border: 1px solid #87B30B
+.btn-block+.btn-block {
+  margin-top: 0px;
 }
+
 /* --------------------------Gerer events------------------------*/
 /* Structure du conteneur */
 

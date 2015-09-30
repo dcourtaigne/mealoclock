@@ -3,18 +3,18 @@
 <?php $this->start('main_content') ?>
 
 <section id="event" data-id="<?=$this->e($event[0]['id'])?>" class="container-fluid">
-      <section class="row">
+      <section class="row marginTop10">
       <div id="feedback"></div>
 
           <article class="col-xs-12 col-sm-6 col-sm-push-3 col-md-6 col-md-push-3 paddingTB25">
-            <h2 class="marginTB20"><a href="<?=$this->url('event',['id'=>$event[0]['id']])?>"><?=$this->e($event[0]['event_title'])?></a></h2>
+            <h2 class="marginTop10"><a href="<?=$this->url('event',['id'=>$event[0]['id']])?>"><?=$this->e($event[0]['event_title'])?></a></h2>
               <p>Organisé par <a href="<?=$this->url('userProfile',['id'=>$event[0]['user_id']])?>"><strong><?=$this->e(ucfirst($event[0]['user_name']))?></strong></a></p> <br>
               <p><i class="glyphicon glyphicon-time"></i> <?=$this->e($event[0]['event_date'])?> à <?=$this->e($event[0]['event_time'])?></p>
               <p><i class="glyphicon glyphicon-map-marker"></i> Paris, <?=$this->e($event[0]['event_location'])?>e</p>
               <p><i class="fa fa-child"></i> Participants : <?=$this->e(count($event['guests']))?>/<?=$this->e($event[0]['event_guests'])?></p>
           </article>
 
-          <article class="col-xs-12 col-sm-3 col-sm-push-3 col-md-3 col-md-push-3 paddingTB25 text-center">
+          <article class="col-xs-12 col-sm-3 col-sm-push-3 col-md-3 col-md-push-3 paddingTB20 text-center">
             <?php if($event[0]['event_image']): ?>
             <img src="<?=$this->assetUrl('img/event/'.$event[0]['event_image'])?>" class="img-responsive">
           <?php else:?>
@@ -36,18 +36,18 @@
           <div class="col-xs-12 col-sm-3 col-sm-pull-9">
             <?php if($w_user):?>
             	<?php if(!in_array($w_user['id'], $event['guestsId'])):?>
-              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 color-white" id="buttonmsg"><a href="#" id="attend" class="color-white"><i class="glyphicon glyphicon-user color-white"></i><strong>  Participer</strong></a></button>
+              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop20 color-white" id="buttonmsg"><a href="#" id="attend" class="color-white"><i class="glyphicon glyphicon-user color-white"></i><strong>  Participer</strong></a></button>
               <?php else :?>
-              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10"><a href="#" id="cancel" class="color-white"><strong>Annuler ma participation</strong></a></button>
+              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop20"><a href="#" id="cancel" class="color-white"><strong>Annuler ma participation</strong></a></button>
               <?php endif ?>
             <?php else:?>
-            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10" id="open_register_form"><a href="#" id="inscription" class="color-white"><strong>Inscrivez-vous pour participer!</strong></a></button>
+            <button type="button" name="Participer" class="btn btn-primary btn-block marginTop20" id="open_register_form"><a href="#" id="inscription" class="color-white"><strong>Inscrivez-vous pour participer !</strong></a></button>
             <?php endif?>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10"><a href="#" class="color-white"><i class="glyphicon glyphicon-pencil"></i><strong>   Question</strong></a></button>
             <div class="btn-group btn-block">
-            <button type="button" class="btn-group btn btn-primary dropdown-toggle btn-block marginTop10" name="events" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-search"></i>
-                  <strong>  Evénements</strong> <span class="caret"></span>
-            </button>
+              <button type="button" class="btn-group btn btn-primary dropdown-toggle btn-block marginTop10" name="events" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-search"></i>
+                    <strong>  Evénements</strong> <span class="caret"></span>
+              </button>
                 <ul class="dropdown-menu">
                   <li><a href="<?= $this->url('eventsbycom',['com'=>$event[0]['com_shortname']])?>">Evénements de la communauté</a></li>
                   <li><a href="<?= $this->url('events')?>">Tous les événements</a></li>
@@ -58,7 +58,7 @@
 
       <section class="row ">
 
-        <article class="col-xs-12 col-sm-8 col-sm-push-3 marginTB10">
+        <article class="col-xs-12 col-sm-8 col-sm-push-3 marginTB40">
             <p class="text-left"><?=nl2br($event[0]['event_desc'])?></p>
         </article>
 
