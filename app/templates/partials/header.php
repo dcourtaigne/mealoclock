@@ -36,8 +36,8 @@
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Communautés<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?= $this->url('eventsbycom',['com'=>'vege']); ?>">Végétarien</a></li>
-                            <li><a href="<?= $this->url('eventsbycom',['com'=>'vegan']); ?>">Végan</a></li>
+                            <li><a href="<?= $this->url('eventsbycom',['com'=>'vege']); ?>">Végétariens</a></li>
+                            <li><a href="<?= $this->url('eventsbycom',['com'=>'vegan']); ?>">Vegans</a></li>
                             <li><a href="<?= $this->url('eventsbycom',['com'=>'ssgluten']); ?>">Sans gluten</a></li>
                             <li><a href="<?= $this->url('eventsbycom',['com'=>'sslactose']); ?>">Sans lactose</a></li>
                         </ul>

@@ -18,7 +18,7 @@
             <div class="item active">
                         <img src="<?= $this->assetUrl('img/vege_fruit.jpg')?>" />
                         <div class="carousel-caption">
-                            <h1 class="carousel-caption-header">Végétarien</h1>
+                            <h1 class="carousel-caption-header">Végétariens</h1>
                             <p class="carousel-caption-text hidden-xs">
                                 Manger 5 fruits et légumes ne date pas d'hier pour les végétariens. Découvrez cette communauté et la variété culinaire qui la caractérise.
                             </p>
@@ -28,7 +28,7 @@
                     <div class="item">
                         <img src="<?= $this->assetUrl('img/vegan_frie.jpg')?>" />
                         <div class="carousel-caption">
-                            <h1 class="carousel-caption-header">Végan</h1>
+                            <h1 class="carousel-caption-header">Vegans</h1>
                             <p class="carousel-caption-text hidden-xs">
                              <strong>Un régime alimentaire sans produits d'origine animale, c'est possible et ce n'est pas un sacrifice. Notre communauté végan en est la preuve. Soyez curieux et goûtez !</strong></p>
                         </div>
