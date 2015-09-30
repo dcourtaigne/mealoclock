@@ -42,7 +42,7 @@
                     <h3 class='text-center'><strong>Faites le premier pas !</strong></h3>
                     <p class="text-justify">Pas besoin d’être cuisinier pour profiter de bons plats. De vrais chefs n’attendent que vous
                         autour de leur table. Alors complétez votre profil et donnez-leur envie d’en apprendre plus sur vous.<br>
-                        L’organisateur a toujours le dernier mot concernant votre participation alors montrez que derrière votre profil, il y a un être humain doué de sensibilité.</p>
+                        L’organisateur a toujours le dernier mot concernant votre participation alors montrez que derrière votre profil, il y a un être sensible.</p>
                 </div>
                 <div class="col-xs-12 col-md-8 col-md-pull-4 ">
                     <img src="<?= $this->assetUrl('img/first_step-B.png')?>" alt="illustration d'une tablette avec des bulles de BD" class="img-responsive">
