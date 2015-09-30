@@ -148,5 +148,4 @@ class EventsManager extends \W\Manager\Manager{
     return $eventQuery->fetchAll();
   }
 
-
 }

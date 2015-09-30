@@ -311,17 +311,35 @@ public function deleteProfile(){
   $userObj = new UsersManager();
 
   $events = $userObj->getUserEvents($thisId);
-
   if(!empty($events)){
     $eventObj = new EventsManager();
     foreach ($events as $event) {
-      $eventObj->delete($event['id']);
+      $fakeUser=["user_id"=>999];
+      $eventObj->update($fakeUser,$event['id']);
+    }
+  }
+
+  $communities = $userObj->getUserCommunities($thisId);
+  if(!empty($communities)){
+    $comObj = new CommunitiesManager();
+    foreach ($communities as $community) {
+      $fakeUser=["user_id"=>999];
+      $comObj->updateFakeUser($fakeUser);
+    }
+  }
+
+  $participations = $userObj->getAllUserParticipations($thisId);
+  if(!empty($participationss)){
+    $uepObj = new Users_events_participationsManager();
+    foreach ($participations as $participation) {
+      $fakeUser=["user_id"=>999];
+      $uepObj->updateFakeUser($fakeUser);
     }
   }
   
   $authObj->logUserOut();
   $userObj->deleteUser($userLogin['id']);
-  //$this->redirectToRoute('home');
+  $this->redirectToRoute('home');
 
 }
 
