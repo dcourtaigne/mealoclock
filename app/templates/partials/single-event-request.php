@@ -2,7 +2,11 @@
         <section class="utilisateur">
           <div class="alignright">
             <div class="image_prenom">
+               <?php if($request['user_photo']): ?>
               <img src="<?=$this->assetUrl('img/avatar/'.$request['user_photo'])?>">
+               <?php else:?>
+              <img src="<?=$this->assetUrl('img/avatar/avatar.png')?>">
+            <?php endif?>
                 <h4><?= $this->e($request['user_name']) ?></h4>
             </div>
             <p class="commentaire wide">
