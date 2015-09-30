@@ -14,7 +14,7 @@
               <div class="col-xs-12 col-sm-2 col-sm-offset-1 text-center paddingTB20">
                   <a href="#" class="color-white"><i id="social-fb" class="fa fa-facebook-square fa-3x social "></i></a>
                   <a href="#" class="color-white"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                  <a href="#" class="color-white"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                  <a href="<?= $this->url('contact')?>" class="color-white"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
               </div>
 
 

@@ -36,9 +36,9 @@
           <div class="col-xs-12 col-sm-3 col-sm-pull-9">
             <?php if($w_user):?>
             	<?php if(!in_array($w_user['id'], $event['guestsId'])):?>
-              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10" id="buttonmsg"><a href="#" id="attend"><i class="glyphicon glyphicon-user"></i><strong>  Participer</strong></a></button>
+              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10 color-white" id="buttonmsg"><a href="#" id="attend" class="color-white"><i class="glyphicon glyphicon-user color-white"></i><strong>  Participer</strong></a></button>
               <?php else :?>
-              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10"><a href="#" id="cancel"><strong>Annuler ma participation</strong></a></button>
+              <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10"><a href="#" id="cancel" class="color-white"><strong>Annuler ma participation</strong></a></button>
               <?php endif ?>
             <?php else:?>
             <button type="button" name="Participer" class="btn btn-primary btn-block marginTop10" id="open_register_form"><a href="#" id="inscription" class="color-white"><strong>Inscrivez-vous pour participer!</strong></a></button>

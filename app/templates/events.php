@@ -21,7 +21,7 @@
           </section>
 
           <div>
-            <a href="<?=$this->url('editEvent', ['action' => 'create'])?>"><i class="btn btn-default glyphicon glyphicon-plus pull-right marginTop10"></i></a>
+            <button type="button" name="créer un événement" class="btn btn-default pull-right marginTop10"><a href="<?=$this->url('editEvent', ['action' => 'create'])?>"><i class="glyphicon glyphicon-plus"></i><strong class="hidden-xs"> créer un événement</strong></a></button>
           </div>
 
           <section id="event_list" class="col-xs-12 marginTB20">

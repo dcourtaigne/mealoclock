@@ -16,9 +16,9 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-                        <img src="<?= $this->assetUrl('img/vege_fruit.jpg')?>" />
+                        <img src="<?= $this->assetUrl('img/vege_fruit.jpg')?>" alt="image d'un mur rempli d'oranges" />
                         <div class="carousel-caption">
-                            <h1 class="carousel-caption-header">Végétariens</h1>
+                            <h1 class="carousel-caption-header">Végétarien</h1>
                             <p class="carousel-caption-text hidden-xs">
                                 Manger 5 fruits et légumes ne date pas d'hier pour les végétariens. Découvrez cette communauté et la variété culinaire qui la caractérise.
                             </p>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="item">
-                        <img src="<?= $this->assetUrl('img/vegan_frie.jpg')?>" />
+                        <img src="<?= $this->assetUrl('img/vegan_frie.jpg')?>" alt="image d'un cornet de frite"/>
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Vegans</h1>
                             <p class="carousel-caption-text hidden-xs">
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="item">
-                        <img src="<?= $this->assetUrl('img/gluten_cake.jpg')?>" />
+                        <img src="<?= $this->assetUrl('img/gluten_cake.jpg')?>" alt="image d'une personne pétrissant de la pate sans gluten'"/>
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Sans gluten</h1>
                             <p class="carousel-caption-text hidden-xs">
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="item">
-                        <img src="<?= $this->assetUrl('img/lactose_cake.jpg')?>" />
+                        <img src="<?= $this->assetUrl('img/lactose_cake.jpg')?>" alt="image de gateau sans lactose" />
                         <div class="carousel-caption">
                             <h1 class="carousel-caption-header">Sans lactose</h1>
                             <p class="carousel-caption-text hidden-xs">

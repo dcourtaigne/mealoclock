@@ -17,11 +17,11 @@
         </article>
     </section>
     <section class="row marginTop20">
-      <article class="col-xs-12 col-sm-4">
+      <article class="col-xs-6 col-sm-4">
       <h3>Evénements à venir</h3>
       </article>
 
-      <div class="col-xs-12 col-sm-6 marginTop10">
+      <div class="col-xs-10 col-sm-5 marginTop10">
         <section class="pull-left">
             <label>Rechercher par date: </label>
             <input type="text" id="datepicker"></button>
@@ -29,9 +29,10 @@
         </section>
       </div>
 
-      <div class="col-xs-12 col-sm-2 h4 ">
-        <a href="<?=$this->url('editEvent', ['action' => 'create'])?>"><i class="btn btn-default glyphicon glyphicon-plus pull-right"></i></a>
+      <div class="col-xs-2 col-sm-3 h4 ">
+        <button type="button" name="créer un événement" class="btn btn-default pull-right marginTop10"><a href="<?=$this->url('editEvent', ['action' => 'create'])?>"><i class="glyphicon glyphicon-plus"></i><strong class="hidden-xs"> créer un événement</strong></a></button>
       </div>
+
     </section>
 
         <!--<section id="events" class="container-fluid">-->

@@ -36,6 +36,9 @@
                             <p> Membre depuis le : <?=$this->e($thisUser['create_time'])?></p>
                             <p> Repas organisé(s) : <?= $this->e(count($thisUser['eventsOrg']))?> </br>
                                     Repas participé(s) : <?= $this->e(count($thisUser['eventsPart']))?></p>
+                            <a class="btn btn-default marginTop10" href="#" role="button">laisser un commentaire</a>
+                            <a class="btn btn-default marginTop10" href="#" role="button">contacter</a>
+
                         </div>
                     </div>
 
@@ -87,26 +90,26 @@
                 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-            
+
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 <h4 class="modal-title" id="myModalLabel">Confirmer la suppression de votre profil</h4>
                             </div>
-                        
+
                             <div class="modal-body">
-                                <p>You are about to delete one track, this procedure is irreversible.</p>
-                                <p>Do you want to proceed?</p>
+                                <p>Attention ! Vous êtes sur le point de faire une grosse erreur, du genre irreversible. Vous allez supprimer votre compte. </p>
+                                <p>Voulez-vous vraiment le faire ? hein ? Sérieusement ?</p>
                                 <p class="debug-url"></p>
                             </div>
-                            
+
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                <a href="<?=$this->url('deleteProfile')?>" class="btn btn-danger btn-ok">Delete</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                                <a href="<?=$this->url('deleteProfile')?>" class="btn btn-danger btn-ok">Supprimer</a>
                             </div>
                         </div>
                     </div>
                 </div>
-    
+
             <!-- tableau d'exemple en placement -->
             <div class="col-sm-5 col-sm-offset-1">
                 <section id="evenementProfile" class="row container-fluid gris marginTB20">
