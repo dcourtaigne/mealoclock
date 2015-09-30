@@ -319,24 +319,12 @@ public function deleteProfile(){
     }
   }
 
-  $communities = $userObj->getUserCommunities($thisId);
-  if(!empty($communities)){
-    $comObj = new CommunitiesManager();
-    foreach ($communities as $community) {
-      $fakeUser=["user_id"=>999];
-      $comObj->updateFakeUser($fakeUser);
-    }
-  }
+  $fakeUser=999;
+  $comObj = new Communities_membersManager();
+  $comObj->updateFakeUser($fakeUser, $thisId);
+  $uepObj = new Users_events_participationsManager();
+  $uepObj->updateFakeUser($fakeUser, $thisId);
 
-  $participations = $userObj->getAllUserParticipations($thisId);
-  if(!empty($participationss)){
-    $uepObj = new Users_events_participationsManager();
-    foreach ($participations as $participation) {
-      $fakeUser=["user_id"=>999];
-      $uepObj->updateFakeUser($fakeUser);
-    }
-  }
-  
   $authObj->logUserOut();
   $userObj->deleteUser($userLogin['id']);
   $this->redirectToRoute('home');

@@ -21,9 +21,10 @@ class Users_events_participationsManager extends \W\Manager\Manager{
     $updateQuery->execute();
   }
 
-  public function updateFakeUser($id){
-    $sql = "UPDATE `users_events_participations` SET `guest_id`=:id WHERE guest_id=:id";
+  public function updateFakeUser($fakeid, $id){
+    $sql = "UPDATE `users_events_participations` SET `guest_id`=:fakeid WHERE guest_id=:id";
     $updateQuery = $this->dbh->prepare($sql);
+    $updateQuery->bindValue(':fakeid',(int)$fakeid);
     $updateQuery->bindValue(':id',(int)$id);
     $updateQuery->execute();
   }
