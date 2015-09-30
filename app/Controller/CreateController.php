@@ -129,7 +129,9 @@ class CreateController extends Controller{
   public function uploadPhotoEvent($id){
     var_dump($_FILES);
      // la première entrée au téléchargement
-        $dossier = "c:/xampp/htdocs/mealoclock/public/assets/img/event/";
+         $app = getApp();
+        $baseURL = $app->getConfig('base_url');
+        $dossier = 'c:/xampp/htdocs'.$baseURL.'/assets/img/event/';
         $fichier_tmp = $_FILES["photo"]["tmp_name"];
         $fichier = $_FILES["photo"]["name"];
         $extension = strrchr($fichier, '.'); // extension de fichier téléchargé
